@@ -1,0 +1,26 @@
+cmake_minimum_required(VERSION 3.17.4)
+
+project(sandbox VERSION  0.1)
+
+include( GNUInstallDirs )
+
+set( GLFWM_VERSION_MAJOR "3" )
+set( GLFWM_VERSION_MINOR "2" )
+
+
+find_package( OpenGL REQUIRED )
+find_package( glfw3 REQUIRED )
+
+set( SRCS
+
+../src/Application.cpp
+
+)
+
+add_executable(${CMAKE_PROJECT_NAME} ${SRCS})
+    
+   
+
+target_link_libraries( sandbox ${../lib} GL )
+target_link_libraries( sandbox ${../lib} GLEW )
+target_link_libraries( sandbox ${../lib} glfw )
