@@ -33,10 +33,34 @@ int main (void)
     fprintf(stdout, "Status: Using GL %s\n", glGetString(GL_VERSION));
 
 
+    float positions[6] = {
+            -0.5f, -0.5f,
+             0.0f,  0.5f,
+             0.5f, -0.5f
+
+    };
+
+
+    unsigned int buffer;
+    glGenBuffers(1, &buffer);
+    glBindBuffer(GL_ARRAY_BUFFER, buffer);
+    glBufferData(GL_ARRAY_BUFFER, 6 * sizeof(float), positions, GL_STATIC_DRAW); 
+
+
+
+
+
+
+
     while(!glfwWindowShouldClose(window))
     {
 
         glClear(GL_COLOR_BUFFER_BIT);
+
+        glDrawArrays(GL_TRIANGLES, 0, 3);
+        // glDrawElements(GL_TRIANGLES, 3, nullptr)
+
+
 
         glfwSwapBuffers(window);
 
