@@ -7,10 +7,16 @@
 #IncludeRegexTransform: 
 
 /home/demijan/Projects/sandbox/src/Application.cpp
-iostream
--
 GL/glew.h
 -
 GLFW/glfw3.h
+-
+iostream
+-
+fstream
+-
+string
+-
+sstream
 -
 

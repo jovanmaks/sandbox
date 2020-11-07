@@ -1,7 +1,52 @@
-#include <iostream>
 /* OpenGl */
 #include <GL/glew.h> 
 #include <GLFW/glfw3.h>
+
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <sstream>
+
+
+
+struct ShaderProgramSource
+{
+    std::string VertexSource;
+    std::string FragmentSource;
+};
+
+static ShaderProgramSource ParseShader(const std::string& filepath)
+{
+   std::ifstream stream(filepath);
+
+    enum class ShaderType
+    {
+        NONE = -1, VERTEX = 0, FRAGMENT = 1
+    };
+
+    std::string line;
+    std::stringstream ss[2];
+    ShaderType type = ShaderType::NONE;
+
+    while(getline(stream, line))
+    {
+        if (line.find("#shader") !=std::string::npos)
+        {
+            if (line.find("vertex") != std::string::npos)
+                type = ShaderType::VERTEX;
+            else if(line.find("fragment") != std::string::npos)
+                type = ShaderType::FRAGMENT;
+        }
+        else
+        {
+            ss[(int) type] << line << '\n'; 
+        }
+    }
+
+    return { ss[0].str(), ss[1].str() };
+
+}
 
 
 static unsigned int CompileShader(  unsigned int type, const std::string& source )
@@ -11,7 +56,7 @@ static unsigned int CompileShader(  unsigned int type, const std::string& source
     glShaderSource(id, 1, &src, nullptr);
     glCompileShader(id);
 
-    //error handling
+    //== error handling ==
     int result;
     glGetShaderiv(id,   GL_COMPILE_STATUS, &result);
     if (result == GL_FALSE)
@@ -23,8 +68,9 @@ static unsigned int CompileShader(  unsigned int type, const std::string& source
         std::cout<< "Failed to compile "<<(type == GL_VERTEX_SHADER ? "vertex" : "fragment" ) << "shader!" << std::endl;
         std::cout << message <<std::endl;
         glDeleteShader(id);
-        return 0; 
+        return 0;  
     }
+    //== error handling ==
     
 
     return id;
@@ -79,7 +125,6 @@ int main (void)
     GLenum err1 = glewInit();
     if (GLEW_OK != err1)
     {
-    /* Problem: glewInit failed, something is seriously wrong. */
     fprintf(stderr, "Error: %s\n", glewGetErrorString(err1));    
     }
     fprintf(stdout, "Status: Using GLEW %s\n", glewGetString(GLEW_VERSION));
@@ -111,31 +156,10 @@ int main (void)
 
 
 
-    std::string vertexShader =
-     "#version 330 core\n"
-     "\n"
-     "layout (location = 0) in vec4 position;\n"
-     "\n"
-     "void main()\n"
-     "{\n"
-     "gl_Position = position;\n"
-     "}\n";
+    ShaderProgramSource source = ParseShader("../res/shaders/Basic.shader");
 
 
-
-
-    std::string fragmentShader =
-     "#version 330 core\n"
-     "\n"
-     "layout (location = 0) out vec4 color;"
-     "\n"
-     "void main()\n"
-     "{\n"
-     " color = vec4(1.0, 0.0, 0.0, 1.0);\n"
-     "}\n";
-
-
-    unsigned int shader = CreateShader(vertexShader, fragmentShader);
+    unsigned int shader = CreateShader(source.VertexSource,  source.FragmentSource);
     glUseProgram(shader);
 
 
@@ -166,6 +190,7 @@ int main (void)
 
 
     glDeleteProgram(shader);
+
     glfwTerminate();
     return 0;
 
