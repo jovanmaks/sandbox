@@ -11,6 +11,8 @@ GL/glew.h
 -
 GLFW/glfw3.h
 -
+signal.h
+-
 iostream
 -
 fstream
