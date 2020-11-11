@@ -27,6 +27,8 @@ VertexBuffer.h
 /home/demijan/Projects/sandbox/src/VertexBuffer.h
 IndexBuffer.h
 /home/demijan/Projects/sandbox/src/IndexBuffer.h
+VertexArray.h
+/home/demijan/Projects/sandbox/src/VertexArray.h
 
 /home/demijan/Projects/sandbox/src/IndexBuffer.h
 
@@ -36,5 +38,19 @@ GL/glew.h
 signal.h
 -
 
+/home/demijan/Projects/sandbox/src/VertexArray.h
+VertexBuffer.h
 /home/demijan/Projects/sandbox/src/VertexBuffer.h
+VertexBufferLayout.h
+/home/demijan/Projects/sandbox/src/VertexBufferLayout.h
+
+/home/demijan/Projects/sandbox/src/VertexBuffer.h
+
+/home/demijan/Projects/sandbox/src/VertexBufferLayout.h
+vector
+-
+GL/glew.h
+-
+Renderer.h
+/home/demijan/Projects/sandbox/src/Renderer.h
 
