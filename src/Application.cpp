@@ -12,28 +12,11 @@
 #include <string>
 #include <sstream>
 
-#define ASSERT(x) if (!(x)) raise(SIGTRAP);
-#define GLCall(x)   GLClearError();\
-    x;\
-    ASSERT(GLLogCall(#x, __FILE__, __LINE__))
+#include "Renderer.h"
+#include "VertexBuffer.h"
+#include "IndexBuffer.h"
 
-static void GLClearError()
-{
 
-    while (glGetError() !=GL_NO_ERROR);
-   
-    
-}
-
-static bool GLLogCall(const char* function, const char* file, int line)
-{
-    while (GLenum error = glGetError())
-    {
-         std::cout << "[OpenGL Error] (" << error << "):" << function <<" "<< file << ":"<< line << std::endl;
-         return false;
-    }
-    return true;
-}   
 
 
 struct ShaderProgramSource
@@ -41,6 +24,8 @@ struct ShaderProgramSource
     std::string VertexSource;
     std::string FragmentSource;
 };
+
+
 
 static ShaderProgramSource ParseShader(const std::string& filepath)
 {
@@ -167,13 +152,13 @@ int main (void)
 
 
 
-
+    {
 
     float positions[] = {
             -0.5f, -0.5f, //0
              0.5f, -0.5f, //1
              0.5f,  0.5f, //2
-            -0.5f, 0.5f   //3
+            -0.5f,  0.5f  //3
 
     };
 
@@ -188,22 +173,15 @@ int main (void)
     GLCall(glBindVertexArray(vao));
 
 
-    unsigned int buffer;
-    GLCall(glGenBuffers(1, &buffer));
-    GLCall(glBindBuffer(GL_ARRAY_BUFFER, buffer));
-    GLCall(glBufferData(GL_ARRAY_BUFFER, 4 * 2 * sizeof(float), positions, GL_STATIC_DRAW)); 
+    VertexBuffer vb(positions, 4 * 2 * sizeof(float));
+
 
 
     GLCall(glEnableVertexAttribArray(0));
     GLCall(glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 2, 0));
 
 
-
-
-    unsigned int ibo;
-    GLCall(glGenBuffers(1, &ibo));
-    GLCall(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo));
-    GLCall(glBufferData(GL_ELEMENT_ARRAY_BUFFER, 6 * sizeof(unsigned int), indices, GL_STATIC_DRAW)); 
+    IndexBuffer ib(indices, 6);
 
 
 
@@ -243,8 +221,7 @@ int main (void)
 
 
         GLCall(glBindVertexArray(vao));
-        GLCall(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo));
-
+        ib.Bind();
 
         GLCall(glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr));
 
@@ -268,6 +245,8 @@ int main (void)
 
 
     glDeleteProgram(shader);
+    
+    }
 
     glfwTerminate();
     return 0;

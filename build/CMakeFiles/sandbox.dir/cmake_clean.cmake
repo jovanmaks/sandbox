@@ -1,5 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/sandbox.dir/Application.cpp.o"
+  "CMakeFiles/sandbox.dir/IndexBuffer.cpp.o"
+  "CMakeFiles/sandbox.dir/Renderer.cpp.o"
+  "CMakeFiles/sandbox.dir/VertexBuffer.cpp.o"
   "sandbox"
   "sandbox.pdb"
 )

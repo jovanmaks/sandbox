@@ -15,6 +15,9 @@ set( SRCS
 
 ../src/Application.cpp
 
+../src/Renderer.cpp
+../src/VertexBuffer.cpp
+../src/IndexBuffer.cpp
 )
 
 add_executable(${CMAKE_PROJECT_NAME} ${SRCS})

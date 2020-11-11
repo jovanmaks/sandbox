@@ -90,18 +90,63 @@ CMakeFiles/sandbox.dir/Application.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sandbox.dir/Application.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/demijan/Projects/sandbox/src/Application.cpp -o CMakeFiles/sandbox.dir/Application.cpp.s
 
+CMakeFiles/sandbox.dir/Renderer.cpp.o: CMakeFiles/sandbox.dir/flags.make
+CMakeFiles/sandbox.dir/Renderer.cpp.o: /home/demijan/Projects/sandbox/src/Renderer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/demijan/Projects/sandbox/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/sandbox.dir/Renderer.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sandbox.dir/Renderer.cpp.o -c /home/demijan/Projects/sandbox/src/Renderer.cpp
+
+CMakeFiles/sandbox.dir/Renderer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sandbox.dir/Renderer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/demijan/Projects/sandbox/src/Renderer.cpp > CMakeFiles/sandbox.dir/Renderer.cpp.i
+
+CMakeFiles/sandbox.dir/Renderer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sandbox.dir/Renderer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/demijan/Projects/sandbox/src/Renderer.cpp -o CMakeFiles/sandbox.dir/Renderer.cpp.s
+
+CMakeFiles/sandbox.dir/VertexBuffer.cpp.o: CMakeFiles/sandbox.dir/flags.make
+CMakeFiles/sandbox.dir/VertexBuffer.cpp.o: /home/demijan/Projects/sandbox/src/VertexBuffer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/demijan/Projects/sandbox/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/sandbox.dir/VertexBuffer.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sandbox.dir/VertexBuffer.cpp.o -c /home/demijan/Projects/sandbox/src/VertexBuffer.cpp
+
+CMakeFiles/sandbox.dir/VertexBuffer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sandbox.dir/VertexBuffer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/demijan/Projects/sandbox/src/VertexBuffer.cpp > CMakeFiles/sandbox.dir/VertexBuffer.cpp.i
+
+CMakeFiles/sandbox.dir/VertexBuffer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sandbox.dir/VertexBuffer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/demijan/Projects/sandbox/src/VertexBuffer.cpp -o CMakeFiles/sandbox.dir/VertexBuffer.cpp.s
+
+CMakeFiles/sandbox.dir/IndexBuffer.cpp.o: CMakeFiles/sandbox.dir/flags.make
+CMakeFiles/sandbox.dir/IndexBuffer.cpp.o: /home/demijan/Projects/sandbox/src/IndexBuffer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/demijan/Projects/sandbox/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/sandbox.dir/IndexBuffer.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sandbox.dir/IndexBuffer.cpp.o -c /home/demijan/Projects/sandbox/src/IndexBuffer.cpp
+
+CMakeFiles/sandbox.dir/IndexBuffer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sandbox.dir/IndexBuffer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/demijan/Projects/sandbox/src/IndexBuffer.cpp > CMakeFiles/sandbox.dir/IndexBuffer.cpp.i
+
+CMakeFiles/sandbox.dir/IndexBuffer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sandbox.dir/IndexBuffer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/demijan/Projects/sandbox/src/IndexBuffer.cpp -o CMakeFiles/sandbox.dir/IndexBuffer.cpp.s
+
 # Object files for target sandbox
 sandbox_OBJECTS = \
-"CMakeFiles/sandbox.dir/Application.cpp.o"
+"CMakeFiles/sandbox.dir/Application.cpp.o" \
+"CMakeFiles/sandbox.dir/Renderer.cpp.o" \
+"CMakeFiles/sandbox.dir/VertexBuffer.cpp.o" \
+"CMakeFiles/sandbox.dir/IndexBuffer.cpp.o"
 
 # External object files for target sandbox
 sandbox_EXTERNAL_OBJECTS =
 
 sandbox: CMakeFiles/sandbox.dir/Application.cpp.o
+sandbox: CMakeFiles/sandbox.dir/Renderer.cpp.o
+sandbox: CMakeFiles/sandbox.dir/VertexBuffer.cpp.o
+sandbox: CMakeFiles/sandbox.dir/IndexBuffer.cpp.o
 sandbox: CMakeFiles/sandbox.dir/build.make
 sandbox: /usr/lib64/libglfw.so.3.3
 sandbox: CMakeFiles/sandbox.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/demijan/Projects/sandbox/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable sandbox"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/demijan/Projects/sandbox/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable sandbox"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sandbox.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

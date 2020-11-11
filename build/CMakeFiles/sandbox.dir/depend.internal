@@ -3,3 +3,17 @@
 
 CMakeFiles/sandbox.dir/Application.cpp.o
  /home/demijan/Projects/sandbox/src/Application.cpp
+ /home/demijan/Projects/sandbox/src/IndexBuffer.h
+ /home/demijan/Projects/sandbox/src/Renderer.h
+ /home/demijan/Projects/sandbox/src/VertexBuffer.h
+CMakeFiles/sandbox.dir/IndexBuffer.cpp.o
+ /home/demijan/Projects/sandbox/src/IndexBuffer.cpp
+ /home/demijan/Projects/sandbox/src/IndexBuffer.h
+ /home/demijan/Projects/sandbox/src/Renderer.h
+CMakeFiles/sandbox.dir/Renderer.cpp.o
+ /home/demijan/Projects/sandbox/src/Renderer.cpp
+ /home/demijan/Projects/sandbox/src/Renderer.h
+CMakeFiles/sandbox.dir/VertexBuffer.cpp.o
+ /home/demijan/Projects/sandbox/src/Renderer.h
+ /home/demijan/Projects/sandbox/src/VertexBuffer.cpp
+ /home/demijan/Projects/sandbox/src/VertexBuffer.h
