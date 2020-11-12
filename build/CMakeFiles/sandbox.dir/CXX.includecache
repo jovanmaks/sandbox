@@ -33,6 +33,8 @@ Shader.h
 /home/demijan/Projects/sandbox/src/Shader.h
 VertexBufferLayout.h
 /home/demijan/Projects/sandbox/src/VertexBufferLayout.h
+Texture.h
+/home/demijan/Projects/sandbox/src/Texture.h
 
 /home/demijan/Projects/sandbox/src/IndexBuffer.h
 
@@ -54,13 +56,9 @@ string
 unordered_map
 -
 
-/home/demijan/Projects/sandbox/src/VertexArray.cpp
-VertexArray.h
-/home/demijan/Projects/sandbox/src/VertexArray.h
+/home/demijan/Projects/sandbox/src/Texture.h
 Renderer.h
 /home/demijan/Projects/sandbox/src/Renderer.h
-VertexBufferLayout.h
-/home/demijan/Projects/sandbox/src/VertexBufferLayout.h
 
 /home/demijan/Projects/sandbox/src/VertexArray.h
 VertexBuffer.h

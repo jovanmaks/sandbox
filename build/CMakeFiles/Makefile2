@@ -94,12 +94,12 @@ clean: CMakeFiles/sandbox.dir/clean
 CMakeFiles/sandbox.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/demijan/Projects/sandbox/build/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target sandbox"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/demijan/Projects/sandbox/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9 "Built target sandbox"
 .PHONY : CMakeFiles/sandbox.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/sandbox.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/demijan/Projects/sandbox/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/demijan/Projects/sandbox/build/CMakeFiles 9
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/sandbox.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/demijan/Projects/sandbox/build/CMakeFiles 0
 .PHONY : CMakeFiles/sandbox.dir/rule

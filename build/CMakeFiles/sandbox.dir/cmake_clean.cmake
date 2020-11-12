@@ -3,8 +3,10 @@ file(REMOVE_RECURSE
   "CMakeFiles/sandbox.dir/IndexBuffer.cpp.o"
   "CMakeFiles/sandbox.dir/Renderer.cpp.o"
   "CMakeFiles/sandbox.dir/Shader.cpp.o"
+  "CMakeFiles/sandbox.dir/Texture.cpp.o"
   "CMakeFiles/sandbox.dir/VertexArray.cpp.o"
   "CMakeFiles/sandbox.dir/VertexBuffer.cpp.o"
+  "CMakeFiles/sandbox.dir/vendor/stb_image/stb_image.cpp.o"
   "sandbox"
   "sandbox.pdb"
 )

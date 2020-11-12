@@ -20,6 +20,8 @@ set( SRCS
 ../src/IndexBuffer.cpp
 ../src/VertexArray.cpp
 ../src/Shader.cpp
+../src/Texture.cpp
+../src/vendor/stb_image/stb_image.cpp
 )
 
 add_executable(${CMAKE_PROJECT_NAME} ${SRCS})

@@ -251,6 +251,33 @@ Shader.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/Shader.cpp.s
 .PHONY : Shader.cpp.s
 
+Texture.o: Texture.cpp.o
+
+.PHONY : Texture.o
+
+# target to build an object file
+Texture.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/Texture.cpp.o
+.PHONY : Texture.cpp.o
+
+Texture.i: Texture.cpp.i
+
+.PHONY : Texture.i
+
+# target to preprocess a source file
+Texture.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/Texture.cpp.i
+.PHONY : Texture.cpp.i
+
+Texture.s: Texture.cpp.s
+
+.PHONY : Texture.s
+
+# target to generate assembly for a file
+Texture.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/Texture.cpp.s
+.PHONY : Texture.cpp.s
+
 VertexArray.o: VertexArray.cpp.o
 
 .PHONY : VertexArray.o
@@ -305,6 +332,33 @@ VertexBuffer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/VertexBuffer.cpp.s
 .PHONY : VertexBuffer.cpp.s
 
+vendor/stb_image/stb_image.o: vendor/stb_image/stb_image.cpp.o
+
+.PHONY : vendor/stb_image/stb_image.o
+
+# target to build an object file
+vendor/stb_image/stb_image.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/vendor/stb_image/stb_image.cpp.o
+.PHONY : vendor/stb_image/stb_image.cpp.o
+
+vendor/stb_image/stb_image.i: vendor/stb_image/stb_image.cpp.i
+
+.PHONY : vendor/stb_image/stb_image.i
+
+# target to preprocess a source file
+vendor/stb_image/stb_image.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/vendor/stb_image/stb_image.cpp.i
+.PHONY : vendor/stb_image/stb_image.cpp.i
+
+vendor/stb_image/stb_image.s: vendor/stb_image/stb_image.cpp.s
+
+.PHONY : vendor/stb_image/stb_image.s
+
+# target to generate assembly for a file
+vendor/stb_image/stb_image.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/vendor/stb_image/stb_image.cpp.s
+.PHONY : vendor/stb_image/stb_image.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -326,12 +380,18 @@ help:
 	@echo "... Shader.o"
 	@echo "... Shader.i"
 	@echo "... Shader.s"
+	@echo "... Texture.o"
+	@echo "... Texture.i"
+	@echo "... Texture.s"
 	@echo "... VertexArray.o"
 	@echo "... VertexArray.i"
 	@echo "... VertexArray.s"
 	@echo "... VertexBuffer.o"
 	@echo "... VertexBuffer.i"
 	@echo "... VertexBuffer.s"
+	@echo "... vendor/stb_image/stb_image.o"
+	@echo "... vendor/stb_image/stb_image.i"
+	@echo "... vendor/stb_image/stb_image.s"
 .PHONY : help
 
 

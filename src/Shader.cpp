@@ -127,6 +127,13 @@ GLCall(glUseProgram(0));
 }
 
 
+void Shader::SetUniform1i(const std::string& name, int value)
+{
+
+    GLCall(glUniform1i(GetUniformLocation(name), value));
+
+}
+
 void Shader::SetUniform1f(const std::string& name, float value)
 {
 
@@ -142,7 +149,7 @@ void Shader::SetUniform4f(const std::string& name, float v0, float v1, float v2,
 }
 
 
-unsigned int Shader::GetUniformLocation(const std::string& name)
+int Shader::GetUniformLocation(const std::string& name)
 {
 
     if (m_UniformLocationCashe.find(name) != m_UniformLocationCashe.end())

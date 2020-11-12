@@ -5,6 +5,7 @@ CMakeFiles/sandbox.dir/Application.cpp.o: /home/demijan/Projects/sandbox/src/App
 CMakeFiles/sandbox.dir/Application.cpp.o: /home/demijan/Projects/sandbox/src/IndexBuffer.h
 CMakeFiles/sandbox.dir/Application.cpp.o: /home/demijan/Projects/sandbox/src/Renderer.h
 CMakeFiles/sandbox.dir/Application.cpp.o: /home/demijan/Projects/sandbox/src/Shader.h
+CMakeFiles/sandbox.dir/Application.cpp.o: /home/demijan/Projects/sandbox/src/Texture.h
 CMakeFiles/sandbox.dir/Application.cpp.o: /home/demijan/Projects/sandbox/src/VertexArray.h
 CMakeFiles/sandbox.dir/Application.cpp.o: /home/demijan/Projects/sandbox/src/VertexBuffer.h
 CMakeFiles/sandbox.dir/Application.cpp.o: /home/demijan/Projects/sandbox/src/VertexBufferLayout.h
@@ -30,6 +31,15 @@ CMakeFiles/sandbox.dir/Shader.cpp.o: /home/demijan/Projects/sandbox/src/Shader.h
 CMakeFiles/sandbox.dir/Shader.cpp.o: /home/demijan/Projects/sandbox/src/VertexArray.h
 CMakeFiles/sandbox.dir/Shader.cpp.o: /home/demijan/Projects/sandbox/src/VertexBuffer.h
 
+CMakeFiles/sandbox.dir/Texture.cpp.o: /home/demijan/Projects/sandbox/src/IndexBuffer.h
+CMakeFiles/sandbox.dir/Texture.cpp.o: /home/demijan/Projects/sandbox/src/Renderer.h
+CMakeFiles/sandbox.dir/Texture.cpp.o: /home/demijan/Projects/sandbox/src/Shader.h
+CMakeFiles/sandbox.dir/Texture.cpp.o: /home/demijan/Projects/sandbox/src/Texture.cpp
+CMakeFiles/sandbox.dir/Texture.cpp.o: /home/demijan/Projects/sandbox/src/Texture.h
+CMakeFiles/sandbox.dir/Texture.cpp.o: /home/demijan/Projects/sandbox/src/VertexArray.h
+CMakeFiles/sandbox.dir/Texture.cpp.o: /home/demijan/Projects/sandbox/src/VertexBuffer.h
+CMakeFiles/sandbox.dir/Texture.cpp.o: /home/demijan/Projects/sandbox/src/vendor/stb_image/stb_image.h
+
 CMakeFiles/sandbox.dir/VertexArray.cpp.o: /home/demijan/Projects/sandbox/src/IndexBuffer.h
 CMakeFiles/sandbox.dir/VertexArray.cpp.o: /home/demijan/Projects/sandbox/src/Renderer.h
 CMakeFiles/sandbox.dir/VertexArray.cpp.o: /home/demijan/Projects/sandbox/src/Shader.h
@@ -44,4 +54,7 @@ CMakeFiles/sandbox.dir/VertexBuffer.cpp.o: /home/demijan/Projects/sandbox/src/Sh
 CMakeFiles/sandbox.dir/VertexBuffer.cpp.o: /home/demijan/Projects/sandbox/src/VertexArray.h
 CMakeFiles/sandbox.dir/VertexBuffer.cpp.o: /home/demijan/Projects/sandbox/src/VertexBuffer.cpp
 CMakeFiles/sandbox.dir/VertexBuffer.cpp.o: /home/demijan/Projects/sandbox/src/VertexBuffer.h
+
+CMakeFiles/sandbox.dir/vendor/stb_image/stb_image.cpp.o: /home/demijan/Projects/sandbox/src/vendor/stb_image/stb_image.cpp
+CMakeFiles/sandbox.dir/vendor/stb_image/stb_image.cpp.o: /home/demijan/Projects/sandbox/src/vendor/stb_image/stb_image.h
 
