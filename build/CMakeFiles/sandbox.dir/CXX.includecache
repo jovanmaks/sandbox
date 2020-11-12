@@ -29,6 +29,8 @@ IndexBuffer.h
 /home/demijan/Projects/sandbox/src/IndexBuffer.h
 VertexArray.h
 /home/demijan/Projects/sandbox/src/VertexArray.h
+Shader.h
+/home/demijan/Projects/sandbox/src/Shader.h
 
 /home/demijan/Projects/sandbox/src/IndexBuffer.h
 
@@ -36,6 +38,26 @@ VertexArray.h
 GL/glew.h
 -
 signal.h
+-
+
+/home/demijan/Projects/sandbox/src/Shader.cpp
+iostream
+-
+fstream
+-
+string
+-
+sstream
+-
+Shader.h
+/home/demijan/Projects/sandbox/src/Shader.h
+Renderer.h
+/home/demijan/Projects/sandbox/src/Renderer.h
+
+/home/demijan/Projects/sandbox/src/Shader.h
+string
+-
+unordered_map
 -
 
 /home/demijan/Projects/sandbox/src/VertexArray.h

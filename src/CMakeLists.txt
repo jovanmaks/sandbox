@@ -19,6 +19,7 @@ set( SRCS
 ../src/VertexBuffer.cpp
 ../src/IndexBuffer.cpp
 ../src/VertexArray.cpp
+../src/Shader.cpp
 )
 
 add_executable(${CMAKE_PROJECT_NAME} ${SRCS})
