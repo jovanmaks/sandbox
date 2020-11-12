@@ -41,7 +41,7 @@ int main (void)
 
 
 
-    window = glfwCreateWindow(640, 480, "sandbox", NULL, NULL);
+    window = glfwCreateWindow(960, 540, "sandbox", NULL, NULL);
     if(!window)
     {
         glfwTerminate();
@@ -66,10 +66,10 @@ int main (void)
     {
 
     float positions[] = {
-            -0.5f, -0.5f, 0.0f, 0.0f,//0
-             0.5f, -0.5f, 1.0f, 0.0f,//1
-             0.5f,  0.5f,1.0f,1.0f, //2
-            -0.5f,  0.5f, 0.0f, 1.0f  //3
+            200.0f, 200.0f, 0.0f, 0.0f, //0
+            400.0f, 200.0f, 1.0f, 0.0f, //1
+            400.0f, 400.0f, 1.0f, 1.0f, //2
+            200.0f, 400.0f, 0.0f,1.0f  //3
 
     };
 
@@ -95,8 +95,7 @@ int main (void)
     IndexBuffer ib(indices, 6);
 
 
-    glm::mat4 proj = glm::ortho(-1.0f, 1.0f, -0.75f, 0.75f, -1.0f, 1.0f);
-    // glm::mat4 proj = glm::ortho(0.0f, sirina , 0.0f, visina, -1.0f, 1.0f);
+    glm::mat4 proj = glm::ortho(0.0f, 960.0f, 0.0f, 540.0f, -1.0f, 1.0f);
 
 
     Shader shader("../res/shaders/Basic.shader");
