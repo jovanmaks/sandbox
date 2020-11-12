@@ -181,6 +181,84 @@ CMakeFiles/sandbox.dir/vendor/stb_image/stb_image.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sandbox.dir/vendor/stb_image/stb_image.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/demijan/Projects/sandbox/src/vendor/stb_image/stb_image.cpp -o CMakeFiles/sandbox.dir/vendor/stb_image/stb_image.cpp.s
 
+CMakeFiles/sandbox.dir/vendor/imgui/imgui_demo.cpp.o: CMakeFiles/sandbox.dir/flags.make
+CMakeFiles/sandbox.dir/vendor/imgui/imgui_demo.cpp.o: /home/demijan/Projects/sandbox/src/vendor/imgui/imgui_demo.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/demijan/Projects/sandbox/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/sandbox.dir/vendor/imgui/imgui_demo.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sandbox.dir/vendor/imgui/imgui_demo.cpp.o -c /home/demijan/Projects/sandbox/src/vendor/imgui/imgui_demo.cpp
+
+CMakeFiles/sandbox.dir/vendor/imgui/imgui_demo.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sandbox.dir/vendor/imgui/imgui_demo.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/demijan/Projects/sandbox/src/vendor/imgui/imgui_demo.cpp > CMakeFiles/sandbox.dir/vendor/imgui/imgui_demo.cpp.i
+
+CMakeFiles/sandbox.dir/vendor/imgui/imgui_demo.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sandbox.dir/vendor/imgui/imgui_demo.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/demijan/Projects/sandbox/src/vendor/imgui/imgui_demo.cpp -o CMakeFiles/sandbox.dir/vendor/imgui/imgui_demo.cpp.s
+
+CMakeFiles/sandbox.dir/vendor/imgui/imgui_draw.cpp.o: CMakeFiles/sandbox.dir/flags.make
+CMakeFiles/sandbox.dir/vendor/imgui/imgui_draw.cpp.o: /home/demijan/Projects/sandbox/src/vendor/imgui/imgui_draw.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/demijan/Projects/sandbox/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/sandbox.dir/vendor/imgui/imgui_draw.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sandbox.dir/vendor/imgui/imgui_draw.cpp.o -c /home/demijan/Projects/sandbox/src/vendor/imgui/imgui_draw.cpp
+
+CMakeFiles/sandbox.dir/vendor/imgui/imgui_draw.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sandbox.dir/vendor/imgui/imgui_draw.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/demijan/Projects/sandbox/src/vendor/imgui/imgui_draw.cpp > CMakeFiles/sandbox.dir/vendor/imgui/imgui_draw.cpp.i
+
+CMakeFiles/sandbox.dir/vendor/imgui/imgui_draw.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sandbox.dir/vendor/imgui/imgui_draw.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/demijan/Projects/sandbox/src/vendor/imgui/imgui_draw.cpp -o CMakeFiles/sandbox.dir/vendor/imgui/imgui_draw.cpp.s
+
+CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_glfw.cpp.o: CMakeFiles/sandbox.dir/flags.make
+CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_glfw.cpp.o: /home/demijan/Projects/sandbox/src/vendor/imgui/imgui_impl_glfw.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/demijan/Projects/sandbox/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_glfw.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_glfw.cpp.o -c /home/demijan/Projects/sandbox/src/vendor/imgui/imgui_impl_glfw.cpp
+
+CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_glfw.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_glfw.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/demijan/Projects/sandbox/src/vendor/imgui/imgui_impl_glfw.cpp > CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_glfw.cpp.i
+
+CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_glfw.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_glfw.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/demijan/Projects/sandbox/src/vendor/imgui/imgui_impl_glfw.cpp -o CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_glfw.cpp.s
+
+CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_opengl3.cpp.o: CMakeFiles/sandbox.dir/flags.make
+CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_opengl3.cpp.o: /home/demijan/Projects/sandbox/src/vendor/imgui/imgui_impl_opengl3.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/demijan/Projects/sandbox/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_opengl3.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_opengl3.cpp.o -c /home/demijan/Projects/sandbox/src/vendor/imgui/imgui_impl_opengl3.cpp
+
+CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_opengl3.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_opengl3.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/demijan/Projects/sandbox/src/vendor/imgui/imgui_impl_opengl3.cpp > CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_opengl3.cpp.i
+
+CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_opengl3.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_opengl3.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/demijan/Projects/sandbox/src/vendor/imgui/imgui_impl_opengl3.cpp -o CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_opengl3.cpp.s
+
+CMakeFiles/sandbox.dir/vendor/imgui/imgui_widgets.cpp.o: CMakeFiles/sandbox.dir/flags.make
+CMakeFiles/sandbox.dir/vendor/imgui/imgui_widgets.cpp.o: /home/demijan/Projects/sandbox/src/vendor/imgui/imgui_widgets.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/demijan/Projects/sandbox/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/sandbox.dir/vendor/imgui/imgui_widgets.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sandbox.dir/vendor/imgui/imgui_widgets.cpp.o -c /home/demijan/Projects/sandbox/src/vendor/imgui/imgui_widgets.cpp
+
+CMakeFiles/sandbox.dir/vendor/imgui/imgui_widgets.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sandbox.dir/vendor/imgui/imgui_widgets.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/demijan/Projects/sandbox/src/vendor/imgui/imgui_widgets.cpp > CMakeFiles/sandbox.dir/vendor/imgui/imgui_widgets.cpp.i
+
+CMakeFiles/sandbox.dir/vendor/imgui/imgui_widgets.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sandbox.dir/vendor/imgui/imgui_widgets.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/demijan/Projects/sandbox/src/vendor/imgui/imgui_widgets.cpp -o CMakeFiles/sandbox.dir/vendor/imgui/imgui_widgets.cpp.s
+
+CMakeFiles/sandbox.dir/vendor/imgui/imgui.cpp.o: CMakeFiles/sandbox.dir/flags.make
+CMakeFiles/sandbox.dir/vendor/imgui/imgui.cpp.o: /home/demijan/Projects/sandbox/src/vendor/imgui/imgui.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/demijan/Projects/sandbox/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/sandbox.dir/vendor/imgui/imgui.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sandbox.dir/vendor/imgui/imgui.cpp.o -c /home/demijan/Projects/sandbox/src/vendor/imgui/imgui.cpp
+
+CMakeFiles/sandbox.dir/vendor/imgui/imgui.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sandbox.dir/vendor/imgui/imgui.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/demijan/Projects/sandbox/src/vendor/imgui/imgui.cpp > CMakeFiles/sandbox.dir/vendor/imgui/imgui.cpp.i
+
+CMakeFiles/sandbox.dir/vendor/imgui/imgui.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sandbox.dir/vendor/imgui/imgui.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/demijan/Projects/sandbox/src/vendor/imgui/imgui.cpp -o CMakeFiles/sandbox.dir/vendor/imgui/imgui.cpp.s
+
 # Object files for target sandbox
 sandbox_OBJECTS = \
 "CMakeFiles/sandbox.dir/Application.cpp.o" \
@@ -190,7 +268,13 @@ sandbox_OBJECTS = \
 "CMakeFiles/sandbox.dir/VertexArray.cpp.o" \
 "CMakeFiles/sandbox.dir/Shader.cpp.o" \
 "CMakeFiles/sandbox.dir/Texture.cpp.o" \
-"CMakeFiles/sandbox.dir/vendor/stb_image/stb_image.cpp.o"
+"CMakeFiles/sandbox.dir/vendor/stb_image/stb_image.cpp.o" \
+"CMakeFiles/sandbox.dir/vendor/imgui/imgui_demo.cpp.o" \
+"CMakeFiles/sandbox.dir/vendor/imgui/imgui_draw.cpp.o" \
+"CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_glfw.cpp.o" \
+"CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_opengl3.cpp.o" \
+"CMakeFiles/sandbox.dir/vendor/imgui/imgui_widgets.cpp.o" \
+"CMakeFiles/sandbox.dir/vendor/imgui/imgui.cpp.o"
 
 # External object files for target sandbox
 sandbox_EXTERNAL_OBJECTS =
@@ -203,10 +287,16 @@ sandbox: CMakeFiles/sandbox.dir/VertexArray.cpp.o
 sandbox: CMakeFiles/sandbox.dir/Shader.cpp.o
 sandbox: CMakeFiles/sandbox.dir/Texture.cpp.o
 sandbox: CMakeFiles/sandbox.dir/vendor/stb_image/stb_image.cpp.o
+sandbox: CMakeFiles/sandbox.dir/vendor/imgui/imgui_demo.cpp.o
+sandbox: CMakeFiles/sandbox.dir/vendor/imgui/imgui_draw.cpp.o
+sandbox: CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_glfw.cpp.o
+sandbox: CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_opengl3.cpp.o
+sandbox: CMakeFiles/sandbox.dir/vendor/imgui/imgui_widgets.cpp.o
+sandbox: CMakeFiles/sandbox.dir/vendor/imgui/imgui.cpp.o
 sandbox: CMakeFiles/sandbox.dir/build.make
 sandbox: /usr/lib64/libglfw.so.3.3
 sandbox: CMakeFiles/sandbox.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/demijan/Projects/sandbox/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable sandbox"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/demijan/Projects/sandbox/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable sandbox"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sandbox.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

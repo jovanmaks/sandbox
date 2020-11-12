@@ -39,6 +39,12 @@ vendor/glm/glm.hpp
 /home/demijan/Projects/sandbox/src/vendor/glm/glm.hpp
 vendor/glm/gtc/matrix_transform.hpp
 /home/demijan/Projects/sandbox/src/vendor/glm/gtc/matrix_transform.hpp
+vendor/imgui/imgui.h
+/home/demijan/Projects/sandbox/src/vendor/imgui/imgui.h
+vendor/imgui/imgui_impl_glfw.h
+/home/demijan/Projects/sandbox/src/vendor/imgui/imgui_impl_glfw.h
+vendor/imgui/imgui_impl_opengl3.h
+/home/demijan/Projects/sandbox/src/vendor/imgui/imgui_impl_opengl3.h
 
 /home/demijan/Projects/sandbox/src/IndexBuffer.h
 
@@ -1169,4 +1175,34 @@ detail/setup.hpp
 /home/demijan/Projects/sandbox/src/vendor/glm/detail/setup.hpp
 detail/func_vector_relational.inl
 /home/demijan/Projects/sandbox/src/vendor/glm/detail/func_vector_relational.inl
+
+/home/demijan/Projects/sandbox/src/vendor/imgui/imconfig.h
+
+/home/demijan/Projects/sandbox/src/vendor/imgui/imgui.h
+imconfig.h
+/home/demijan/Projects/sandbox/src/vendor/imgui/imconfig.h
+float.h
+-
+stdarg.h
+-
+stddef.h
+-
+string.h
+-
+assert.h
+-
+stdint.h
+-
+imgui_user.h
+/home/demijan/Projects/sandbox/src/vendor/imgui/imgui_user.h
+
+/home/demijan/Projects/sandbox/src/vendor/imgui/imgui_impl_glfw.h
+imgui.h
+/home/demijan/Projects/sandbox/src/vendor/imgui/imgui.h
+
+/home/demijan/Projects/sandbox/src/vendor/imgui/imgui_impl_opengl3.h
+imgui.h
+/home/demijan/Projects/sandbox/src/vendor/imgui/imgui.h
+TargetConditionals.h
+/home/demijan/Projects/sandbox/src/vendor/imgui/TargetConditionals.h
 

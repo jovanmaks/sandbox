@@ -171,6 +171,10 @@ CMakeFiles/sandbox.dir/Application.cpp.o: /home/demijan/Projects/sandbox/src/ven
 CMakeFiles/sandbox.dir/Application.cpp.o: /home/demijan/Projects/sandbox/src/vendor/glm/vec3.hpp
 CMakeFiles/sandbox.dir/Application.cpp.o: /home/demijan/Projects/sandbox/src/vendor/glm/vec4.hpp
 CMakeFiles/sandbox.dir/Application.cpp.o: /home/demijan/Projects/sandbox/src/vendor/glm/vector_relational.hpp
+CMakeFiles/sandbox.dir/Application.cpp.o: /home/demijan/Projects/sandbox/src/vendor/imgui/imconfig.h
+CMakeFiles/sandbox.dir/Application.cpp.o: /home/demijan/Projects/sandbox/src/vendor/imgui/imgui.h
+CMakeFiles/sandbox.dir/Application.cpp.o: /home/demijan/Projects/sandbox/src/vendor/imgui/imgui_impl_glfw.h
+CMakeFiles/sandbox.dir/Application.cpp.o: /home/demijan/Projects/sandbox/src/vendor/imgui/imgui_impl_opengl3.h
 
 CMakeFiles/sandbox.dir/IndexBuffer.cpp.o: /home/demijan/Projects/sandbox/src/IndexBuffer.cpp
 CMakeFiles/sandbox.dir/IndexBuffer.cpp.o: /home/demijan/Projects/sandbox/src/IndexBuffer.h
@@ -1122,6 +1126,40 @@ CMakeFiles/sandbox.dir/VertexBuffer.cpp.o: /home/demijan/Projects/sandbox/src/ve
 CMakeFiles/sandbox.dir/VertexBuffer.cpp.o: /home/demijan/Projects/sandbox/src/vendor/glm/vec3.hpp
 CMakeFiles/sandbox.dir/VertexBuffer.cpp.o: /home/demijan/Projects/sandbox/src/vendor/glm/vec4.hpp
 CMakeFiles/sandbox.dir/VertexBuffer.cpp.o: /home/demijan/Projects/sandbox/src/vendor/glm/vector_relational.hpp
+
+CMakeFiles/sandbox.dir/vendor/imgui/imgui.cpp.o: /home/demijan/Projects/sandbox/src/vendor/imgui/imconfig.h
+CMakeFiles/sandbox.dir/vendor/imgui/imgui.cpp.o: /home/demijan/Projects/sandbox/src/vendor/imgui/imgui.cpp
+CMakeFiles/sandbox.dir/vendor/imgui/imgui.cpp.o: /home/demijan/Projects/sandbox/src/vendor/imgui/imgui.h
+CMakeFiles/sandbox.dir/vendor/imgui/imgui.cpp.o: /home/demijan/Projects/sandbox/src/vendor/imgui/imgui_internal.h
+CMakeFiles/sandbox.dir/vendor/imgui/imgui.cpp.o: /home/demijan/Projects/sandbox/src/vendor/imgui/imstb_textedit.h
+
+CMakeFiles/sandbox.dir/vendor/imgui/imgui_demo.cpp.o: /home/demijan/Projects/sandbox/src/vendor/imgui/imconfig.h
+CMakeFiles/sandbox.dir/vendor/imgui/imgui_demo.cpp.o: /home/demijan/Projects/sandbox/src/vendor/imgui/imgui.h
+CMakeFiles/sandbox.dir/vendor/imgui/imgui_demo.cpp.o: /home/demijan/Projects/sandbox/src/vendor/imgui/imgui_demo.cpp
+
+CMakeFiles/sandbox.dir/vendor/imgui/imgui_draw.cpp.o: /home/demijan/Projects/sandbox/src/vendor/imgui/imconfig.h
+CMakeFiles/sandbox.dir/vendor/imgui/imgui_draw.cpp.o: /home/demijan/Projects/sandbox/src/vendor/imgui/imgui.h
+CMakeFiles/sandbox.dir/vendor/imgui/imgui_draw.cpp.o: /home/demijan/Projects/sandbox/src/vendor/imgui/imgui_draw.cpp
+CMakeFiles/sandbox.dir/vendor/imgui/imgui_draw.cpp.o: /home/demijan/Projects/sandbox/src/vendor/imgui/imgui_internal.h
+CMakeFiles/sandbox.dir/vendor/imgui/imgui_draw.cpp.o: /home/demijan/Projects/sandbox/src/vendor/imgui/imstb_rectpack.h
+CMakeFiles/sandbox.dir/vendor/imgui/imgui_draw.cpp.o: /home/demijan/Projects/sandbox/src/vendor/imgui/imstb_textedit.h
+CMakeFiles/sandbox.dir/vendor/imgui/imgui_draw.cpp.o: /home/demijan/Projects/sandbox/src/vendor/imgui/imstb_truetype.h
+
+CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_glfw.cpp.o: /home/demijan/Projects/sandbox/src/vendor/imgui/imconfig.h
+CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_glfw.cpp.o: /home/demijan/Projects/sandbox/src/vendor/imgui/imgui.h
+CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_glfw.cpp.o: /home/demijan/Projects/sandbox/src/vendor/imgui/imgui_impl_glfw.cpp
+CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_glfw.cpp.o: /home/demijan/Projects/sandbox/src/vendor/imgui/imgui_impl_glfw.h
+
+CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_opengl3.cpp.o: /home/demijan/Projects/sandbox/src/vendor/imgui/imconfig.h
+CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_opengl3.cpp.o: /home/demijan/Projects/sandbox/src/vendor/imgui/imgui.h
+CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_opengl3.cpp.o: /home/demijan/Projects/sandbox/src/vendor/imgui/imgui_impl_opengl3.cpp
+CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_opengl3.cpp.o: /home/demijan/Projects/sandbox/src/vendor/imgui/imgui_impl_opengl3.h
+
+CMakeFiles/sandbox.dir/vendor/imgui/imgui_widgets.cpp.o: /home/demijan/Projects/sandbox/src/vendor/imgui/imconfig.h
+CMakeFiles/sandbox.dir/vendor/imgui/imgui_widgets.cpp.o: /home/demijan/Projects/sandbox/src/vendor/imgui/imgui.h
+CMakeFiles/sandbox.dir/vendor/imgui/imgui_widgets.cpp.o: /home/demijan/Projects/sandbox/src/vendor/imgui/imgui_internal.h
+CMakeFiles/sandbox.dir/vendor/imgui/imgui_widgets.cpp.o: /home/demijan/Projects/sandbox/src/vendor/imgui/imgui_widgets.cpp
+CMakeFiles/sandbox.dir/vendor/imgui/imgui_widgets.cpp.o: /home/demijan/Projects/sandbox/src/vendor/imgui/imstb_textedit.h
 
 CMakeFiles/sandbox.dir/vendor/stb_image/stb_image.cpp.o: /home/demijan/Projects/sandbox/src/vendor/stb_image/stb_image.cpp
 CMakeFiles/sandbox.dir/vendor/stb_image/stb_image.cpp.o: /home/demijan/Projects/sandbox/src/vendor/stb_image/stb_image.h

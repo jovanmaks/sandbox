@@ -332,6 +332,168 @@ VertexBuffer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/VertexBuffer.cpp.s
 .PHONY : VertexBuffer.cpp.s
 
+vendor/imgui/imgui.o: vendor/imgui/imgui.cpp.o
+
+.PHONY : vendor/imgui/imgui.o
+
+# target to build an object file
+vendor/imgui/imgui.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/vendor/imgui/imgui.cpp.o
+.PHONY : vendor/imgui/imgui.cpp.o
+
+vendor/imgui/imgui.i: vendor/imgui/imgui.cpp.i
+
+.PHONY : vendor/imgui/imgui.i
+
+# target to preprocess a source file
+vendor/imgui/imgui.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/vendor/imgui/imgui.cpp.i
+.PHONY : vendor/imgui/imgui.cpp.i
+
+vendor/imgui/imgui.s: vendor/imgui/imgui.cpp.s
+
+.PHONY : vendor/imgui/imgui.s
+
+# target to generate assembly for a file
+vendor/imgui/imgui.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/vendor/imgui/imgui.cpp.s
+.PHONY : vendor/imgui/imgui.cpp.s
+
+vendor/imgui/imgui_demo.o: vendor/imgui/imgui_demo.cpp.o
+
+.PHONY : vendor/imgui/imgui_demo.o
+
+# target to build an object file
+vendor/imgui/imgui_demo.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/vendor/imgui/imgui_demo.cpp.o
+.PHONY : vendor/imgui/imgui_demo.cpp.o
+
+vendor/imgui/imgui_demo.i: vendor/imgui/imgui_demo.cpp.i
+
+.PHONY : vendor/imgui/imgui_demo.i
+
+# target to preprocess a source file
+vendor/imgui/imgui_demo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/vendor/imgui/imgui_demo.cpp.i
+.PHONY : vendor/imgui/imgui_demo.cpp.i
+
+vendor/imgui/imgui_demo.s: vendor/imgui/imgui_demo.cpp.s
+
+.PHONY : vendor/imgui/imgui_demo.s
+
+# target to generate assembly for a file
+vendor/imgui/imgui_demo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/vendor/imgui/imgui_demo.cpp.s
+.PHONY : vendor/imgui/imgui_demo.cpp.s
+
+vendor/imgui/imgui_draw.o: vendor/imgui/imgui_draw.cpp.o
+
+.PHONY : vendor/imgui/imgui_draw.o
+
+# target to build an object file
+vendor/imgui/imgui_draw.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/vendor/imgui/imgui_draw.cpp.o
+.PHONY : vendor/imgui/imgui_draw.cpp.o
+
+vendor/imgui/imgui_draw.i: vendor/imgui/imgui_draw.cpp.i
+
+.PHONY : vendor/imgui/imgui_draw.i
+
+# target to preprocess a source file
+vendor/imgui/imgui_draw.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/vendor/imgui/imgui_draw.cpp.i
+.PHONY : vendor/imgui/imgui_draw.cpp.i
+
+vendor/imgui/imgui_draw.s: vendor/imgui/imgui_draw.cpp.s
+
+.PHONY : vendor/imgui/imgui_draw.s
+
+# target to generate assembly for a file
+vendor/imgui/imgui_draw.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/vendor/imgui/imgui_draw.cpp.s
+.PHONY : vendor/imgui/imgui_draw.cpp.s
+
+vendor/imgui/imgui_impl_glfw.o: vendor/imgui/imgui_impl_glfw.cpp.o
+
+.PHONY : vendor/imgui/imgui_impl_glfw.o
+
+# target to build an object file
+vendor/imgui/imgui_impl_glfw.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_glfw.cpp.o
+.PHONY : vendor/imgui/imgui_impl_glfw.cpp.o
+
+vendor/imgui/imgui_impl_glfw.i: vendor/imgui/imgui_impl_glfw.cpp.i
+
+.PHONY : vendor/imgui/imgui_impl_glfw.i
+
+# target to preprocess a source file
+vendor/imgui/imgui_impl_glfw.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_glfw.cpp.i
+.PHONY : vendor/imgui/imgui_impl_glfw.cpp.i
+
+vendor/imgui/imgui_impl_glfw.s: vendor/imgui/imgui_impl_glfw.cpp.s
+
+.PHONY : vendor/imgui/imgui_impl_glfw.s
+
+# target to generate assembly for a file
+vendor/imgui/imgui_impl_glfw.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_glfw.cpp.s
+.PHONY : vendor/imgui/imgui_impl_glfw.cpp.s
+
+vendor/imgui/imgui_impl_opengl3.o: vendor/imgui/imgui_impl_opengl3.cpp.o
+
+.PHONY : vendor/imgui/imgui_impl_opengl3.o
+
+# target to build an object file
+vendor/imgui/imgui_impl_opengl3.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_opengl3.cpp.o
+.PHONY : vendor/imgui/imgui_impl_opengl3.cpp.o
+
+vendor/imgui/imgui_impl_opengl3.i: vendor/imgui/imgui_impl_opengl3.cpp.i
+
+.PHONY : vendor/imgui/imgui_impl_opengl3.i
+
+# target to preprocess a source file
+vendor/imgui/imgui_impl_opengl3.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_opengl3.cpp.i
+.PHONY : vendor/imgui/imgui_impl_opengl3.cpp.i
+
+vendor/imgui/imgui_impl_opengl3.s: vendor/imgui/imgui_impl_opengl3.cpp.s
+
+.PHONY : vendor/imgui/imgui_impl_opengl3.s
+
+# target to generate assembly for a file
+vendor/imgui/imgui_impl_opengl3.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_opengl3.cpp.s
+.PHONY : vendor/imgui/imgui_impl_opengl3.cpp.s
+
+vendor/imgui/imgui_widgets.o: vendor/imgui/imgui_widgets.cpp.o
+
+.PHONY : vendor/imgui/imgui_widgets.o
+
+# target to build an object file
+vendor/imgui/imgui_widgets.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/vendor/imgui/imgui_widgets.cpp.o
+.PHONY : vendor/imgui/imgui_widgets.cpp.o
+
+vendor/imgui/imgui_widgets.i: vendor/imgui/imgui_widgets.cpp.i
+
+.PHONY : vendor/imgui/imgui_widgets.i
+
+# target to preprocess a source file
+vendor/imgui/imgui_widgets.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/vendor/imgui/imgui_widgets.cpp.i
+.PHONY : vendor/imgui/imgui_widgets.cpp.i
+
+vendor/imgui/imgui_widgets.s: vendor/imgui/imgui_widgets.cpp.s
+
+.PHONY : vendor/imgui/imgui_widgets.s
+
+# target to generate assembly for a file
+vendor/imgui/imgui_widgets.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/vendor/imgui/imgui_widgets.cpp.s
+.PHONY : vendor/imgui/imgui_widgets.cpp.s
+
 vendor/stb_image/stb_image.o: vendor/stb_image/stb_image.cpp.o
 
 .PHONY : vendor/stb_image/stb_image.o
@@ -389,6 +551,24 @@ help:
 	@echo "... VertexBuffer.o"
 	@echo "... VertexBuffer.i"
 	@echo "... VertexBuffer.s"
+	@echo "... vendor/imgui/imgui.o"
+	@echo "... vendor/imgui/imgui.i"
+	@echo "... vendor/imgui/imgui.s"
+	@echo "... vendor/imgui/imgui_demo.o"
+	@echo "... vendor/imgui/imgui_demo.i"
+	@echo "... vendor/imgui/imgui_demo.s"
+	@echo "... vendor/imgui/imgui_draw.o"
+	@echo "... vendor/imgui/imgui_draw.i"
+	@echo "... vendor/imgui/imgui_draw.s"
+	@echo "... vendor/imgui/imgui_impl_glfw.o"
+	@echo "... vendor/imgui/imgui_impl_glfw.i"
+	@echo "... vendor/imgui/imgui_impl_glfw.s"
+	@echo "... vendor/imgui/imgui_impl_opengl3.o"
+	@echo "... vendor/imgui/imgui_impl_opengl3.i"
+	@echo "... vendor/imgui/imgui_impl_opengl3.s"
+	@echo "... vendor/imgui/imgui_widgets.o"
+	@echo "... vendor/imgui/imgui_widgets.i"
+	@echo "... vendor/imgui/imgui_widgets.s"
 	@echo "... vendor/stb_image/stb_image.o"
 	@echo "... vendor/stb_image/stb_image.i"
 	@echo "... vendor/stb_image/stb_image.s"
