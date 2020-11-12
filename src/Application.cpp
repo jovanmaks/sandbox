@@ -21,6 +21,10 @@
 #include "Texture.h"
 
 
+#include "vendor/glm/glm.hpp"
+#include "vendor/glm/gtc/matrix_transform.hpp"
+
+
 int main (void)
 {
 
@@ -90,6 +94,11 @@ int main (void)
 
     IndexBuffer ib(indices, 6);
 
+
+    glm::mat4 proj = glm::ortho(-1.0f, 1.0f, -0.75f, 0.75f, -1.0f, 1.0f);
+    // glm::mat4 proj = glm::ortho(0.0f, sirina , 0.0f, visina, -1.0f, 1.0f);
+
+
     Shader shader("../res/shaders/Basic.shader");
     shader.Bind();
 
@@ -98,6 +107,9 @@ int main (void)
     Texture texture("../res/texture/arabeska.png");
     texture.Bind();
     shader.SetUniform1i("u_Texture", 0);
+    shader.SetUniformMat4f( "u_MVP", proj);
+
+
 
     va.Unbind();
     vb.Unbind();
