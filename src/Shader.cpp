@@ -126,6 +126,14 @@ GLCall(glUseProgram(0));
 
 }
 
+
+void Shader::SetUniform1f(const std::string& name, float value)
+{
+
+    GLCall(glUniform1f(GetUniformLocation(name), value));
+
+}
+
 void Shader::SetUniform4f(const std::string& name, float v0, float v1, float v2, float v3)
 {
 
@@ -142,7 +150,7 @@ unsigned int Shader::GetUniformLocation(const std::string& name)
 
     GLCall( int location = glGetUniformLocation(m_RendererID, name.c_str()) );
      if (location == -1)
-        std::cout<< "Warning: uniform"<< name << "doesent exist!"<<std::endl;
+        std::cout<< "Warning: uniform "<< name << " doesent exist!"<<std::endl;
 
 
     m_UniformLocationCashe[name] = location;
