@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/sandbox.dir/Texture.cpp.o"
   "CMakeFiles/sandbox.dir/VertexArray.cpp.o"
   "CMakeFiles/sandbox.dir/VertexBuffer.cpp.o"
+  "CMakeFiles/sandbox.dir/tests/Test.cpp.o"
   "CMakeFiles/sandbox.dir/tests/TestClearColor.cpp.o"
   "CMakeFiles/sandbox.dir/vendor/imgui/imgui.cpp.o"
   "CMakeFiles/sandbox.dir/vendor/imgui/imgui_demo.cpp.o"

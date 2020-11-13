@@ -332,6 +332,33 @@ VertexBuffer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/VertexBuffer.cpp.s
 .PHONY : VertexBuffer.cpp.s
 
+tests/Test.o: tests/Test.cpp.o
+
+.PHONY : tests/Test.o
+
+# target to build an object file
+tests/Test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/tests/Test.cpp.o
+.PHONY : tests/Test.cpp.o
+
+tests/Test.i: tests/Test.cpp.i
+
+.PHONY : tests/Test.i
+
+# target to preprocess a source file
+tests/Test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/tests/Test.cpp.i
+.PHONY : tests/Test.cpp.i
+
+tests/Test.s: tests/Test.cpp.s
+
+.PHONY : tests/Test.s
+
+# target to generate assembly for a file
+tests/Test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/tests/Test.cpp.s
+.PHONY : tests/Test.cpp.s
+
 tests/TestClearColor.o: tests/TestClearColor.cpp.o
 
 .PHONY : tests/TestClearColor.o
@@ -578,6 +605,9 @@ help:
 	@echo "... VertexBuffer.o"
 	@echo "... VertexBuffer.i"
 	@echo "... VertexBuffer.s"
+	@echo "... tests/Test.o"
+	@echo "... tests/Test.i"
+	@echo "... tests/Test.s"
 	@echo "... tests/TestClearColor.o"
 	@echo "... tests/TestClearColor.i"
 	@echo "... tests/TestClearColor.s"

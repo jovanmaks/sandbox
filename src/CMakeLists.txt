@@ -32,6 +32,7 @@ set( SRCS
 
 
 ../src/tests/TestClearColor.cpp
+../src/tests/Test.cpp
 
 
 

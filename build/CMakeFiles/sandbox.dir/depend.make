@@ -1129,6 +1129,11 @@ CMakeFiles/sandbox.dir/VertexBuffer.cpp.o: /home/demijan/Projects/sandbox/src/ve
 CMakeFiles/sandbox.dir/VertexBuffer.cpp.o: /home/demijan/Projects/sandbox/src/vendor/glm/vec4.hpp
 CMakeFiles/sandbox.dir/VertexBuffer.cpp.o: /home/demijan/Projects/sandbox/src/vendor/glm/vector_relational.hpp
 
+CMakeFiles/sandbox.dir/tests/Test.cpp.o: /home/demijan/Projects/sandbox/src/tests/Test.cpp
+CMakeFiles/sandbox.dir/tests/Test.cpp.o: /home/demijan/Projects/sandbox/src/tests/Test.h
+CMakeFiles/sandbox.dir/tests/Test.cpp.o: /home/demijan/Projects/sandbox/src/vendor/imgui/imconfig.h
+CMakeFiles/sandbox.dir/tests/Test.cpp.o: /home/demijan/Projects/sandbox/src/vendor/imgui/imgui.h
+
 CMakeFiles/sandbox.dir/tests/TestClearColor.cpp.o: /home/demijan/Projects/sandbox/src/IndexBuffer.h
 CMakeFiles/sandbox.dir/tests/TestClearColor.cpp.o: /home/demijan/Projects/sandbox/src/Renderer.h
 CMakeFiles/sandbox.dir/tests/TestClearColor.cpp.o: /home/demijan/Projects/sandbox/src/Shader.h
