@@ -45,6 +45,8 @@ vendor/imgui/imgui_impl_glfw.h
 /home/demijan/Projects/sandbox/src/vendor/imgui/imgui_impl_glfw.h
 vendor/imgui/imgui_impl_opengl3.h
 /home/demijan/Projects/sandbox/src/vendor/imgui/imgui_impl_opengl3.h
+tests/TestClearColor.h
+/home/demijan/Projects/sandbox/src/tests/TestClearColor.h
 
 /home/demijan/Projects/sandbox/src/IndexBuffer.h
 
@@ -85,6 +87,12 @@ GL/glew.h
 -
 Renderer.h
 /home/demijan/Projects/sandbox/src/Renderer.h
+
+/home/demijan/Projects/sandbox/src/tests/Test.h
+
+/home/demijan/Projects/sandbox/src/tests/TestClearColor.h
+Test.h
+/home/demijan/Projects/sandbox/src/tests/Test.h
 
 /home/demijan/Projects/sandbox/src/vendor/glm/common.hpp
 detail/qualifier.hpp
