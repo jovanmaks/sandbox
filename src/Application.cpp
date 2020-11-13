@@ -75,10 +75,10 @@ int main (void)
     {
 
     float positions[] = {
-            200.0f, 200.0f, 0.0f, 0.0f, //0
-            400.0f, 200.0f, 1.0f, 0.0f, //1
-            400.0f, 400.0f, 1.0f, 1.0f, //2
-            200.0f, 400.0f, 0.0f,1.0f  //3
+           -50.0f,-50.0f, 0.0f, 0.0f, //0
+            50.0f, -50.0f, 1.0f, 0.0f, //1
+            50.0f,  50.0f, 1.0f, 1.0f, //2
+           -50.0f, 50.0f, 0.0f,1.0f  //3
 
     };
 
@@ -105,7 +105,7 @@ int main (void)
 
 
     glm::mat4 proj  = glm::ortho(0.0f, 960.0f, 0.0f, 540.0f, -1.0f, 1.0f);
-    glm::mat4 view  = glm::translate(glm::mat4(1.0f), glm::vec3(200, 0, 0));
+    glm::mat4 view  = glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, 0));
 
 
 
@@ -143,7 +143,9 @@ int main (void)
     ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
 
 
-    glm::vec3 translation(100, 0, 0);
+    glm::vec3 translationA(100, 0, 0);
+    glm::vec3 translationB(400, 0, 0);
+
 
 
     float r = 0.0f;
@@ -167,18 +169,23 @@ int main (void)
         ImGui::NewFrame();
 
 
-        glm::mat4 model = glm::translate(glm::mat4(1.0f),translation );
-        glm::mat4 mvp = proj * view * model;
+        {
+            glm::mat4 model = glm::translate(glm::mat4(1.0f),translationA );
+            glm::mat4 mvp = proj * view * model;
+            shader.Bind();
+            shader.SetUniformMat4f("u_MVP", mvp);
+            renderer.Draw(va, ib, shader);      
+        }
 
 
+        {
+            glm::mat4 model = glm::translate(glm::mat4(1.0f),translationB );
+            glm::mat4 mvp = proj * view * model;
+            shader.Bind();
+            shader.SetUniformMat4f("u_MVP", mvp);
+            renderer.Draw(va, ib, shader);      
+        }
 
-        shader.Bind();
-        shader.SetUniform4f("u_Color", r, 0.3f, 0.8f, 1.0f );
-        shader.SetUniformMat4f("u_MVP", mvp);
-
-
-
-        renderer.Draw(va, ib, shader);      
         
        
 
@@ -200,12 +207,12 @@ int main (void)
           
             ImGui::Separator();
             ImGui::SliderFloat("color  r", &r, 0.0f, 1.0f);
-            ImGui::SliderFloat3("translation", &translation.x, 0.0f, 960.0f);
+            ImGui::SliderFloat3("translationA", &translationA.x, 0.0f, 960.0f);
+            ImGui::SliderFloat3("translationB", &translationB.x, 0.0f, 960.0f);
+
            
             ImGui::End();
         }
-
-
 
         ImGui::Render();
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
@@ -213,6 +220,7 @@ int main (void)
 
         glfwSwapBuffers(window);
         glfwPollEvents();
+
     }
 
 
