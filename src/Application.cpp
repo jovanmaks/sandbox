@@ -32,7 +32,7 @@
 
 
 #include "tests/TestClearColor.h"
-// #include "tests/TestClearColor.h"
+#include "tests/TestTexture2D.h"
 
 
 
@@ -77,11 +77,12 @@ int main (void)
 
     {
 
-
+   
 
 
     GLCall(glEnable(GL_BLEND));
     GLCall(glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)  );
+
 
 
     Renderer renderer;
@@ -104,8 +105,29 @@ int main (void)
 
 
     testMenu->RegisterTest<test::TestClearColor>("Clear Color");
+    testMenu->RegisterTest<test::TestTexture2D>("Texture 2D ");
 
 
+    
+   /*  //flags for trigerring imGui 
+    bool show_another_window = true;
+    ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
+
+
+    glm::vec3 translationA(100, 0, 0);
+    glm::vec3 translationB(400, 0, 0);
+
+
+
+    float r = 0.0f;
+    float increment = 0.05f;
+
+
+
+    float g = 0.0f;
+    float b = 0.5f;
+
+    bool on = true; */
 
     while(!glfwWindowShouldClose(window))
     {
@@ -134,6 +156,51 @@ int main (void)
         }
 
 
+/* 
+        {
+            glm::mat4 model = glm::translate(glm::mat4(1.0f),translationA );
+            glm::mat4 mvp = proj * view * model;
+            shader.Bind();
+            shader.SetUniformMat4f("u_MVP", mvp);
+            renderer.Draw(va, ib, shader);      
+        }
+
+
+        {
+            glm::mat4 model = glm::translate(glm::mat4(1.0f),translationB );
+            glm::mat4 mvp = proj * view * model;
+            shader.Bind();
+            shader.SetUniformMat4f("u_MVP", mvp);   
+            renderer.Draw(va, ib, shader);      
+        }
+
+        
+       
+
+        if ( r > 1.0f)
+            increment = -0.05f;
+        else if ( r < 0.0f )
+            increment = 0.05f;
+
+        r+= increment;
+
+
+        if (show_another_window)
+        {
+            ImGui::Begin("Another Window", &show_another_window);   // Pass a pointer to our bool variable (the window will have a closing button that will clear the bool when clicked)
+            ImGui::Text("Hello from another window!");
+            ImGui::Text("Vertex position");
+            if (ImGui::Button("Show"))
+                on == true;
+          
+            ImGui::Separator();
+            ImGui::SliderFloat("color  r", &r, 0.0f, 1.0f);
+            ImGui::SliderFloat3("translationA", &translationA.x, 0.0f, 960.0f);
+            ImGui::SliderFloat3("translationB", &translationB.x, 0.0f, 960.0f);
+
+           
+            ImGui::End();
+        } */
 
         ImGui::Render();
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());

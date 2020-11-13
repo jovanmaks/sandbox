@@ -8,6 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/sandbox.dir/VertexBuffer.cpp.o"
   "CMakeFiles/sandbox.dir/tests/Test.cpp.o"
   "CMakeFiles/sandbox.dir/tests/TestClearColor.cpp.o"
+  "CMakeFiles/sandbox.dir/tests/TestTexture2D.cpp.o"
   "CMakeFiles/sandbox.dir/vendor/imgui/imgui.cpp.o"
   "CMakeFiles/sandbox.dir/vendor/imgui/imgui_demo.cpp.o"
   "CMakeFiles/sandbox.dir/vendor/imgui/imgui_draw.cpp.o"

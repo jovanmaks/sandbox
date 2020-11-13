@@ -6,48 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/demijan/Projects/sandbox/src/Application.cpp
-GL/glew.h
--
-GLFW/glfw3.h
--
-signal.h
--
-iostream
--
-fstream
--
-string
--
-sstream
--
-Renderer.h
-/home/demijan/Projects/sandbox/src/Renderer.h
-VertexBuffer.h
-/home/demijan/Projects/sandbox/src/VertexBuffer.h
-IndexBuffer.h
-/home/demijan/Projects/sandbox/src/IndexBuffer.h
-VertexArray.h
-/home/demijan/Projects/sandbox/src/VertexArray.h
-Shader.h
-/home/demijan/Projects/sandbox/src/Shader.h
-VertexBufferLayout.h
-/home/demijan/Projects/sandbox/src/VertexBufferLayout.h
-Texture.h
-/home/demijan/Projects/sandbox/src/Texture.h
-vendor/glm/glm.hpp
-/home/demijan/Projects/sandbox/src/vendor/glm/glm.hpp
-vendor/glm/gtc/matrix_transform.hpp
-/home/demijan/Projects/sandbox/src/vendor/glm/gtc/matrix_transform.hpp
-vendor/imgui/imgui.h
-/home/demijan/Projects/sandbox/src/vendor/imgui/imgui.h
-vendor/imgui/imgui_impl_glfw.h
-/home/demijan/Projects/sandbox/src/vendor/imgui/imgui_impl_glfw.h
-vendor/imgui/imgui_impl_opengl3.h
-/home/demijan/Projects/sandbox/src/vendor/imgui/imgui_impl_opengl3.h
-tests/TestClearColor.h
-/home/demijan/Projects/sandbox/src/tests/TestClearColor.h
-
 /home/demijan/Projects/sandbox/src/IndexBuffer.h
 
 /home/demijan/Projects/sandbox/src/Renderer.h
@@ -96,9 +54,29 @@ vector
 iostream
 -
 
-/home/demijan/Projects/sandbox/src/tests/TestClearColor.h
+/home/demijan/Projects/sandbox/src/tests/TestTexture2D.cpp
+TestTexture2D.h
+/home/demijan/Projects/sandbox/src/tests/TestTexture2D.h
+../Renderer.h
+/home/demijan/Projects/sandbox/src/Renderer.h
+../vendor/imgui/imgui.h
+/home/demijan/Projects/sandbox/src/vendor/imgui/imgui.h
+../vendor/glm/glm.hpp
+/home/demijan/Projects/sandbox/src/vendor/glm/glm.hpp
+../vendor/glm/gtc/matrix_transform.hpp
+/home/demijan/Projects/sandbox/src/vendor/glm/gtc/matrix_transform.hpp
+
+/home/demijan/Projects/sandbox/src/tests/TestTexture2D.h
 Test.h
 /home/demijan/Projects/sandbox/src/tests/Test.h
+../VertexBuffer.h
+/home/demijan/Projects/sandbox/src/VertexBuffer.h
+../VertexBufferLayout.h
+/home/demijan/Projects/sandbox/src/VertexBufferLayout.h
+../Texture.h
+/home/demijan/Projects/sandbox/src/Texture.h
+memory
+-
 
 /home/demijan/Projects/sandbox/src/vendor/glm/common.hpp
 detail/qualifier.hpp
@@ -1209,14 +1187,4 @@ stdint.h
 -
 imgui_user.h
 /home/demijan/Projects/sandbox/src/vendor/imgui/imgui_user.h
-
-/home/demijan/Projects/sandbox/src/vendor/imgui/imgui_impl_glfw.h
-imgui.h
-/home/demijan/Projects/sandbox/src/vendor/imgui/imgui.h
-
-/home/demijan/Projects/sandbox/src/vendor/imgui/imgui_impl_opengl3.h
-imgui.h
-/home/demijan/Projects/sandbox/src/vendor/imgui/imgui.h
-TargetConditionals.h
-/home/demijan/Projects/sandbox/src/vendor/imgui/TargetConditionals.h
 

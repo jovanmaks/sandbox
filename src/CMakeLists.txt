@@ -31,8 +31,10 @@ set( SRCS
 ../src/vendor/imgui/imgui.cpp
 
 
-../src/tests/TestClearColor.cpp
+
 ../src/tests/Test.cpp
+../src/tests/TestClearColor.cpp
+../src/tests/TestTexture2D.cpp
 
 
 

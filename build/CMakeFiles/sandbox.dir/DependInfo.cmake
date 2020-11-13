@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/demijan/Projects/sandbox/src/VertexBuffer.cpp" "/home/demijan/Projects/sandbox/build/CMakeFiles/sandbox.dir/VertexBuffer.cpp.o"
   "/home/demijan/Projects/sandbox/src/tests/Test.cpp" "/home/demijan/Projects/sandbox/build/CMakeFiles/sandbox.dir/tests/Test.cpp.o"
   "/home/demijan/Projects/sandbox/src/tests/TestClearColor.cpp" "/home/demijan/Projects/sandbox/build/CMakeFiles/sandbox.dir/tests/TestClearColor.cpp.o"
+  "/home/demijan/Projects/sandbox/src/tests/TestTexture2D.cpp" "/home/demijan/Projects/sandbox/build/CMakeFiles/sandbox.dir/tests/TestTexture2D.cpp.o"
   "/home/demijan/Projects/sandbox/src/vendor/imgui/imgui.cpp" "/home/demijan/Projects/sandbox/build/CMakeFiles/sandbox.dir/vendor/imgui/imgui.cpp.o"
   "/home/demijan/Projects/sandbox/src/vendor/imgui/imgui_demo.cpp" "/home/demijan/Projects/sandbox/build/CMakeFiles/sandbox.dir/vendor/imgui/imgui_demo.cpp.o"
   "/home/demijan/Projects/sandbox/src/vendor/imgui/imgui_draw.cpp" "/home/demijan/Projects/sandbox/build/CMakeFiles/sandbox.dir/vendor/imgui/imgui_draw.cpp.o"

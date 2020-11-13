@@ -386,6 +386,33 @@ tests/TestClearColor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/tests/TestClearColor.cpp.s
 .PHONY : tests/TestClearColor.cpp.s
 
+tests/TestTexture2D.o: tests/TestTexture2D.cpp.o
+
+.PHONY : tests/TestTexture2D.o
+
+# target to build an object file
+tests/TestTexture2D.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/tests/TestTexture2D.cpp.o
+.PHONY : tests/TestTexture2D.cpp.o
+
+tests/TestTexture2D.i: tests/TestTexture2D.cpp.i
+
+.PHONY : tests/TestTexture2D.i
+
+# target to preprocess a source file
+tests/TestTexture2D.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/tests/TestTexture2D.cpp.i
+.PHONY : tests/TestTexture2D.cpp.i
+
+tests/TestTexture2D.s: tests/TestTexture2D.cpp.s
+
+.PHONY : tests/TestTexture2D.s
+
+# target to generate assembly for a file
+tests/TestTexture2D.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/tests/TestTexture2D.cpp.s
+.PHONY : tests/TestTexture2D.cpp.s
+
 vendor/imgui/imgui.o: vendor/imgui/imgui.cpp.o
 
 .PHONY : vendor/imgui/imgui.o
@@ -611,6 +638,9 @@ help:
 	@echo "... tests/TestClearColor.o"
 	@echo "... tests/TestClearColor.i"
 	@echo "... tests/TestClearColor.s"
+	@echo "... tests/TestTexture2D.o"
+	@echo "... tests/TestTexture2D.i"
+	@echo "... tests/TestTexture2D.s"
 	@echo "... vendor/imgui/imgui.o"
 	@echo "... vendor/imgui/imgui.i"
 	@echo "... vendor/imgui/imgui.s"

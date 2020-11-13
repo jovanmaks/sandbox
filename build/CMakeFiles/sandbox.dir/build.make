@@ -259,9 +259,22 @@ CMakeFiles/sandbox.dir/vendor/imgui/imgui.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sandbox.dir/vendor/imgui/imgui.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/demijan/Projects/sandbox/src/vendor/imgui/imgui.cpp -o CMakeFiles/sandbox.dir/vendor/imgui/imgui.cpp.s
 
+CMakeFiles/sandbox.dir/tests/Test.cpp.o: CMakeFiles/sandbox.dir/flags.make
+CMakeFiles/sandbox.dir/tests/Test.cpp.o: /home/demijan/Projects/sandbox/src/tests/Test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/demijan/Projects/sandbox/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/sandbox.dir/tests/Test.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sandbox.dir/tests/Test.cpp.o -c /home/demijan/Projects/sandbox/src/tests/Test.cpp
+
+CMakeFiles/sandbox.dir/tests/Test.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sandbox.dir/tests/Test.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/demijan/Projects/sandbox/src/tests/Test.cpp > CMakeFiles/sandbox.dir/tests/Test.cpp.i
+
+CMakeFiles/sandbox.dir/tests/Test.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sandbox.dir/tests/Test.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/demijan/Projects/sandbox/src/tests/Test.cpp -o CMakeFiles/sandbox.dir/tests/Test.cpp.s
+
 CMakeFiles/sandbox.dir/tests/TestClearColor.cpp.o: CMakeFiles/sandbox.dir/flags.make
 CMakeFiles/sandbox.dir/tests/TestClearColor.cpp.o: /home/demijan/Projects/sandbox/src/tests/TestClearColor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/demijan/Projects/sandbox/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/sandbox.dir/tests/TestClearColor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/demijan/Projects/sandbox/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/sandbox.dir/tests/TestClearColor.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sandbox.dir/tests/TestClearColor.cpp.o -c /home/demijan/Projects/sandbox/src/tests/TestClearColor.cpp
 
 CMakeFiles/sandbox.dir/tests/TestClearColor.cpp.i: cmake_force
@@ -272,18 +285,18 @@ CMakeFiles/sandbox.dir/tests/TestClearColor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sandbox.dir/tests/TestClearColor.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/demijan/Projects/sandbox/src/tests/TestClearColor.cpp -o CMakeFiles/sandbox.dir/tests/TestClearColor.cpp.s
 
-CMakeFiles/sandbox.dir/tests/Test.cpp.o: CMakeFiles/sandbox.dir/flags.make
-CMakeFiles/sandbox.dir/tests/Test.cpp.o: /home/demijan/Projects/sandbox/src/tests/Test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/demijan/Projects/sandbox/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/sandbox.dir/tests/Test.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sandbox.dir/tests/Test.cpp.o -c /home/demijan/Projects/sandbox/src/tests/Test.cpp
+CMakeFiles/sandbox.dir/tests/TestTexture2D.cpp.o: CMakeFiles/sandbox.dir/flags.make
+CMakeFiles/sandbox.dir/tests/TestTexture2D.cpp.o: /home/demijan/Projects/sandbox/src/tests/TestTexture2D.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/demijan/Projects/sandbox/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/sandbox.dir/tests/TestTexture2D.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sandbox.dir/tests/TestTexture2D.cpp.o -c /home/demijan/Projects/sandbox/src/tests/TestTexture2D.cpp
 
-CMakeFiles/sandbox.dir/tests/Test.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sandbox.dir/tests/Test.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/demijan/Projects/sandbox/src/tests/Test.cpp > CMakeFiles/sandbox.dir/tests/Test.cpp.i
+CMakeFiles/sandbox.dir/tests/TestTexture2D.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sandbox.dir/tests/TestTexture2D.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/demijan/Projects/sandbox/src/tests/TestTexture2D.cpp > CMakeFiles/sandbox.dir/tests/TestTexture2D.cpp.i
 
-CMakeFiles/sandbox.dir/tests/Test.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sandbox.dir/tests/Test.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/demijan/Projects/sandbox/src/tests/Test.cpp -o CMakeFiles/sandbox.dir/tests/Test.cpp.s
+CMakeFiles/sandbox.dir/tests/TestTexture2D.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sandbox.dir/tests/TestTexture2D.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/demijan/Projects/sandbox/src/tests/TestTexture2D.cpp -o CMakeFiles/sandbox.dir/tests/TestTexture2D.cpp.s
 
 # Object files for target sandbox
 sandbox_OBJECTS = \
@@ -301,8 +314,9 @@ sandbox_OBJECTS = \
 "CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_opengl3.cpp.o" \
 "CMakeFiles/sandbox.dir/vendor/imgui/imgui_widgets.cpp.o" \
 "CMakeFiles/sandbox.dir/vendor/imgui/imgui.cpp.o" \
+"CMakeFiles/sandbox.dir/tests/Test.cpp.o" \
 "CMakeFiles/sandbox.dir/tests/TestClearColor.cpp.o" \
-"CMakeFiles/sandbox.dir/tests/Test.cpp.o"
+"CMakeFiles/sandbox.dir/tests/TestTexture2D.cpp.o"
 
 # External object files for target sandbox
 sandbox_EXTERNAL_OBJECTS =
@@ -321,12 +335,13 @@ sandbox: CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_glfw.cpp.o
 sandbox: CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_opengl3.cpp.o
 sandbox: CMakeFiles/sandbox.dir/vendor/imgui/imgui_widgets.cpp.o
 sandbox: CMakeFiles/sandbox.dir/vendor/imgui/imgui.cpp.o
-sandbox: CMakeFiles/sandbox.dir/tests/TestClearColor.cpp.o
 sandbox: CMakeFiles/sandbox.dir/tests/Test.cpp.o
+sandbox: CMakeFiles/sandbox.dir/tests/TestClearColor.cpp.o
+sandbox: CMakeFiles/sandbox.dir/tests/TestTexture2D.cpp.o
 sandbox: CMakeFiles/sandbox.dir/build.make
 sandbox: /usr/lib64/libglfw.so.3.3
 sandbox: CMakeFiles/sandbox.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/demijan/Projects/sandbox/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable sandbox"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/demijan/Projects/sandbox/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX executable sandbox"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sandbox.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
