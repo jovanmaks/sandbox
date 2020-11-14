@@ -10,7 +10,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.17.4/CMakeCCompiler.cmake"
   "CMakeFiles/3.17.4/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.17.4/CMakeSystem.cmake"
-  "/home/demijan/Projects/sandbox/src/CMakeLists.txt"
+  "/home/demijan/Projects/tests/src/CMakeLists.txt"
   "/usr/lib64/cmake/glfw3/glfw3Config.cmake"
   "/usr/lib64/cmake/glfw3/glfw3ConfigVersion.cmake"
   "/usr/lib64/cmake/glfw3/glfw3Targets-noconfig.cmake"
@@ -53,5 +53,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/sandbox.dir/DependInfo.cmake"
+  "CMakeFiles/tests.dir/DependInfo.cmake"
   )

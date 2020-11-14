@@ -1,3 +1,3 @@
-/home/demijan/Projects/sandbox/build/CMakeFiles/rebuild_cache.dir
-/home/demijan/Projects/sandbox/build/CMakeFiles/edit_cache.dir
-/home/demijan/Projects/sandbox/build/CMakeFiles/sandbox.dir
+/home/demijan/Projects/tests/build/CMakeFiles/rebuild_cache.dir
+/home/demijan/Projects/tests/build/CMakeFiles/edit_cache.dir
+/home/demijan/Projects/tests/build/CMakeFiles/tests.dir

@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.17.4)
 
-project(sandbox VERSION  0.1)
+project(tests VERSION  0.1)
 
 include( GNUInstallDirs )
 
@@ -35,6 +35,8 @@ set( SRCS
 ../src/tests/Test.cpp
 ../src/tests/TestClearColor.cpp
 ../src/tests/TestTexture2D.cpp
+../src/tests/TestKeyInput.cpp
+
 
 
 
@@ -44,6 +46,6 @@ add_executable(${CMAKE_PROJECT_NAME} ${SRCS})
     
    
 
-target_link_libraries( sandbox ${../lib} GL )
-target_link_libraries( sandbox ${../lib} GLEW )
-target_link_libraries( sandbox ${../lib} glfw )
+target_link_libraries( tests ${../lib} GL )
+target_link_libraries( tests ${../lib} GLEW )
+target_link_libraries( tests ${../lib} glfw )

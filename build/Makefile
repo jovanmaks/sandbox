@@ -68,10 +68,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/demijan/Projects/sandbox/src
+CMAKE_SOURCE_DIR = /home/demijan/Projects/tests/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/demijan/Projects/sandbox/build
+CMAKE_BINARY_DIR = /home/demijan/Projects/tests/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -100,9 +100,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/demijan/Projects/sandbox/build/CMakeFiles /home/demijan/Projects/sandbox/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/demijan/Projects/tests/build/CMakeFiles /home/demijan/Projects/tests/build/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/demijan/Projects/sandbox/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/demijan/Projects/tests/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -131,17 +131,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named sandbox
+# Target rules for targets named tests
 
 # Build rule for target.
-sandbox: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sandbox
-.PHONY : sandbox
+tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests
+.PHONY : tests
 
 # fast build rule for target.
-sandbox/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/build
-.PHONY : sandbox/fast
+tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/build
+.PHONY : tests/fast
 
 Application.o: Application.cpp.o
 
@@ -149,7 +149,7 @@ Application.o: Application.cpp.o
 
 # target to build an object file
 Application.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/Application.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/Application.cpp.o
 .PHONY : Application.cpp.o
 
 Application.i: Application.cpp.i
@@ -158,7 +158,7 @@ Application.i: Application.cpp.i
 
 # target to preprocess a source file
 Application.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/Application.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/Application.cpp.i
 .PHONY : Application.cpp.i
 
 Application.s: Application.cpp.s
@@ -167,7 +167,7 @@ Application.s: Application.cpp.s
 
 # target to generate assembly for a file
 Application.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/Application.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/Application.cpp.s
 .PHONY : Application.cpp.s
 
 IndexBuffer.o: IndexBuffer.cpp.o
@@ -176,7 +176,7 @@ IndexBuffer.o: IndexBuffer.cpp.o
 
 # target to build an object file
 IndexBuffer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/IndexBuffer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/IndexBuffer.cpp.o
 .PHONY : IndexBuffer.cpp.o
 
 IndexBuffer.i: IndexBuffer.cpp.i
@@ -185,7 +185,7 @@ IndexBuffer.i: IndexBuffer.cpp.i
 
 # target to preprocess a source file
 IndexBuffer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/IndexBuffer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/IndexBuffer.cpp.i
 .PHONY : IndexBuffer.cpp.i
 
 IndexBuffer.s: IndexBuffer.cpp.s
@@ -194,7 +194,7 @@ IndexBuffer.s: IndexBuffer.cpp.s
 
 # target to generate assembly for a file
 IndexBuffer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/IndexBuffer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/IndexBuffer.cpp.s
 .PHONY : IndexBuffer.cpp.s
 
 Renderer.o: Renderer.cpp.o
@@ -203,7 +203,7 @@ Renderer.o: Renderer.cpp.o
 
 # target to build an object file
 Renderer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/Renderer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/Renderer.cpp.o
 .PHONY : Renderer.cpp.o
 
 Renderer.i: Renderer.cpp.i
@@ -212,7 +212,7 @@ Renderer.i: Renderer.cpp.i
 
 # target to preprocess a source file
 Renderer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/Renderer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/Renderer.cpp.i
 .PHONY : Renderer.cpp.i
 
 Renderer.s: Renderer.cpp.s
@@ -221,7 +221,7 @@ Renderer.s: Renderer.cpp.s
 
 # target to generate assembly for a file
 Renderer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/Renderer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/Renderer.cpp.s
 .PHONY : Renderer.cpp.s
 
 Shader.o: Shader.cpp.o
@@ -230,7 +230,7 @@ Shader.o: Shader.cpp.o
 
 # target to build an object file
 Shader.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/Shader.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/Shader.cpp.o
 .PHONY : Shader.cpp.o
 
 Shader.i: Shader.cpp.i
@@ -239,7 +239,7 @@ Shader.i: Shader.cpp.i
 
 # target to preprocess a source file
 Shader.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/Shader.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/Shader.cpp.i
 .PHONY : Shader.cpp.i
 
 Shader.s: Shader.cpp.s
@@ -248,7 +248,7 @@ Shader.s: Shader.cpp.s
 
 # target to generate assembly for a file
 Shader.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/Shader.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/Shader.cpp.s
 .PHONY : Shader.cpp.s
 
 Texture.o: Texture.cpp.o
@@ -257,7 +257,7 @@ Texture.o: Texture.cpp.o
 
 # target to build an object file
 Texture.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/Texture.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/Texture.cpp.o
 .PHONY : Texture.cpp.o
 
 Texture.i: Texture.cpp.i
@@ -266,7 +266,7 @@ Texture.i: Texture.cpp.i
 
 # target to preprocess a source file
 Texture.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/Texture.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/Texture.cpp.i
 .PHONY : Texture.cpp.i
 
 Texture.s: Texture.cpp.s
@@ -275,7 +275,7 @@ Texture.s: Texture.cpp.s
 
 # target to generate assembly for a file
 Texture.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/Texture.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/Texture.cpp.s
 .PHONY : Texture.cpp.s
 
 VertexArray.o: VertexArray.cpp.o
@@ -284,7 +284,7 @@ VertexArray.o: VertexArray.cpp.o
 
 # target to build an object file
 VertexArray.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/VertexArray.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/VertexArray.cpp.o
 .PHONY : VertexArray.cpp.o
 
 VertexArray.i: VertexArray.cpp.i
@@ -293,7 +293,7 @@ VertexArray.i: VertexArray.cpp.i
 
 # target to preprocess a source file
 VertexArray.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/VertexArray.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/VertexArray.cpp.i
 .PHONY : VertexArray.cpp.i
 
 VertexArray.s: VertexArray.cpp.s
@@ -302,7 +302,7 @@ VertexArray.s: VertexArray.cpp.s
 
 # target to generate assembly for a file
 VertexArray.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/VertexArray.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/VertexArray.cpp.s
 .PHONY : VertexArray.cpp.s
 
 VertexBuffer.o: VertexBuffer.cpp.o
@@ -311,7 +311,7 @@ VertexBuffer.o: VertexBuffer.cpp.o
 
 # target to build an object file
 VertexBuffer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/VertexBuffer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/VertexBuffer.cpp.o
 .PHONY : VertexBuffer.cpp.o
 
 VertexBuffer.i: VertexBuffer.cpp.i
@@ -320,7 +320,7 @@ VertexBuffer.i: VertexBuffer.cpp.i
 
 # target to preprocess a source file
 VertexBuffer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/VertexBuffer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/VertexBuffer.cpp.i
 .PHONY : VertexBuffer.cpp.i
 
 VertexBuffer.s: VertexBuffer.cpp.s
@@ -329,7 +329,7 @@ VertexBuffer.s: VertexBuffer.cpp.s
 
 # target to generate assembly for a file
 VertexBuffer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/VertexBuffer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/VertexBuffer.cpp.s
 .PHONY : VertexBuffer.cpp.s
 
 tests/Test.o: tests/Test.cpp.o
@@ -338,7 +338,7 @@ tests/Test.o: tests/Test.cpp.o
 
 # target to build an object file
 tests/Test.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/tests/Test.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/Test.cpp.o
 .PHONY : tests/Test.cpp.o
 
 tests/Test.i: tests/Test.cpp.i
@@ -347,7 +347,7 @@ tests/Test.i: tests/Test.cpp.i
 
 # target to preprocess a source file
 tests/Test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/tests/Test.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/Test.cpp.i
 .PHONY : tests/Test.cpp.i
 
 tests/Test.s: tests/Test.cpp.s
@@ -356,7 +356,7 @@ tests/Test.s: tests/Test.cpp.s
 
 # target to generate assembly for a file
 tests/Test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/tests/Test.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/Test.cpp.s
 .PHONY : tests/Test.cpp.s
 
 tests/TestClearColor.o: tests/TestClearColor.cpp.o
@@ -365,7 +365,7 @@ tests/TestClearColor.o: tests/TestClearColor.cpp.o
 
 # target to build an object file
 tests/TestClearColor.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/tests/TestClearColor.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/TestClearColor.cpp.o
 .PHONY : tests/TestClearColor.cpp.o
 
 tests/TestClearColor.i: tests/TestClearColor.cpp.i
@@ -374,7 +374,7 @@ tests/TestClearColor.i: tests/TestClearColor.cpp.i
 
 # target to preprocess a source file
 tests/TestClearColor.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/tests/TestClearColor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/TestClearColor.cpp.i
 .PHONY : tests/TestClearColor.cpp.i
 
 tests/TestClearColor.s: tests/TestClearColor.cpp.s
@@ -383,8 +383,35 @@ tests/TestClearColor.s: tests/TestClearColor.cpp.s
 
 # target to generate assembly for a file
 tests/TestClearColor.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/tests/TestClearColor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/TestClearColor.cpp.s
 .PHONY : tests/TestClearColor.cpp.s
+
+tests/TestKeyInput.o: tests/TestKeyInput.cpp.o
+
+.PHONY : tests/TestKeyInput.o
+
+# target to build an object file
+tests/TestKeyInput.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/TestKeyInput.cpp.o
+.PHONY : tests/TestKeyInput.cpp.o
+
+tests/TestKeyInput.i: tests/TestKeyInput.cpp.i
+
+.PHONY : tests/TestKeyInput.i
+
+# target to preprocess a source file
+tests/TestKeyInput.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/TestKeyInput.cpp.i
+.PHONY : tests/TestKeyInput.cpp.i
+
+tests/TestKeyInput.s: tests/TestKeyInput.cpp.s
+
+.PHONY : tests/TestKeyInput.s
+
+# target to generate assembly for a file
+tests/TestKeyInput.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/TestKeyInput.cpp.s
+.PHONY : tests/TestKeyInput.cpp.s
 
 tests/TestTexture2D.o: tests/TestTexture2D.cpp.o
 
@@ -392,7 +419,7 @@ tests/TestTexture2D.o: tests/TestTexture2D.cpp.o
 
 # target to build an object file
 tests/TestTexture2D.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/tests/TestTexture2D.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/TestTexture2D.cpp.o
 .PHONY : tests/TestTexture2D.cpp.o
 
 tests/TestTexture2D.i: tests/TestTexture2D.cpp.i
@@ -401,7 +428,7 @@ tests/TestTexture2D.i: tests/TestTexture2D.cpp.i
 
 # target to preprocess a source file
 tests/TestTexture2D.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/tests/TestTexture2D.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/TestTexture2D.cpp.i
 .PHONY : tests/TestTexture2D.cpp.i
 
 tests/TestTexture2D.s: tests/TestTexture2D.cpp.s
@@ -410,7 +437,7 @@ tests/TestTexture2D.s: tests/TestTexture2D.cpp.s
 
 # target to generate assembly for a file
 tests/TestTexture2D.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/tests/TestTexture2D.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/TestTexture2D.cpp.s
 .PHONY : tests/TestTexture2D.cpp.s
 
 vendor/imgui/imgui.o: vendor/imgui/imgui.cpp.o
@@ -419,7 +446,7 @@ vendor/imgui/imgui.o: vendor/imgui/imgui.cpp.o
 
 # target to build an object file
 vendor/imgui/imgui.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/vendor/imgui/imgui.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/vendor/imgui/imgui.cpp.o
 .PHONY : vendor/imgui/imgui.cpp.o
 
 vendor/imgui/imgui.i: vendor/imgui/imgui.cpp.i
@@ -428,7 +455,7 @@ vendor/imgui/imgui.i: vendor/imgui/imgui.cpp.i
 
 # target to preprocess a source file
 vendor/imgui/imgui.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/vendor/imgui/imgui.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/vendor/imgui/imgui.cpp.i
 .PHONY : vendor/imgui/imgui.cpp.i
 
 vendor/imgui/imgui.s: vendor/imgui/imgui.cpp.s
@@ -437,7 +464,7 @@ vendor/imgui/imgui.s: vendor/imgui/imgui.cpp.s
 
 # target to generate assembly for a file
 vendor/imgui/imgui.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/vendor/imgui/imgui.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/vendor/imgui/imgui.cpp.s
 .PHONY : vendor/imgui/imgui.cpp.s
 
 vendor/imgui/imgui_demo.o: vendor/imgui/imgui_demo.cpp.o
@@ -446,7 +473,7 @@ vendor/imgui/imgui_demo.o: vendor/imgui/imgui_demo.cpp.o
 
 # target to build an object file
 vendor/imgui/imgui_demo.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/vendor/imgui/imgui_demo.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/vendor/imgui/imgui_demo.cpp.o
 .PHONY : vendor/imgui/imgui_demo.cpp.o
 
 vendor/imgui/imgui_demo.i: vendor/imgui/imgui_demo.cpp.i
@@ -455,7 +482,7 @@ vendor/imgui/imgui_demo.i: vendor/imgui/imgui_demo.cpp.i
 
 # target to preprocess a source file
 vendor/imgui/imgui_demo.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/vendor/imgui/imgui_demo.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/vendor/imgui/imgui_demo.cpp.i
 .PHONY : vendor/imgui/imgui_demo.cpp.i
 
 vendor/imgui/imgui_demo.s: vendor/imgui/imgui_demo.cpp.s
@@ -464,7 +491,7 @@ vendor/imgui/imgui_demo.s: vendor/imgui/imgui_demo.cpp.s
 
 # target to generate assembly for a file
 vendor/imgui/imgui_demo.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/vendor/imgui/imgui_demo.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/vendor/imgui/imgui_demo.cpp.s
 .PHONY : vendor/imgui/imgui_demo.cpp.s
 
 vendor/imgui/imgui_draw.o: vendor/imgui/imgui_draw.cpp.o
@@ -473,7 +500,7 @@ vendor/imgui/imgui_draw.o: vendor/imgui/imgui_draw.cpp.o
 
 # target to build an object file
 vendor/imgui/imgui_draw.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/vendor/imgui/imgui_draw.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/vendor/imgui/imgui_draw.cpp.o
 .PHONY : vendor/imgui/imgui_draw.cpp.o
 
 vendor/imgui/imgui_draw.i: vendor/imgui/imgui_draw.cpp.i
@@ -482,7 +509,7 @@ vendor/imgui/imgui_draw.i: vendor/imgui/imgui_draw.cpp.i
 
 # target to preprocess a source file
 vendor/imgui/imgui_draw.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/vendor/imgui/imgui_draw.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/vendor/imgui/imgui_draw.cpp.i
 .PHONY : vendor/imgui/imgui_draw.cpp.i
 
 vendor/imgui/imgui_draw.s: vendor/imgui/imgui_draw.cpp.s
@@ -491,7 +518,7 @@ vendor/imgui/imgui_draw.s: vendor/imgui/imgui_draw.cpp.s
 
 # target to generate assembly for a file
 vendor/imgui/imgui_draw.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/vendor/imgui/imgui_draw.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/vendor/imgui/imgui_draw.cpp.s
 .PHONY : vendor/imgui/imgui_draw.cpp.s
 
 vendor/imgui/imgui_impl_glfw.o: vendor/imgui/imgui_impl_glfw.cpp.o
@@ -500,7 +527,7 @@ vendor/imgui/imgui_impl_glfw.o: vendor/imgui/imgui_impl_glfw.cpp.o
 
 # target to build an object file
 vendor/imgui/imgui_impl_glfw.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_glfw.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/vendor/imgui/imgui_impl_glfw.cpp.o
 .PHONY : vendor/imgui/imgui_impl_glfw.cpp.o
 
 vendor/imgui/imgui_impl_glfw.i: vendor/imgui/imgui_impl_glfw.cpp.i
@@ -509,7 +536,7 @@ vendor/imgui/imgui_impl_glfw.i: vendor/imgui/imgui_impl_glfw.cpp.i
 
 # target to preprocess a source file
 vendor/imgui/imgui_impl_glfw.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_glfw.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/vendor/imgui/imgui_impl_glfw.cpp.i
 .PHONY : vendor/imgui/imgui_impl_glfw.cpp.i
 
 vendor/imgui/imgui_impl_glfw.s: vendor/imgui/imgui_impl_glfw.cpp.s
@@ -518,7 +545,7 @@ vendor/imgui/imgui_impl_glfw.s: vendor/imgui/imgui_impl_glfw.cpp.s
 
 # target to generate assembly for a file
 vendor/imgui/imgui_impl_glfw.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_glfw.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/vendor/imgui/imgui_impl_glfw.cpp.s
 .PHONY : vendor/imgui/imgui_impl_glfw.cpp.s
 
 vendor/imgui/imgui_impl_opengl3.o: vendor/imgui/imgui_impl_opengl3.cpp.o
@@ -527,7 +554,7 @@ vendor/imgui/imgui_impl_opengl3.o: vendor/imgui/imgui_impl_opengl3.cpp.o
 
 # target to build an object file
 vendor/imgui/imgui_impl_opengl3.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_opengl3.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/vendor/imgui/imgui_impl_opengl3.cpp.o
 .PHONY : vendor/imgui/imgui_impl_opengl3.cpp.o
 
 vendor/imgui/imgui_impl_opengl3.i: vendor/imgui/imgui_impl_opengl3.cpp.i
@@ -536,7 +563,7 @@ vendor/imgui/imgui_impl_opengl3.i: vendor/imgui/imgui_impl_opengl3.cpp.i
 
 # target to preprocess a source file
 vendor/imgui/imgui_impl_opengl3.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_opengl3.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/vendor/imgui/imgui_impl_opengl3.cpp.i
 .PHONY : vendor/imgui/imgui_impl_opengl3.cpp.i
 
 vendor/imgui/imgui_impl_opengl3.s: vendor/imgui/imgui_impl_opengl3.cpp.s
@@ -545,7 +572,7 @@ vendor/imgui/imgui_impl_opengl3.s: vendor/imgui/imgui_impl_opengl3.cpp.s
 
 # target to generate assembly for a file
 vendor/imgui/imgui_impl_opengl3.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/vendor/imgui/imgui_impl_opengl3.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/vendor/imgui/imgui_impl_opengl3.cpp.s
 .PHONY : vendor/imgui/imgui_impl_opengl3.cpp.s
 
 vendor/imgui/imgui_widgets.o: vendor/imgui/imgui_widgets.cpp.o
@@ -554,7 +581,7 @@ vendor/imgui/imgui_widgets.o: vendor/imgui/imgui_widgets.cpp.o
 
 # target to build an object file
 vendor/imgui/imgui_widgets.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/vendor/imgui/imgui_widgets.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/vendor/imgui/imgui_widgets.cpp.o
 .PHONY : vendor/imgui/imgui_widgets.cpp.o
 
 vendor/imgui/imgui_widgets.i: vendor/imgui/imgui_widgets.cpp.i
@@ -563,7 +590,7 @@ vendor/imgui/imgui_widgets.i: vendor/imgui/imgui_widgets.cpp.i
 
 # target to preprocess a source file
 vendor/imgui/imgui_widgets.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/vendor/imgui/imgui_widgets.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/vendor/imgui/imgui_widgets.cpp.i
 .PHONY : vendor/imgui/imgui_widgets.cpp.i
 
 vendor/imgui/imgui_widgets.s: vendor/imgui/imgui_widgets.cpp.s
@@ -572,7 +599,7 @@ vendor/imgui/imgui_widgets.s: vendor/imgui/imgui_widgets.cpp.s
 
 # target to generate assembly for a file
 vendor/imgui/imgui_widgets.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/vendor/imgui/imgui_widgets.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/vendor/imgui/imgui_widgets.cpp.s
 .PHONY : vendor/imgui/imgui_widgets.cpp.s
 
 vendor/stb_image/stb_image.o: vendor/stb_image/stb_image.cpp.o
@@ -581,7 +608,7 @@ vendor/stb_image/stb_image.o: vendor/stb_image/stb_image.cpp.o
 
 # target to build an object file
 vendor/stb_image/stb_image.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/vendor/stb_image/stb_image.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/vendor/stb_image/stb_image.cpp.o
 .PHONY : vendor/stb_image/stb_image.cpp.o
 
 vendor/stb_image/stb_image.i: vendor/stb_image/stb_image.cpp.i
@@ -590,7 +617,7 @@ vendor/stb_image/stb_image.i: vendor/stb_image/stb_image.cpp.i
 
 # target to preprocess a source file
 vendor/stb_image/stb_image.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/vendor/stb_image/stb_image.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/vendor/stb_image/stb_image.cpp.i
 .PHONY : vendor/stb_image/stb_image.cpp.i
 
 vendor/stb_image/stb_image.s: vendor/stb_image/stb_image.cpp.s
@@ -599,7 +626,7 @@ vendor/stb_image/stb_image.s: vendor/stb_image/stb_image.cpp.s
 
 # target to generate assembly for a file
 vendor/stb_image/stb_image.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sandbox.dir/build.make CMakeFiles/sandbox.dir/vendor/stb_image/stb_image.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/vendor/stb_image/stb_image.cpp.s
 .PHONY : vendor/stb_image/stb_image.cpp.s
 
 # Help Target
@@ -610,7 +637,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... sandbox"
+	@echo "... tests"
 	@echo "... Application.o"
 	@echo "... Application.i"
 	@echo "... Application.s"
@@ -638,6 +665,9 @@ help:
 	@echo "... tests/TestClearColor.o"
 	@echo "... tests/TestClearColor.i"
 	@echo "... tests/TestClearColor.s"
+	@echo "... tests/TestKeyInput.o"
+	@echo "... tests/TestKeyInput.i"
+	@echo "... tests/TestKeyInput.s"
 	@echo "... tests/TestTexture2D.o"
 	@echo "... tests/TestTexture2D.i"
 	@echo "... tests/TestTexture2D.s"

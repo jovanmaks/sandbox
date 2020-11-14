@@ -1,4 +1,4 @@
-# Install script for directory: /home/demijan/Projects/sandbox/src
+# Install script for directory: /home/demijan/Projects/tests/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/demijan/Projects/sandbox/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/demijan/Projects/tests/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -37,9 +37,7 @@ namespace test
     {
         ImGui::ColorEdit4("Clear Color", m_ClearColor);
 
-
     }
-
 
 
 }
