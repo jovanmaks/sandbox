@@ -170,6 +170,33 @@ Application.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/Application.cpp.s
 .PHONY : Application.cpp.s
 
+GridMatrix.o: GridMatrix.cpp.o
+
+.PHONY : GridMatrix.o
+
+# target to build an object file
+GridMatrix.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/GridMatrix.cpp.o
+.PHONY : GridMatrix.cpp.o
+
+GridMatrix.i: GridMatrix.cpp.i
+
+.PHONY : GridMatrix.i
+
+# target to preprocess a source file
+GridMatrix.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/GridMatrix.cpp.i
+.PHONY : GridMatrix.cpp.i
+
+GridMatrix.s: GridMatrix.cpp.s
+
+.PHONY : GridMatrix.s
+
+# target to generate assembly for a file
+GridMatrix.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/GridMatrix.cpp.s
+.PHONY : GridMatrix.cpp.s
+
 IndexBuffer.o: IndexBuffer.cpp.o
 
 .PHONY : IndexBuffer.o
@@ -359,6 +386,60 @@ tests/Test.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/Test.cpp.s
 .PHONY : tests/Test.cpp.s
 
+tests/TestAddingElement.o: tests/TestAddingElement.cpp.o
+
+.PHONY : tests/TestAddingElement.o
+
+# target to build an object file
+tests/TestAddingElement.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/TestAddingElement.cpp.o
+.PHONY : tests/TestAddingElement.cpp.o
+
+tests/TestAddingElement.i: tests/TestAddingElement.cpp.i
+
+.PHONY : tests/TestAddingElement.i
+
+# target to preprocess a source file
+tests/TestAddingElement.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/TestAddingElement.cpp.i
+.PHONY : tests/TestAddingElement.cpp.i
+
+tests/TestAddingElement.s: tests/TestAddingElement.cpp.s
+
+.PHONY : tests/TestAddingElement.s
+
+# target to generate assembly for a file
+tests/TestAddingElement.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/TestAddingElement.cpp.s
+.PHONY : tests/TestAddingElement.cpp.s
+
+tests/TestCellSelection.o: tests/TestCellSelection.cpp.o
+
+.PHONY : tests/TestCellSelection.o
+
+# target to build an object file
+tests/TestCellSelection.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/TestCellSelection.cpp.o
+.PHONY : tests/TestCellSelection.cpp.o
+
+tests/TestCellSelection.i: tests/TestCellSelection.cpp.i
+
+.PHONY : tests/TestCellSelection.i
+
+# target to preprocess a source file
+tests/TestCellSelection.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/TestCellSelection.cpp.i
+.PHONY : tests/TestCellSelection.cpp.i
+
+tests/TestCellSelection.s: tests/TestCellSelection.cpp.s
+
+.PHONY : tests/TestCellSelection.s
+
+# target to generate assembly for a file
+tests/TestCellSelection.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/TestCellSelection.cpp.s
+.PHONY : tests/TestCellSelection.cpp.s
+
 tests/TestClearColor.o: tests/TestClearColor.cpp.o
 
 .PHONY : tests/TestClearColor.o
@@ -386,6 +467,60 @@ tests/TestClearColor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/TestClearColor.cpp.s
 .PHONY : tests/TestClearColor.cpp.s
 
+tests/TestColorAssign.o: tests/TestColorAssign.cpp.o
+
+.PHONY : tests/TestColorAssign.o
+
+# target to build an object file
+tests/TestColorAssign.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/TestColorAssign.cpp.o
+.PHONY : tests/TestColorAssign.cpp.o
+
+tests/TestColorAssign.i: tests/TestColorAssign.cpp.i
+
+.PHONY : tests/TestColorAssign.i
+
+# target to preprocess a source file
+tests/TestColorAssign.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/TestColorAssign.cpp.i
+.PHONY : tests/TestColorAssign.cpp.i
+
+tests/TestColorAssign.s: tests/TestColorAssign.cpp.s
+
+.PHONY : tests/TestColorAssign.s
+
+# target to generate assembly for a file
+tests/TestColorAssign.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/TestColorAssign.cpp.s
+.PHONY : tests/TestColorAssign.cpp.s
+
+tests/TestGrid.o: tests/TestGrid.cpp.o
+
+.PHONY : tests/TestGrid.o
+
+# target to build an object file
+tests/TestGrid.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/TestGrid.cpp.o
+.PHONY : tests/TestGrid.cpp.o
+
+tests/TestGrid.i: tests/TestGrid.cpp.i
+
+.PHONY : tests/TestGrid.i
+
+# target to preprocess a source file
+tests/TestGrid.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/TestGrid.cpp.i
+.PHONY : tests/TestGrid.cpp.i
+
+tests/TestGrid.s: tests/TestGrid.cpp.s
+
+.PHONY : tests/TestGrid.s
+
+# target to generate assembly for a file
+tests/TestGrid.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/TestGrid.cpp.s
+.PHONY : tests/TestGrid.cpp.s
+
 tests/TestKeyInput.o: tests/TestKeyInput.cpp.o
 
 .PHONY : tests/TestKeyInput.o
@@ -412,6 +547,60 @@ tests/TestKeyInput.s: tests/TestKeyInput.cpp.s
 tests/TestKeyInput.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/TestKeyInput.cpp.s
 .PHONY : tests/TestKeyInput.cpp.s
+
+tests/TestMousePosition.o: tests/TestMousePosition.cpp.o
+
+.PHONY : tests/TestMousePosition.o
+
+# target to build an object file
+tests/TestMousePosition.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/TestMousePosition.cpp.o
+.PHONY : tests/TestMousePosition.cpp.o
+
+tests/TestMousePosition.i: tests/TestMousePosition.cpp.i
+
+.PHONY : tests/TestMousePosition.i
+
+# target to preprocess a source file
+tests/TestMousePosition.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/TestMousePosition.cpp.i
+.PHONY : tests/TestMousePosition.cpp.i
+
+tests/TestMousePosition.s: tests/TestMousePosition.cpp.s
+
+.PHONY : tests/TestMousePosition.s
+
+# target to generate assembly for a file
+tests/TestMousePosition.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/TestMousePosition.cpp.s
+.PHONY : tests/TestMousePosition.cpp.s
+
+tests/TestPerspectiveView.o: tests/TestPerspectiveView.cpp.o
+
+.PHONY : tests/TestPerspectiveView.o
+
+# target to build an object file
+tests/TestPerspectiveView.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/TestPerspectiveView.cpp.o
+.PHONY : tests/TestPerspectiveView.cpp.o
+
+tests/TestPerspectiveView.i: tests/TestPerspectiveView.cpp.i
+
+.PHONY : tests/TestPerspectiveView.i
+
+# target to preprocess a source file
+tests/TestPerspectiveView.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/TestPerspectiveView.cpp.i
+.PHONY : tests/TestPerspectiveView.cpp.i
+
+tests/TestPerspectiveView.s: tests/TestPerspectiveView.cpp.s
+
+.PHONY : tests/TestPerspectiveView.s
+
+# target to generate assembly for a file
+tests/TestPerspectiveView.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/TestPerspectiveView.cpp.s
+.PHONY : tests/TestPerspectiveView.cpp.s
 
 tests/TestTexture2D.o: tests/TestTexture2D.cpp.o
 
@@ -641,6 +830,9 @@ help:
 	@echo "... Application.o"
 	@echo "... Application.i"
 	@echo "... Application.s"
+	@echo "... GridMatrix.o"
+	@echo "... GridMatrix.i"
+	@echo "... GridMatrix.s"
 	@echo "... IndexBuffer.o"
 	@echo "... IndexBuffer.i"
 	@echo "... IndexBuffer.s"
@@ -662,12 +854,30 @@ help:
 	@echo "... tests/Test.o"
 	@echo "... tests/Test.i"
 	@echo "... tests/Test.s"
+	@echo "... tests/TestAddingElement.o"
+	@echo "... tests/TestAddingElement.i"
+	@echo "... tests/TestAddingElement.s"
+	@echo "... tests/TestCellSelection.o"
+	@echo "... tests/TestCellSelection.i"
+	@echo "... tests/TestCellSelection.s"
 	@echo "... tests/TestClearColor.o"
 	@echo "... tests/TestClearColor.i"
 	@echo "... tests/TestClearColor.s"
+	@echo "... tests/TestColorAssign.o"
+	@echo "... tests/TestColorAssign.i"
+	@echo "... tests/TestColorAssign.s"
+	@echo "... tests/TestGrid.o"
+	@echo "... tests/TestGrid.i"
+	@echo "... tests/TestGrid.s"
 	@echo "... tests/TestKeyInput.o"
 	@echo "... tests/TestKeyInput.i"
 	@echo "... tests/TestKeyInput.s"
+	@echo "... tests/TestMousePosition.o"
+	@echo "... tests/TestMousePosition.i"
+	@echo "... tests/TestMousePosition.s"
+	@echo "... tests/TestPerspectiveView.o"
+	@echo "... tests/TestPerspectiveView.i"
+	@echo "... tests/TestPerspectiveView.s"
 	@echo "... tests/TestTexture2D.o"
 	@echo "... tests/TestTexture2D.i"
 	@echo "... tests/TestTexture2D.s"

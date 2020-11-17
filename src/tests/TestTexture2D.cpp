@@ -69,11 +69,13 @@ namespace test
 
     }
 
-    void TestTexture2D::OnRender()
+    void TestTexture2D::OnRender(GLFWwindow* window)
     {
 
         GLCall(glClearColor( 0.0f, 0.0f, 0.0f, 1.0f )); 
         GLCall(glClear( GL_COLOR_BUFFER_BIT )); 
+
+        GLCall(glPolygonMode(GL_FRONT_AND_BACK, GL_FILL));//  GL_FILL  GL_LINE  GL_POINT
 
 
         Renderer renderer;

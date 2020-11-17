@@ -6,10 +6,13 @@
 
 namespace test
 {
+    float left=500.0f;
+
+    
 
     TestKeyInput::TestKeyInput()
         : m_Proj(glm::ortho(0.0f, 960.0f, 0.0f, 540.0f, -1.0f, 1.0f)), m_View(glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, 0))), 
-          m_TranslationA(400,250,0)
+          m_TranslationA(500,220,0)
         
     {
 
@@ -26,9 +29,6 @@ namespace test
         0, 1, 2,
         2, 3, 0
         }; 
-
-        GLCall(glEnable (GL_BLEND ));
-        GLCall(glBlendFunc ( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)  );
 
         m_VAO = std::make_unique<VertexArray>();     
         m_VertexBuffer = std::make_unique<VertexBuffer> (positions, 4 * 2 * sizeof(float));
@@ -53,15 +53,23 @@ namespace test
 
     void TestKeyInput::OnUpdate(float deltaTime)
     {
+ 
+      
+          
 
+   
+
+        
+        
     }
 
-    void TestKeyInput::OnRender()
+    void TestKeyInput::OnRender(GLFWwindow* window)
     {
 
         GLCall(glClearColor( 0.0f, 0.0f, 0.0f, 1.0f )); 
         GLCall(glClear( GL_COLOR_BUFFER_BIT )); 
 
+        GLCall(glPolygonMode(GL_FRONT_AND_BACK, GL_FILL));//  GL_FILL  GL_LINE  GL_POINT
 
 
         Renderer renderer;
@@ -73,18 +81,31 @@ namespace test
            m_Shader -> Bind();
            m_Shader -> SetUniformMat4f("u_MVP", mvp);
            renderer.Draw(*m_VAO, *m_IndexBuffer, *m_Shader);      
+  
         }
 
+       
+            if(glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS) 
+            {         
+            m_TranslationA.x -= 5;
+            }else if( glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS){
+             m_TranslationA.x += 5;
+            }else if( glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS){
+             m_TranslationA.y += 5;
+            }else if( glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS){
+             m_TranslationA.y -= 5;
+            }          
+
+           
 
     }
 
     void TestKeyInput::OnImGuiRender()
     {
      
+        ImGui::Text("Use 'W A S D'  `for moving the square");
         ImGui::SliderFloat2("translationA", &m_TranslationA.x, 0.0f, 960.0f);
 
-
     }
-
 
 }

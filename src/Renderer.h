@@ -1,9 +1,13 @@
 #pragma once
 
 #include <GL/glew.h>
+#include <GLFW/glfw3.h>
+
 
 //for raise(SIGTRAP) function in gcc - instead of __debugbreak()
 #include <signal.h>
+#include <iostream>
+
 
 #include "VertexArray.h"
 #include "IndexBuffer.h"

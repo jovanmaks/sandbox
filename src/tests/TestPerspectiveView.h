@@ -5,11 +5,11 @@
 
 namespace test {
 
-    class TestClearColor : public Test
+    class TestPerspectiveView : public Test
     {
     public:
-        TestClearColor();
-        ~TestClearColor();
+        TestPerspectiveView();
+        ~TestPerspectiveView();
 
         void OnUpdate(float deltaTime) override;
         void OnRender(GLFWwindow* window) override;

@@ -21,6 +21,10 @@ set( SRCS
 ../src/VertexArray.cpp
 ../src/Shader.cpp
 ../src/Texture.cpp
+../src/GridMatrix.cpp
+
+
+
 ../src/vendor/stb_image/stb_image.cpp
 
 ../src/vendor/imgui/imgui_demo.cpp
@@ -36,6 +40,15 @@ set( SRCS
 ../src/tests/TestClearColor.cpp
 ../src/tests/TestTexture2D.cpp
 ../src/tests/TestKeyInput.cpp
+../src/tests/TestGrid.cpp
+../src/tests/TestMousePosition.cpp
+../src/tests/TestColorAssign.cpp
+../src/tests/TestCellSelection.cpp
+../src/tests/TestPerspectiveView.cpp
+../src/tests/TestAddingElement.cpp
+
+
+
 
 
 

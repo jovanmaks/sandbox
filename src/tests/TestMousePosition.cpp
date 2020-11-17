@@ -1,4 +1,4 @@
-#include "TestClearColor.h"
+#include "TestMousePosition.h"
 
 #include "../Renderer.h"
 #include "../vendor/imgui/imgui.h"
@@ -7,24 +7,24 @@
 namespace test
 {
 
-    TestClearColor::TestClearColor()
+    TestMousePosition::TestMousePosition()
         : m_ClearColor { 0.2f, 0.3f, 0.8f, 1.0f  }
     {
 
     }
 
 
-    TestClearColor::~TestClearColor()
+    TestMousePosition::~TestMousePosition()
     {
 
     }
 
-    void TestClearColor::OnUpdate(float deltaTime)
+    void TestMousePosition::OnUpdate(float deltaTime)
     {
 
     }
 
-    void TestClearColor::OnRender(GLFWwindow* window)
+    void TestMousePosition::OnRender(GLFWwindow* window)
     {
 
         GLCall(glClearColor(m_ClearColor[0], m_ClearColor[1], m_ClearColor[2], m_ClearColor[3])); 
@@ -33,7 +33,7 @@ namespace test
 
     }
 
-    void TestClearColor::OnImGuiRender()
+    void TestMousePosition::OnImGuiRender()
     {
         ImGui::ColorEdit4("Clear Color", m_ClearColor);
 

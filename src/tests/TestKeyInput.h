@@ -11,7 +11,7 @@ namespace test {
         ~TestKeyInput();
 
         void OnUpdate(float deltaTime) override;
-        void OnRender() override;
+        void OnRender(GLFWwindow* window) override;
         void OnImGuiRender() override;  
 
     private:
@@ -23,7 +23,5 @@ namespace test {
 
         glm::mat4 m_Proj, m_View;
         glm::vec3 m_TranslationA;
-
-    };    
-      
+    };          
 }

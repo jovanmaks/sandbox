@@ -1,14 +1,40 @@
-/* OpenGl */
-#include <GL/glew.h> 
-#include <GLFW/glfw3.h>
+
 /* UI */
-#include "vendor/imgui/imgui.h"
 #include "vendor/imgui/imgui_impl_glfw.h"
 #include "vendor/imgui/imgui_impl_opengl3.h"
+
 /* Tests */
 #include "tests/TestClearColor.h"
 #include "tests/TestTexture2D.h"
 #include "tests/TestKeyInput.h"
+#include "tests/TestGrid.h"
+#include "tests/TestMousePosition.h"
+#include "tests/TestColorAssign.h"
+#include "tests/TestCellSelection.h"
+#include "tests/TestPerspectiveView.h"
+#include "tests/TestAddingElement.h"
+
+
+
+
+
+
+#define SCREEN_WIDTH 1400
+#define SCREEN_HEIGHT 800
+
+
+
+
+void updateInput(GLFWwindow* window)
+{
+
+       if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)//////////KRAJ
+       {
+             glfwTerminate();
+     
+
+       }
+}
 
 
 
@@ -23,6 +49,7 @@ int main (void)
     if (!glfwInit())
         return -1;
 
+    
 
     const char* glsl_version = "#version 330";
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
@@ -30,7 +57,7 @@ int main (void)
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);// GLFW_OPENGL_CORE_PROFILE  GLFW_OPENGL_COMPAT_PROFILE 
 
 
-    window = glfwCreateWindow(960, 540, "sandbox", NULL, NULL);
+    window = glfwCreateWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "sandbox", NULL, NULL);
     if(!window)
     {
         glfwTerminate();
@@ -53,7 +80,7 @@ int main (void)
 
 
     /* Important stuf */
-    {
+ {
 
 
     GLCall(glEnable(GL_BLEND));
@@ -77,13 +104,16 @@ int main (void)
     currentTest = testMenu; 
 
 
-    testMenu->RegisterTest<test::TestClearColor> (" Clear Color ");
-    testMenu->RegisterTest<test::TestTexture2D>  (" Texture 2D  ");
-    testMenu->RegisterTest<test::TestKeyInput>   (" Key Input   ");
+    testMenu->RegisterTest<test::TestClearColor>        (" Clear Color      ");
+    testMenu->RegisterTest<test::TestTexture2D>         (" Texture 2D       ");
+    testMenu->RegisterTest<test::TestKeyInput>          (" Key Input        ");
+    testMenu->RegisterTest<test::TestGrid>              (" Grid             ");
 
-
-  
-
+    testMenu->RegisterTest<test::TestMousePosition>     (" Mouse Position   - TODO  ");
+    testMenu->RegisterTest<test::TestClearColor>        (" Color assign     - TODO  ");
+    testMenu->RegisterTest<test::TestCellSelection>     (" Cell selection   - TODO  ");
+    testMenu->RegisterTest<test::TestPerspectiveView>   (" Perspective view - TODO  ");
+    testMenu->RegisterTest<test::TestAddingElement>     (" Adding Elements  - TODO  ");
 
 
     /* Main while loop */
@@ -93,33 +123,43 @@ int main (void)
         renderer.Clear();
         
 
+
+
         ImGui_ImplGlfw_NewFrame();  
         ImGui_ImplOpenGL3_NewFrame();
-        ImGui::NewFrame();
-
+        ImGui::NewFrame();           
+   
 
         if( currentTest)
         {
+
             currentTest->OnUpdate(0.0f);
-            currentTest-> OnRender();
+            currentTest-> OnRender( window);
+
+            /* ImGui UI */
             ImGui::Begin("Test");
-            if ( currentTest != testMenu && ImGui::Button ("<-"))
+            if ( currentTest != testMenu && ImGui::Button ("<-") )
             {
                 delete currentTest; 
                 currentTest = testMenu; 
 
             }
             currentTest->OnImGuiRender();
-
             ImGui::End();
+
+
         }
 
-
+    
         ImGui::Render();
-        ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+        ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());        
+        
+    
 
+        updateInput(window);//ovo ti je funkcija za tastaturu koja pravi core dumped. Nastaje zato sto zatvoris prozor a ostane neizbrisan delta time u imguiu
         glfwSwapBuffers(window);
         glfwPollEvents();
+        
 
     }
 
@@ -128,13 +168,13 @@ int main (void)
     if (currentTest != testMenu)
         delete testMenu;
     
-    }
-
-
+ }
+ 
     ImGui_ImplGlfw_Shutdown();   
     ImGui_ImplOpenGL3_Shutdown();
-    ImGui::DestroyContext();
+    ImGui::DestroyContext();    
     glfwTerminate();
+
     return 0;
 
 }

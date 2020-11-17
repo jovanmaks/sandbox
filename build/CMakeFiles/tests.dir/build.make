@@ -168,9 +168,22 @@ CMakeFiles/tests.dir/Texture.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tests.dir/Texture.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/demijan/Projects/tests/src/Texture.cpp -o CMakeFiles/tests.dir/Texture.cpp.s
 
+CMakeFiles/tests.dir/GridMatrix.cpp.o: CMakeFiles/tests.dir/flags.make
+CMakeFiles/tests.dir/GridMatrix.cpp.o: /home/demijan/Projects/tests/src/GridMatrix.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/demijan/Projects/tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/tests.dir/GridMatrix.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tests.dir/GridMatrix.cpp.o -c /home/demijan/Projects/tests/src/GridMatrix.cpp
+
+CMakeFiles/tests.dir/GridMatrix.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tests.dir/GridMatrix.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/demijan/Projects/tests/src/GridMatrix.cpp > CMakeFiles/tests.dir/GridMatrix.cpp.i
+
+CMakeFiles/tests.dir/GridMatrix.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tests.dir/GridMatrix.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/demijan/Projects/tests/src/GridMatrix.cpp -o CMakeFiles/tests.dir/GridMatrix.cpp.s
+
 CMakeFiles/tests.dir/vendor/stb_image/stb_image.cpp.o: CMakeFiles/tests.dir/flags.make
 CMakeFiles/tests.dir/vendor/stb_image/stb_image.cpp.o: /home/demijan/Projects/tests/src/vendor/stb_image/stb_image.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/demijan/Projects/tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/tests.dir/vendor/stb_image/stb_image.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/demijan/Projects/tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/tests.dir/vendor/stb_image/stb_image.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tests.dir/vendor/stb_image/stb_image.cpp.o -c /home/demijan/Projects/tests/src/vendor/stb_image/stb_image.cpp
 
 CMakeFiles/tests.dir/vendor/stb_image/stb_image.cpp.i: cmake_force
@@ -183,7 +196,7 @@ CMakeFiles/tests.dir/vendor/stb_image/stb_image.cpp.s: cmake_force
 
 CMakeFiles/tests.dir/vendor/imgui/imgui_demo.cpp.o: CMakeFiles/tests.dir/flags.make
 CMakeFiles/tests.dir/vendor/imgui/imgui_demo.cpp.o: /home/demijan/Projects/tests/src/vendor/imgui/imgui_demo.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/demijan/Projects/tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/tests.dir/vendor/imgui/imgui_demo.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/demijan/Projects/tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/tests.dir/vendor/imgui/imgui_demo.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tests.dir/vendor/imgui/imgui_demo.cpp.o -c /home/demijan/Projects/tests/src/vendor/imgui/imgui_demo.cpp
 
 CMakeFiles/tests.dir/vendor/imgui/imgui_demo.cpp.i: cmake_force
@@ -196,7 +209,7 @@ CMakeFiles/tests.dir/vendor/imgui/imgui_demo.cpp.s: cmake_force
 
 CMakeFiles/tests.dir/vendor/imgui/imgui_draw.cpp.o: CMakeFiles/tests.dir/flags.make
 CMakeFiles/tests.dir/vendor/imgui/imgui_draw.cpp.o: /home/demijan/Projects/tests/src/vendor/imgui/imgui_draw.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/demijan/Projects/tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/tests.dir/vendor/imgui/imgui_draw.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/demijan/Projects/tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/tests.dir/vendor/imgui/imgui_draw.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tests.dir/vendor/imgui/imgui_draw.cpp.o -c /home/demijan/Projects/tests/src/vendor/imgui/imgui_draw.cpp
 
 CMakeFiles/tests.dir/vendor/imgui/imgui_draw.cpp.i: cmake_force
@@ -209,7 +222,7 @@ CMakeFiles/tests.dir/vendor/imgui/imgui_draw.cpp.s: cmake_force
 
 CMakeFiles/tests.dir/vendor/imgui/imgui_impl_glfw.cpp.o: CMakeFiles/tests.dir/flags.make
 CMakeFiles/tests.dir/vendor/imgui/imgui_impl_glfw.cpp.o: /home/demijan/Projects/tests/src/vendor/imgui/imgui_impl_glfw.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/demijan/Projects/tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/tests.dir/vendor/imgui/imgui_impl_glfw.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/demijan/Projects/tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/tests.dir/vendor/imgui/imgui_impl_glfw.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tests.dir/vendor/imgui/imgui_impl_glfw.cpp.o -c /home/demijan/Projects/tests/src/vendor/imgui/imgui_impl_glfw.cpp
 
 CMakeFiles/tests.dir/vendor/imgui/imgui_impl_glfw.cpp.i: cmake_force
@@ -222,7 +235,7 @@ CMakeFiles/tests.dir/vendor/imgui/imgui_impl_glfw.cpp.s: cmake_force
 
 CMakeFiles/tests.dir/vendor/imgui/imgui_impl_opengl3.cpp.o: CMakeFiles/tests.dir/flags.make
 CMakeFiles/tests.dir/vendor/imgui/imgui_impl_opengl3.cpp.o: /home/demijan/Projects/tests/src/vendor/imgui/imgui_impl_opengl3.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/demijan/Projects/tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/tests.dir/vendor/imgui/imgui_impl_opengl3.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/demijan/Projects/tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/tests.dir/vendor/imgui/imgui_impl_opengl3.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tests.dir/vendor/imgui/imgui_impl_opengl3.cpp.o -c /home/demijan/Projects/tests/src/vendor/imgui/imgui_impl_opengl3.cpp
 
 CMakeFiles/tests.dir/vendor/imgui/imgui_impl_opengl3.cpp.i: cmake_force
@@ -235,7 +248,7 @@ CMakeFiles/tests.dir/vendor/imgui/imgui_impl_opengl3.cpp.s: cmake_force
 
 CMakeFiles/tests.dir/vendor/imgui/imgui_widgets.cpp.o: CMakeFiles/tests.dir/flags.make
 CMakeFiles/tests.dir/vendor/imgui/imgui_widgets.cpp.o: /home/demijan/Projects/tests/src/vendor/imgui/imgui_widgets.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/demijan/Projects/tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/tests.dir/vendor/imgui/imgui_widgets.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/demijan/Projects/tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/tests.dir/vendor/imgui/imgui_widgets.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tests.dir/vendor/imgui/imgui_widgets.cpp.o -c /home/demijan/Projects/tests/src/vendor/imgui/imgui_widgets.cpp
 
 CMakeFiles/tests.dir/vendor/imgui/imgui_widgets.cpp.i: cmake_force
@@ -248,7 +261,7 @@ CMakeFiles/tests.dir/vendor/imgui/imgui_widgets.cpp.s: cmake_force
 
 CMakeFiles/tests.dir/vendor/imgui/imgui.cpp.o: CMakeFiles/tests.dir/flags.make
 CMakeFiles/tests.dir/vendor/imgui/imgui.cpp.o: /home/demijan/Projects/tests/src/vendor/imgui/imgui.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/demijan/Projects/tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/tests.dir/vendor/imgui/imgui.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/demijan/Projects/tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/tests.dir/vendor/imgui/imgui.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tests.dir/vendor/imgui/imgui.cpp.o -c /home/demijan/Projects/tests/src/vendor/imgui/imgui.cpp
 
 CMakeFiles/tests.dir/vendor/imgui/imgui.cpp.i: cmake_force
@@ -261,7 +274,7 @@ CMakeFiles/tests.dir/vendor/imgui/imgui.cpp.s: cmake_force
 
 CMakeFiles/tests.dir/tests/Test.cpp.o: CMakeFiles/tests.dir/flags.make
 CMakeFiles/tests.dir/tests/Test.cpp.o: /home/demijan/Projects/tests/src/tests/Test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/demijan/Projects/tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/tests.dir/tests/Test.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/demijan/Projects/tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/tests.dir/tests/Test.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tests.dir/tests/Test.cpp.o -c /home/demijan/Projects/tests/src/tests/Test.cpp
 
 CMakeFiles/tests.dir/tests/Test.cpp.i: cmake_force
@@ -274,7 +287,7 @@ CMakeFiles/tests.dir/tests/Test.cpp.s: cmake_force
 
 CMakeFiles/tests.dir/tests/TestClearColor.cpp.o: CMakeFiles/tests.dir/flags.make
 CMakeFiles/tests.dir/tests/TestClearColor.cpp.o: /home/demijan/Projects/tests/src/tests/TestClearColor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/demijan/Projects/tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/tests.dir/tests/TestClearColor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/demijan/Projects/tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/tests.dir/tests/TestClearColor.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tests.dir/tests/TestClearColor.cpp.o -c /home/demijan/Projects/tests/src/tests/TestClearColor.cpp
 
 CMakeFiles/tests.dir/tests/TestClearColor.cpp.i: cmake_force
@@ -287,7 +300,7 @@ CMakeFiles/tests.dir/tests/TestClearColor.cpp.s: cmake_force
 
 CMakeFiles/tests.dir/tests/TestTexture2D.cpp.o: CMakeFiles/tests.dir/flags.make
 CMakeFiles/tests.dir/tests/TestTexture2D.cpp.o: /home/demijan/Projects/tests/src/tests/TestTexture2D.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/demijan/Projects/tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/tests.dir/tests/TestTexture2D.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/demijan/Projects/tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/tests.dir/tests/TestTexture2D.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tests.dir/tests/TestTexture2D.cpp.o -c /home/demijan/Projects/tests/src/tests/TestTexture2D.cpp
 
 CMakeFiles/tests.dir/tests/TestTexture2D.cpp.i: cmake_force
@@ -300,7 +313,7 @@ CMakeFiles/tests.dir/tests/TestTexture2D.cpp.s: cmake_force
 
 CMakeFiles/tests.dir/tests/TestKeyInput.cpp.o: CMakeFiles/tests.dir/flags.make
 CMakeFiles/tests.dir/tests/TestKeyInput.cpp.o: /home/demijan/Projects/tests/src/tests/TestKeyInput.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/demijan/Projects/tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/tests.dir/tests/TestKeyInput.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/demijan/Projects/tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/tests.dir/tests/TestKeyInput.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tests.dir/tests/TestKeyInput.cpp.o -c /home/demijan/Projects/tests/src/tests/TestKeyInput.cpp
 
 CMakeFiles/tests.dir/tests/TestKeyInput.cpp.i: cmake_force
@@ -311,6 +324,84 @@ CMakeFiles/tests.dir/tests/TestKeyInput.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tests.dir/tests/TestKeyInput.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/demijan/Projects/tests/src/tests/TestKeyInput.cpp -o CMakeFiles/tests.dir/tests/TestKeyInput.cpp.s
 
+CMakeFiles/tests.dir/tests/TestGrid.cpp.o: CMakeFiles/tests.dir/flags.make
+CMakeFiles/tests.dir/tests/TestGrid.cpp.o: /home/demijan/Projects/tests/src/tests/TestGrid.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/demijan/Projects/tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/tests.dir/tests/TestGrid.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tests.dir/tests/TestGrid.cpp.o -c /home/demijan/Projects/tests/src/tests/TestGrid.cpp
+
+CMakeFiles/tests.dir/tests/TestGrid.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tests.dir/tests/TestGrid.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/demijan/Projects/tests/src/tests/TestGrid.cpp > CMakeFiles/tests.dir/tests/TestGrid.cpp.i
+
+CMakeFiles/tests.dir/tests/TestGrid.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tests.dir/tests/TestGrid.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/demijan/Projects/tests/src/tests/TestGrid.cpp -o CMakeFiles/tests.dir/tests/TestGrid.cpp.s
+
+CMakeFiles/tests.dir/tests/TestMousePosition.cpp.o: CMakeFiles/tests.dir/flags.make
+CMakeFiles/tests.dir/tests/TestMousePosition.cpp.o: /home/demijan/Projects/tests/src/tests/TestMousePosition.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/demijan/Projects/tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/tests.dir/tests/TestMousePosition.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tests.dir/tests/TestMousePosition.cpp.o -c /home/demijan/Projects/tests/src/tests/TestMousePosition.cpp
+
+CMakeFiles/tests.dir/tests/TestMousePosition.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tests.dir/tests/TestMousePosition.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/demijan/Projects/tests/src/tests/TestMousePosition.cpp > CMakeFiles/tests.dir/tests/TestMousePosition.cpp.i
+
+CMakeFiles/tests.dir/tests/TestMousePosition.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tests.dir/tests/TestMousePosition.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/demijan/Projects/tests/src/tests/TestMousePosition.cpp -o CMakeFiles/tests.dir/tests/TestMousePosition.cpp.s
+
+CMakeFiles/tests.dir/tests/TestColorAssign.cpp.o: CMakeFiles/tests.dir/flags.make
+CMakeFiles/tests.dir/tests/TestColorAssign.cpp.o: /home/demijan/Projects/tests/src/tests/TestColorAssign.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/demijan/Projects/tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/tests.dir/tests/TestColorAssign.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tests.dir/tests/TestColorAssign.cpp.o -c /home/demijan/Projects/tests/src/tests/TestColorAssign.cpp
+
+CMakeFiles/tests.dir/tests/TestColorAssign.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tests.dir/tests/TestColorAssign.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/demijan/Projects/tests/src/tests/TestColorAssign.cpp > CMakeFiles/tests.dir/tests/TestColorAssign.cpp.i
+
+CMakeFiles/tests.dir/tests/TestColorAssign.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tests.dir/tests/TestColorAssign.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/demijan/Projects/tests/src/tests/TestColorAssign.cpp -o CMakeFiles/tests.dir/tests/TestColorAssign.cpp.s
+
+CMakeFiles/tests.dir/tests/TestCellSelection.cpp.o: CMakeFiles/tests.dir/flags.make
+CMakeFiles/tests.dir/tests/TestCellSelection.cpp.o: /home/demijan/Projects/tests/src/tests/TestCellSelection.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/demijan/Projects/tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/tests.dir/tests/TestCellSelection.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tests.dir/tests/TestCellSelection.cpp.o -c /home/demijan/Projects/tests/src/tests/TestCellSelection.cpp
+
+CMakeFiles/tests.dir/tests/TestCellSelection.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tests.dir/tests/TestCellSelection.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/demijan/Projects/tests/src/tests/TestCellSelection.cpp > CMakeFiles/tests.dir/tests/TestCellSelection.cpp.i
+
+CMakeFiles/tests.dir/tests/TestCellSelection.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tests.dir/tests/TestCellSelection.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/demijan/Projects/tests/src/tests/TestCellSelection.cpp -o CMakeFiles/tests.dir/tests/TestCellSelection.cpp.s
+
+CMakeFiles/tests.dir/tests/TestPerspectiveView.cpp.o: CMakeFiles/tests.dir/flags.make
+CMakeFiles/tests.dir/tests/TestPerspectiveView.cpp.o: /home/demijan/Projects/tests/src/tests/TestPerspectiveView.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/demijan/Projects/tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/tests.dir/tests/TestPerspectiveView.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tests.dir/tests/TestPerspectiveView.cpp.o -c /home/demijan/Projects/tests/src/tests/TestPerspectiveView.cpp
+
+CMakeFiles/tests.dir/tests/TestPerspectiveView.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tests.dir/tests/TestPerspectiveView.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/demijan/Projects/tests/src/tests/TestPerspectiveView.cpp > CMakeFiles/tests.dir/tests/TestPerspectiveView.cpp.i
+
+CMakeFiles/tests.dir/tests/TestPerspectiveView.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tests.dir/tests/TestPerspectiveView.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/demijan/Projects/tests/src/tests/TestPerspectiveView.cpp -o CMakeFiles/tests.dir/tests/TestPerspectiveView.cpp.s
+
+CMakeFiles/tests.dir/tests/TestAddingElement.cpp.o: CMakeFiles/tests.dir/flags.make
+CMakeFiles/tests.dir/tests/TestAddingElement.cpp.o: /home/demijan/Projects/tests/src/tests/TestAddingElement.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/demijan/Projects/tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/tests.dir/tests/TestAddingElement.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tests.dir/tests/TestAddingElement.cpp.o -c /home/demijan/Projects/tests/src/tests/TestAddingElement.cpp
+
+CMakeFiles/tests.dir/tests/TestAddingElement.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tests.dir/tests/TestAddingElement.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/demijan/Projects/tests/src/tests/TestAddingElement.cpp > CMakeFiles/tests.dir/tests/TestAddingElement.cpp.i
+
+CMakeFiles/tests.dir/tests/TestAddingElement.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tests.dir/tests/TestAddingElement.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/demijan/Projects/tests/src/tests/TestAddingElement.cpp -o CMakeFiles/tests.dir/tests/TestAddingElement.cpp.s
+
 # Object files for target tests
 tests_OBJECTS = \
 "CMakeFiles/tests.dir/Application.cpp.o" \
@@ -320,6 +411,7 @@ tests_OBJECTS = \
 "CMakeFiles/tests.dir/VertexArray.cpp.o" \
 "CMakeFiles/tests.dir/Shader.cpp.o" \
 "CMakeFiles/tests.dir/Texture.cpp.o" \
+"CMakeFiles/tests.dir/GridMatrix.cpp.o" \
 "CMakeFiles/tests.dir/vendor/stb_image/stb_image.cpp.o" \
 "CMakeFiles/tests.dir/vendor/imgui/imgui_demo.cpp.o" \
 "CMakeFiles/tests.dir/vendor/imgui/imgui_draw.cpp.o" \
@@ -330,7 +422,13 @@ tests_OBJECTS = \
 "CMakeFiles/tests.dir/tests/Test.cpp.o" \
 "CMakeFiles/tests.dir/tests/TestClearColor.cpp.o" \
 "CMakeFiles/tests.dir/tests/TestTexture2D.cpp.o" \
-"CMakeFiles/tests.dir/tests/TestKeyInput.cpp.o"
+"CMakeFiles/tests.dir/tests/TestKeyInput.cpp.o" \
+"CMakeFiles/tests.dir/tests/TestGrid.cpp.o" \
+"CMakeFiles/tests.dir/tests/TestMousePosition.cpp.o" \
+"CMakeFiles/tests.dir/tests/TestColorAssign.cpp.o" \
+"CMakeFiles/tests.dir/tests/TestCellSelection.cpp.o" \
+"CMakeFiles/tests.dir/tests/TestPerspectiveView.cpp.o" \
+"CMakeFiles/tests.dir/tests/TestAddingElement.cpp.o"
 
 # External object files for target tests
 tests_EXTERNAL_OBJECTS =
@@ -342,6 +440,7 @@ tests: CMakeFiles/tests.dir/IndexBuffer.cpp.o
 tests: CMakeFiles/tests.dir/VertexArray.cpp.o
 tests: CMakeFiles/tests.dir/Shader.cpp.o
 tests: CMakeFiles/tests.dir/Texture.cpp.o
+tests: CMakeFiles/tests.dir/GridMatrix.cpp.o
 tests: CMakeFiles/tests.dir/vendor/stb_image/stb_image.cpp.o
 tests: CMakeFiles/tests.dir/vendor/imgui/imgui_demo.cpp.o
 tests: CMakeFiles/tests.dir/vendor/imgui/imgui_draw.cpp.o
@@ -353,10 +452,16 @@ tests: CMakeFiles/tests.dir/tests/Test.cpp.o
 tests: CMakeFiles/tests.dir/tests/TestClearColor.cpp.o
 tests: CMakeFiles/tests.dir/tests/TestTexture2D.cpp.o
 tests: CMakeFiles/tests.dir/tests/TestKeyInput.cpp.o
+tests: CMakeFiles/tests.dir/tests/TestGrid.cpp.o
+tests: CMakeFiles/tests.dir/tests/TestMousePosition.cpp.o
+tests: CMakeFiles/tests.dir/tests/TestColorAssign.cpp.o
+tests: CMakeFiles/tests.dir/tests/TestCellSelection.cpp.o
+tests: CMakeFiles/tests.dir/tests/TestPerspectiveView.cpp.o
+tests: CMakeFiles/tests.dir/tests/TestAddingElement.cpp.o
 tests: CMakeFiles/tests.dir/build.make
 tests: /usr/lib64/libglfw.so.3.3
 tests: CMakeFiles/tests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/demijan/Projects/tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Linking CXX executable tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/demijan/Projects/tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Linking CXX executable tests"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/tests.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -5,11 +5,11 @@
 
 namespace test {
 
-    class TestClearColor : public Test
+    class TestMousePosition : public Test
     {
     public:
-        TestClearColor();
-        ~TestClearColor();
+        TestMousePosition();
+        ~TestMousePosition();
 
         void OnUpdate(float deltaTime) override;
         void OnRender(GLFWwindow* window) override;

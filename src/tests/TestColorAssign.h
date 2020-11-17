@@ -5,11 +5,11 @@
 
 namespace test {
 
-    class TestClearColor : public Test
+    class TestColorAssign : public Test
     {
     public:
-        TestClearColor();
-        ~TestClearColor();
+        TestColorAssign();
+        ~TestColorAssign();
 
         void OnUpdate(float deltaTime) override;
         void OnRender(GLFWwindow* window) override;
