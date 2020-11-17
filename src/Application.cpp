@@ -13,6 +13,8 @@
 #include "tests/TestCellSelection.h"
 #include "tests/TestPerspectiveView.h"
 #include "tests/TestAddingElement.h"
+#include "tests/TestMVP.h"
+
 
 
 #define SCREEN_WIDTH 1400
@@ -118,9 +120,12 @@ int main (void)
     testMenu->RegisterTest<test::TestTexture2D>         (" Texture 2D       ");
     testMenu->RegisterTest<test::TestKeyInput>          (" Key Input        ");
     testMenu->RegisterTest<test::TestGrid>              (" Grid             ");
+    testMenu->RegisterTest<test::TestColorAssign>       (" Color assign     ");
+    testMenu->RegisterTest<test::TestMVP>               (" MVP              ");
+
+
 
     testMenu->RegisterTest<test::TestMousePosition>     (" Mouse Position   - TODO  ");
-    testMenu->RegisterTest<test::TestColorAssign>        (" Color assign    ");
     testMenu->RegisterTest<test::TestCellSelection>     (" Cell selection   - TODO  ");
     testMenu->RegisterTest<test::TestPerspectiveView>   (" Perspective view - TODO  ");
     testMenu->RegisterTest<test::TestAddingElement>     (" Adding Elements  - TODO  ");

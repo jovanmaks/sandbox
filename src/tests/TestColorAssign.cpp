@@ -27,18 +27,23 @@ namespace test
             50.0f, -50.0f,  0.6f, 0.16f, 1.0f,  1.0f,  //1
             50.0f,  50.0f,  0.6f, 0.36f, 1.0f,  1.0f,  //2
            -50.0f, 50.0f,   0.4f, 0.26f, 1.0f,  1.0f   //3
+
+
+           
         };
 
         unsigned int indices[] = 
         {
         0, 1, 2,
-        2, 3, 0
+        2, 3, 0,
+    
         }; 
 
         m_VAO = std::make_unique<VertexArray>();     
         m_VertexBuffer = std::make_unique<VertexBuffer> (positions, 4 * 6 * sizeof(float));
         VertexBufferLayout layout;
         layout.Push<float>(2);
+
         layout.Push<float>(4);
 
         

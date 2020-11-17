@@ -19,6 +19,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/demijan/Projects/tests/src/tests/TestColorAssign.cpp" "/home/demijan/Projects/tests/build/CMakeFiles/tests.dir/tests/TestColorAssign.cpp.o"
   "/home/demijan/Projects/tests/src/tests/TestGrid.cpp" "/home/demijan/Projects/tests/build/CMakeFiles/tests.dir/tests/TestGrid.cpp.o"
   "/home/demijan/Projects/tests/src/tests/TestKeyInput.cpp" "/home/demijan/Projects/tests/build/CMakeFiles/tests.dir/tests/TestKeyInput.cpp.o"
+  "/home/demijan/Projects/tests/src/tests/TestMVP.cpp" "/home/demijan/Projects/tests/build/CMakeFiles/tests.dir/tests/TestMVP.cpp.o"
   "/home/demijan/Projects/tests/src/tests/TestMousePosition.cpp" "/home/demijan/Projects/tests/build/CMakeFiles/tests.dir/tests/TestMousePosition.cpp.o"
   "/home/demijan/Projects/tests/src/tests/TestPerspectiveView.cpp" "/home/demijan/Projects/tests/build/CMakeFiles/tests.dir/tests/TestPerspectiveView.cpp.o"
   "/home/demijan/Projects/tests/src/tests/TestTexture2D.cpp" "/home/demijan/Projects/tests/build/CMakeFiles/tests.dir/tests/TestTexture2D.cpp.o"

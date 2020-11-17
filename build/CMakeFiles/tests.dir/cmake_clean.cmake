@@ -14,6 +14,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/tests.dir/tests/TestColorAssign.cpp.o"
   "CMakeFiles/tests.dir/tests/TestGrid.cpp.o"
   "CMakeFiles/tests.dir/tests/TestKeyInput.cpp.o"
+  "CMakeFiles/tests.dir/tests/TestMVP.cpp.o"
   "CMakeFiles/tests.dir/tests/TestMousePosition.cpp.o"
   "CMakeFiles/tests.dir/tests/TestPerspectiveView.cpp.o"
   "CMakeFiles/tests.dir/tests/TestTexture2D.cpp.o"

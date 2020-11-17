@@ -46,10 +46,7 @@ set( SRCS
 ../src/tests/TestCellSelection.cpp
 ../src/tests/TestPerspectiveView.cpp
 ../src/tests/TestAddingElement.cpp
-
-
-
-
+../src/tests/TestMVP.cpp
 
 
 

@@ -548,6 +548,33 @@ tests/TestKeyInput.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/TestKeyInput.cpp.s
 .PHONY : tests/TestKeyInput.cpp.s
 
+tests/TestMVP.o: tests/TestMVP.cpp.o
+
+.PHONY : tests/TestMVP.o
+
+# target to build an object file
+tests/TestMVP.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/TestMVP.cpp.o
+.PHONY : tests/TestMVP.cpp.o
+
+tests/TestMVP.i: tests/TestMVP.cpp.i
+
+.PHONY : tests/TestMVP.i
+
+# target to preprocess a source file
+tests/TestMVP.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/TestMVP.cpp.i
+.PHONY : tests/TestMVP.cpp.i
+
+tests/TestMVP.s: tests/TestMVP.cpp.s
+
+.PHONY : tests/TestMVP.s
+
+# target to generate assembly for a file
+tests/TestMVP.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/TestMVP.cpp.s
+.PHONY : tests/TestMVP.cpp.s
+
 tests/TestMousePosition.o: tests/TestMousePosition.cpp.o
 
 .PHONY : tests/TestMousePosition.o
@@ -872,6 +899,9 @@ help:
 	@echo "... tests/TestKeyInput.o"
 	@echo "... tests/TestKeyInput.i"
 	@echo "... tests/TestKeyInput.s"
+	@echo "... tests/TestMVP.o"
+	@echo "... tests/TestMVP.i"
+	@echo "... tests/TestMVP.s"
 	@echo "... tests/TestMousePosition.o"
 	@echo "... tests/TestMousePosition.i"
 	@echo "... tests/TestMousePosition.s"
