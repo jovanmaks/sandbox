@@ -32,10 +32,6 @@ tests/TestAddingElement.h
 
 /home/demijan/Projects/tests/src/Atributes.h
 
-/home/demijan/Projects/tests/src/GridMatrix.cpp
-GridMatrix.h
-/home/demijan/Projects/tests/src/GridMatrix.h
-
 /home/demijan/Projects/tests/src/GridMatrix.h
 vector
 -
@@ -121,14 +117,6 @@ Test.h
 /home/demijan/Projects/tests/src/tests/TestColorAssign.h
 Test.h
 /home/demijan/Projects/tests/src/tests/Test.h
-
-/home/demijan/Projects/tests/src/tests/TestGrid.cpp
-TestGrid.h
-/home/demijan/Projects/tests/src/tests/TestGrid.h
-../Renderer.h
-/home/demijan/Projects/tests/src/Renderer.h
-../vendor/imgui/imgui.h
-/home/demijan/Projects/tests/src/vendor/imgui/imgui.h
 
 /home/demijan/Projects/tests/src/tests/TestGrid.h
 Test.h

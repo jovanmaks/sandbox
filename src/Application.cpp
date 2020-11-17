@@ -15,13 +15,15 @@
 #include "tests/TestAddingElement.h"
 
 
-
-
-
-
 #define SCREEN_WIDTH 1400
 #define SCREEN_HEIGHT 800
 
+
+void framebuffer_resize_callback(GLFWwindow* window, int fbW, int fbH)
+{
+
+    glViewport(0, 0, fbW, fbH);
+}
 
 
 
@@ -30,10 +32,10 @@ void updateInput(GLFWwindow* window)
 
        if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)//////////KRAJ
        {
-             glfwTerminate();
-     
+             glfwTerminate();    
 
        }
+
 }
 
 
@@ -41,7 +43,8 @@ void updateInput(GLFWwindow* window)
 
 int main (void)
 {
-    
+    int frameBufferWidth = 0;
+    int frameBufferHeight = 0;
 
     /* Setting up OpenGL and GLFW */
     GLFWwindow* window;
@@ -58,12 +61,19 @@ int main (void)
 
 
     window = glfwCreateWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "sandbox", NULL, NULL);
+
     if(!window)
     {
         glfwTerminate();
         return -1;
     }
 
+
+    glfwSetFramebufferSizeCallback(window, framebuffer_resize_callback);
+    // glfwGetFramebufferSize(window, &frameBufferWidth, &frameBufferHeight);
+    // glViewport(0, 0, frameBufferWidth, frameBufferHeight);
+
+    
     glfwMakeContextCurrent(window);
 
     glfwSwapInterval(1);
@@ -110,7 +120,7 @@ int main (void)
     testMenu->RegisterTest<test::TestGrid>              (" Grid             ");
 
     testMenu->RegisterTest<test::TestMousePosition>     (" Mouse Position   - TODO  ");
-    testMenu->RegisterTest<test::TestClearColor>        (" Color assign     - TODO  ");
+    testMenu->RegisterTest<test::TestColorAssign>        (" Color assign    ");
     testMenu->RegisterTest<test::TestCellSelection>     (" Cell selection   - TODO  ");
     testMenu->RegisterTest<test::TestPerspectiveView>   (" Perspective view - TODO  ");
     testMenu->RegisterTest<test::TestAddingElement>     (" Adding Elements  - TODO  ");

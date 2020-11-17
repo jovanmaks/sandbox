@@ -52,14 +52,7 @@ namespace test
     }
 
     void TestKeyInput::OnUpdate(float deltaTime)
-    {
- 
-      
-          
-
-   
-
-        
+    {     
         
     }
 
