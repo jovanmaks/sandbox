@@ -143,32 +143,59 @@ tests/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/build
 .PHONY : tests/fast
 
-Application.o: Application.cpp.o
+API.o: API.cpp.o
 
-.PHONY : Application.o
+.PHONY : API.o
 
 # target to build an object file
-Application.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/Application.cpp.o
-.PHONY : Application.cpp.o
+API.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/API.cpp.o
+.PHONY : API.cpp.o
 
-Application.i: Application.cpp.i
+API.i: API.cpp.i
 
-.PHONY : Application.i
+.PHONY : API.i
 
 # target to preprocess a source file
-Application.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/Application.cpp.i
-.PHONY : Application.cpp.i
+API.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/API.cpp.i
+.PHONY : API.cpp.i
 
-Application.s: Application.cpp.s
+API.s: API.cpp.s
 
-.PHONY : Application.s
+.PHONY : API.s
 
 # target to generate assembly for a file
-Application.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/Application.cpp.s
-.PHONY : Application.cpp.s
+API.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/API.cpp.s
+.PHONY : API.cpp.s
+
+Grid.o: Grid.cpp.o
+
+.PHONY : Grid.o
+
+# target to build an object file
+Grid.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/Grid.cpp.o
+.PHONY : Grid.cpp.o
+
+Grid.i: Grid.cpp.i
+
+.PHONY : Grid.i
+
+# target to preprocess a source file
+Grid.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/Grid.cpp.i
+.PHONY : Grid.cpp.i
+
+Grid.s: Grid.cpp.s
+
+.PHONY : Grid.s
+
+# target to generate assembly for a file
+Grid.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/Grid.cpp.s
+.PHONY : Grid.cpp.s
 
 GridMatrix.o: GridMatrix.cpp.o
 
@@ -412,6 +439,33 @@ tests/TestAddingElement.s: tests/TestAddingElement.cpp.s
 tests/TestAddingElement.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/TestAddingElement.cpp.s
 .PHONY : tests/TestAddingElement.cpp.s
+
+tests/TestAssemblied1.o: tests/TestAssemblied1.cpp.o
+
+.PHONY : tests/TestAssemblied1.o
+
+# target to build an object file
+tests/TestAssemblied1.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/TestAssemblied1.cpp.o
+.PHONY : tests/TestAssemblied1.cpp.o
+
+tests/TestAssemblied1.i: tests/TestAssemblied1.cpp.i
+
+.PHONY : tests/TestAssemblied1.i
+
+# target to preprocess a source file
+tests/TestAssemblied1.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/TestAssemblied1.cpp.i
+.PHONY : tests/TestAssemblied1.cpp.i
+
+tests/TestAssemblied1.s: tests/TestAssemblied1.cpp.s
+
+.PHONY : tests/TestAssemblied1.s
+
+# target to generate assembly for a file
+tests/TestAssemblied1.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/TestAssemblied1.cpp.s
+.PHONY : tests/TestAssemblied1.cpp.s
 
 tests/TestCellSelection.o: tests/TestCellSelection.cpp.o
 
@@ -854,9 +908,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... tests"
-	@echo "... Application.o"
-	@echo "... Application.i"
-	@echo "... Application.s"
+	@echo "... API.o"
+	@echo "... API.i"
+	@echo "... API.s"
+	@echo "... Grid.o"
+	@echo "... Grid.i"
+	@echo "... Grid.s"
 	@echo "... GridMatrix.o"
 	@echo "... GridMatrix.i"
 	@echo "... GridMatrix.s"
@@ -884,6 +941,9 @@ help:
 	@echo "... tests/TestAddingElement.o"
 	@echo "... tests/TestAddingElement.i"
 	@echo "... tests/TestAddingElement.s"
+	@echo "... tests/TestAssemblied1.o"
+	@echo "... tests/TestAssemblied1.i"
+	@echo "... tests/TestAssemblied1.s"
 	@echo "... tests/TestCellSelection.o"
 	@echo "... tests/TestCellSelection.i"
 	@echo "... tests/TestCellSelection.s"

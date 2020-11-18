@@ -32,6 +32,9 @@ public:
 
    unsigned int GridValueMx( int* array,unsigned int width,unsigned int height );
    unsigned int GridVertexMx ( float* array );
+   
+   unsigned int GridVertex ( float* array );
+   
 
    unsigned int GridIndexQuads ( std::vector<unsigned int>& indices);
    unsigned int GridIndexTriangles(std::vector<unsigned int>& indices);

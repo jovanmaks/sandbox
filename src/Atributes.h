@@ -1,4 +1,4 @@
-#ifndef __ATRIBUTES_H__
+    #ifndef __ATRIBUTES_H__
 #define __ATRIBUTES_H__
 
 
@@ -9,19 +9,34 @@ private:
 public:
     unsigned  int moduo;
 
-    unsigned int GridValue = 0;
+    float GridValue = 0.5;/* VAZNO */
 
 //============== GRID - CELL ==========================
-    unsigned int width = 12;
-    unsigned int height = 8;
+
+    unsigned int rows = 1;/* VAZNO */
+    unsigned int colums = 1;/* VAZNO */
+
+    /* Isto */
+    unsigned int width = 1;
+    unsigned int height = 1;
 
 //============== GRID - VERTEX ========================= 
 
+
+    unsigned int widthVertex = rows + 1;/* VAZNO */
+    unsigned int heightVertex = colums + 1;/* VAZNO */
+
+    /* Isto */
     unsigned int GridVertexWidth = width + 1;
     unsigned int GridVertexHeight = height + 1;
 
 //============= BUFFERS - COUNT =======================
 
+    unsigned int countCoordinates = rows * colums * 8;
+    unsigned int countValues = rows * colums;
+
+
+    /* Isto */
     unsigned int indexCount= width *height * 4;
     unsigned int indexCountTriangles= width *height * 4 *1.5;
 

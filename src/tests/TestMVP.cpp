@@ -11,7 +11,7 @@ namespace test
 
     TestMVP::TestMVP()
         : m_Proj(glm::ortho(0.0f, 960.0f, 0.0f, 540.0f, -1.0f, 1.0f)), m_View(glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, 0))), 
-          m_TranslationA(500,220,0), m_RotationX(1.0f,0.0f,0.0f), m_RotationY(0.0f,1.0f,0.0f), m_RotationZ(0.0f, 0.0f, 1.0f), m_Scale(1.0f, 1.0f, 1.0f)
+          m_TranslationA(500,220,0), m_Rotation(1.0f,0.0f,0.0f), m_Scale(1.0f, 1.0f, 1.0f)
         
     {
 
@@ -66,16 +66,14 @@ namespace test
 
         Renderer renderer;
 
-
+        /* Treba da se popravi. U principu trebaju tri model matrice za tri rotacije mada jedna je trans matrica za tri translacije */
         {
         glm::mat4 model(1.0f);
         model = glm::translate( model, m_TranslationA );
+
+        model = glm::rotate   ( model, glm::radians(1.f), m_Rotation );
+
         model = glm::scale   ( model,  m_Scale );
-
-        // model = glm::rotate   ( model, glm::radians(50.f), m_RotationX );
-        // model = glm::rotate   ( model, glm::radians(0.f), m_RotationY );
-        // model = glm::rotate   ( model, glm::radians(0.f), m_RotationZ );
-
 
 
 
@@ -101,9 +99,6 @@ namespace test
             }else if( glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS){
              m_TranslationA.y += 5;
 
-             /* rotation */
-            }else if( glfwGetKey(window, GLFW_KEY_R) == GLFW_PRESS){
-             m_RotationX.x += 0.1f;     
 
              /* Scale */        
             }else if( glfwGetKey(window, GLFW_KEY_Q) == GLFW_PRESS){
@@ -112,9 +107,14 @@ namespace test
              m_Scale -= 0.1f;             
             }
 
-          
-
-           
+             /* rotation */
+            /*  else if( glfwGetKey(window, GLFW_KEY_G) == GLFW_PRESS){
+             m_RotationX.x += 0.1f;     
+            }else if( glfwGetKey(window, GLFW_KEY_H) == GLFW_PRESS){
+             m_RotationY.y += 0.1f; 
+            }else if( glfwGetKey(window, GLFW_KEY_J) == GLFW_PRESS){
+             m_RotationZ.z += 0.1f; 
+            } */
 
     }
 
@@ -124,8 +124,11 @@ namespace test
         /* Trebda da dodas model matircu */
         ImGui::Text("Use 'W A S D'  `for moving the square");
         ImGui::SliderFloat2("translationA", &m_TranslationA.x, 0.0f, 960.0f);
-        ImGui::SliderFloat2("rotationX", &m_RotationX.x, 0.0f, 960.0f);
-        ImGui::SliderFloat2("Scale", &m_Scale.x, 0.0f, 960.0f);
+
+        ImGui::SliderFloat3("rotationX", &m_Rotation.x, 0.0f, 960.0f);
+      
+
+        ImGui::SliderFloat("Scale", &m_Scale.x, 0.0f, 960.0f);
 
 
 

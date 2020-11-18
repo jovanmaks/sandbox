@@ -15,6 +15,8 @@
 #include "tests/TestAddingElement.h"
 #include "tests/TestMVP.h"
 
+#include "tests/TestAssemblied1.h"
+
 
 
 #define SCREEN_WIDTH 1400
@@ -122,12 +124,14 @@ int main (void)
     testMenu->RegisterTest<test::TestGrid>              (" Grid             ");
     testMenu->RegisterTest<test::TestColorAssign>       (" Color assign     ");
     testMenu->RegisterTest<test::TestMVP>               (" MVP              ");
+    testMenu->RegisterTest<test::TestPerspectiveView>   (" Perspective view - TODO  ");
+
+    testMenu->RegisterTest<test::TestAddingElement>     (" ASSEMBLIED 1   ");
 
 
 
     testMenu->RegisterTest<test::TestMousePosition>     (" Mouse Position   - TODO  ");
     testMenu->RegisterTest<test::TestCellSelection>     (" Cell selection   - TODO  ");
-    testMenu->RegisterTest<test::TestPerspectiveView>   (" Perspective view - TODO  ");
     testMenu->RegisterTest<test::TestAddingElement>     (" Adding Elements  - TODO  ");
 
 

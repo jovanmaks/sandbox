@@ -22,6 +22,6 @@ namespace test {
 
 
         glm::mat4 m_Proj, m_View;
-        glm::vec3 m_TranslationA, m_RotationX, m_RotationY, m_RotationZ, m_Scale;
+        glm::vec3 m_TranslationA, m_Rotation, m_Scale;
     };          
 }

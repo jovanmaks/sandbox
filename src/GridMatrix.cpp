@@ -47,6 +47,35 @@ return 0;
 
 } 
 
+//===============================================//
+      /* OVDJE RADIS ZA KOMPLETNU MATRICU */
+//===============================================//
+   unsigned int GridMatrix::GridVertex ( float* array )
+   {
+
+
+  for(int i=0; i< GridVertexHeight; i++)
+  {
+    for(int j=0; j< GridVertexWidth * 2; j++ )// *2 becouse X and Y component
+    {
+       if( (i*GridVertexWidth * 2 + j) % 2 == 0 ) //testiras da li je prvi ili drugi clan u nizu
+       array[i * GridVertexWidth * 2 + j] =  j/2;
+        
+       else       
+       array[i * GridVertexWidth * 2 + j] =  i ;
+
+    }
+  }
+
+return 0;
+
+
+
+   }
+
+
+
+
 //=============== OVO KAD SE SMILUJES DA ISPISES KAO ARRAY A NE DA SALJES KAO VEKTOR NA TEST PA DA GA PRETVARAS U ARRAY ========================
 unsigned int GridMatrix::GridIndexQuads ( std::vector<unsigned int>& indices)
 {

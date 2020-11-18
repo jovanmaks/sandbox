@@ -13,7 +13,10 @@ find_package( glfw3 REQUIRED )
 
 set( SRCS
 
-../src/Application.cpp
+# ../src/Application.cpp
+../src/API.cpp
+
+
 
 ../src/Renderer.cpp
 ../src/VertexBuffer.cpp
@@ -22,6 +25,7 @@ set( SRCS
 ../src/Shader.cpp
 ../src/Texture.cpp
 ../src/GridMatrix.cpp
+../src/Grid.cpp
 
 
 
@@ -47,6 +51,8 @@ set( SRCS
 ../src/tests/TestPerspectiveView.cpp
 ../src/tests/TestAddingElement.cpp
 ../src/tests/TestMVP.cpp
+
+../src/tests/TestAssemblied1.cpp
 
 
 

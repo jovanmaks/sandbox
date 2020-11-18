@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/tests.dir/Application.cpp.o"
+  "CMakeFiles/tests.dir/API.cpp.o"
+  "CMakeFiles/tests.dir/Grid.cpp.o"
   "CMakeFiles/tests.dir/GridMatrix.cpp.o"
   "CMakeFiles/tests.dir/IndexBuffer.cpp.o"
   "CMakeFiles/tests.dir/Renderer.cpp.o"
@@ -9,6 +10,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/tests.dir/VertexBuffer.cpp.o"
   "CMakeFiles/tests.dir/tests/Test.cpp.o"
   "CMakeFiles/tests.dir/tests/TestAddingElement.cpp.o"
+  "CMakeFiles/tests.dir/tests/TestAssemblied1.cpp.o"
   "CMakeFiles/tests.dir/tests/TestCellSelection.cpp.o"
   "CMakeFiles/tests.dir/tests/TestClearColor.cpp.o"
   "CMakeFiles/tests.dir/tests/TestColorAssign.cpp.o"
