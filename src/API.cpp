@@ -4,97 +4,50 @@
 int main()
 {
 
+/* DEKLARACIJA */
+
 grid::Buffer B;
 Atributes atr;
 
-int count = atr.countCoordinates;
 
 
+/* VERTEXI XY*/
+
+int countVertex = atr.countCoordinates;
+int countIndeks = atr.countIndeks;
 
 
-/*  */
-
-float* Niz;
-Niz  = new float[count];
-
+float* Niz = new float[countVertex];
 B.VertexBuffer_XY(Niz);
 
-std::cout<<count<<std::endl;
+/* VERTEXI XY + RGBA*/
 
-std::cout<<"pozicije:"<<std::endl;
-for(int i=0; i<count; i++)
+
+/* INDEKSI */
+
+std::vector <unsigned int> indeksi;
+B.IndexBuffer(indeksi);
+
+unsigned int* indeksiNiz = new unsigned int [countIndeks];
+indeksiNiz = &indeksi[0];//Index buffer mora biti array pa ovdje vektor pretvaras u array
+
+
+
+/* ISPIS */
+
+std::cout<<"Verteksi:"<<std::endl;
+for(int i=0; i<countVertex; i++)
     std::cout<< Niz[i] << "  ";
 
     std::cout<<std::endl;
-/*  */
 
 
-
-
-/* VERTEKSI */
-/* 
-    unsigned int BrojVertexa;
-    BrojVertexa = atr.vertexCount;
-
-    float* verteksi;
-    verteksi = new  float [BrojVertexa];
-
-    Grid.GridVertex(verteksi);
-
-    std::cout<<"verteksi Triangles:"<<std::endl;
-    //ispis na ekran
-    for(int i=0; i< BrojVertexa; i++)
-    {
-    std::cout<< verteksi[i] << "  ";
-    }
-    std::cout<< " " <<std::endl;
- */
-
-
-
-
-/* INDEKSI TRIANGLES*/
-/* 
-    std::cout<<"indeksi Triangles:"<<std::endl;
-
-     std::vector <unsigned int> indeksiTriangles;//Declarises vektor za unos koordinata  
-
-     Grid.GridIndexTriangles(indeksiTriangles);
-
-     unsigned int* indeksiNizTriangles;
-     indeksiNizTriangles = new unsigned int [BrojIndeksTriangles]; //Deklarises niz u koji ces smjestiti koordinate
-     indeksiNizTriangles = &indeksiTriangles[0];//Index buffer mora biti array pa ovdje vektor pretvaras u array
-
-    //ispis na ekran
-    for(int i=0; i<BrojIndeksTriangles; i++)
-    {
-    std::cout<< indeksiNizTriangles[i] << "  ";
-    }
-
-    std::cout<< " " <<std::endl; */
-
-
-
-
-/* INDEKSI QUADS*/
-/* 
-    std::cout<<"indeksi Quads:"<<std::endl;
-
-     std::vector <unsigned int> indeksi;//Declarises vektor za unos koordinata  
-
-     Grid.GridIndexQuads(indeksi);
-
-     unsigned int* indeksiNiz;
-     indeksiNiz = new unsigned int [BrojIndeksa]; //Deklarises niz u koji ces smjestiti koordinate
-     indeksiNiz = &indeksi[0];//Index buffer mora biti array pa ovdje vektor pretvaras u array
-
-    //ispis na ekran
-    for(int i=0; i<BrojIndeksa; i++)
-    {
+std::cout<<"Indeksi:"<<std::endl;
+for(int i=0; i<countIndeks; i++)
     std::cout<< indeksiNiz[i] << "  ";
-    }
-    std::cout<< " " <<std::endl;
- */
+
+    std::cout<<std::endl;
+ 
 
 return 0;
 }

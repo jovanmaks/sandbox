@@ -13,12 +13,12 @@ public:
 
 //============== GRID - CELL ==========================
 
-    unsigned int rows = 1;/* VAZNO */
-    unsigned int colums = 1;/* VAZNO */
+    unsigned int rows = 5;/* VAZNO */
+    unsigned int colums = 2;/* VAZNO */
 
     /* Isto */
-    unsigned int width = 1;
-    unsigned int height = 1;
+    unsigned int width = 2;
+    unsigned int height = 2;
 
 //============== GRID - VERTEX ========================= 
 
@@ -32,9 +32,11 @@ public:
 
 //============= BUFFERS - COUNT =======================
 
-    unsigned int countCoordinates = rows * colums * 8;
-    unsigned int countValues = rows * colums;
+    unsigned int countCoordinates = widthVertex * heightVertex * 2; /* VAZNO */
+    unsigned int countVerteks = widthVertex * heightVertex; /* VAZNO */
 
+    unsigned int countValues = rows * colums;
+    unsigned int countIndeks = rows * colums * 6;
 
     /* Isto */
     unsigned int indexCount= width *height * 4;

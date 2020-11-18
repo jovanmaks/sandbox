@@ -143,32 +143,32 @@ tests/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/build
 .PHONY : tests/fast
 
-API.o: API.cpp.o
+Application.o: Application.cpp.o
 
-.PHONY : API.o
+.PHONY : Application.o
 
 # target to build an object file
-API.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/API.cpp.o
-.PHONY : API.cpp.o
+Application.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/Application.cpp.o
+.PHONY : Application.cpp.o
 
-API.i: API.cpp.i
+Application.i: Application.cpp.i
 
-.PHONY : API.i
+.PHONY : Application.i
 
 # target to preprocess a source file
-API.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/API.cpp.i
-.PHONY : API.cpp.i
+Application.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/Application.cpp.i
+.PHONY : Application.cpp.i
 
-API.s: API.cpp.s
+Application.s: Application.cpp.s
 
-.PHONY : API.s
+.PHONY : Application.s
 
 # target to generate assembly for a file
-API.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/API.cpp.s
-.PHONY : API.cpp.s
+Application.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/Application.cpp.s
+.PHONY : Application.cpp.s
 
 Grid.o: Grid.cpp.o
 
@@ -908,9 +908,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... tests"
-	@echo "... API.o"
-	@echo "... API.i"
-	@echo "... API.s"
+	@echo "... Application.o"
+	@echo "... Application.i"
+	@echo "... Application.s"
 	@echo "... Grid.o"
 	@echo "... Grid.i"
 	@echo "... Grid.s"

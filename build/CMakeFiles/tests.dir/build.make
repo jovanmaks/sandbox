@@ -77,18 +77,18 @@ include CMakeFiles/tests.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/tests.dir/flags.make
 
-CMakeFiles/tests.dir/API.cpp.o: CMakeFiles/tests.dir/flags.make
-CMakeFiles/tests.dir/API.cpp.o: /home/demijan/Projects/tests/src/API.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/demijan/Projects/tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/tests.dir/API.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tests.dir/API.cpp.o -c /home/demijan/Projects/tests/src/API.cpp
+CMakeFiles/tests.dir/Application.cpp.o: CMakeFiles/tests.dir/flags.make
+CMakeFiles/tests.dir/Application.cpp.o: /home/demijan/Projects/tests/src/Application.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/demijan/Projects/tests/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/tests.dir/Application.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tests.dir/Application.cpp.o -c /home/demijan/Projects/tests/src/Application.cpp
 
-CMakeFiles/tests.dir/API.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tests.dir/API.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/demijan/Projects/tests/src/API.cpp > CMakeFiles/tests.dir/API.cpp.i
+CMakeFiles/tests.dir/Application.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tests.dir/Application.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/demijan/Projects/tests/src/Application.cpp > CMakeFiles/tests.dir/Application.cpp.i
 
-CMakeFiles/tests.dir/API.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tests.dir/API.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/demijan/Projects/tests/src/API.cpp -o CMakeFiles/tests.dir/API.cpp.s
+CMakeFiles/tests.dir/Application.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tests.dir/Application.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/demijan/Projects/tests/src/Application.cpp -o CMakeFiles/tests.dir/Application.cpp.s
 
 CMakeFiles/tests.dir/Renderer.cpp.o: CMakeFiles/tests.dir/flags.make
 CMakeFiles/tests.dir/Renderer.cpp.o: /home/demijan/Projects/tests/src/Renderer.cpp
@@ -443,7 +443,7 @@ CMakeFiles/tests.dir/tests/TestAssemblied1.cpp.s: cmake_force
 
 # Object files for target tests
 tests_OBJECTS = \
-"CMakeFiles/tests.dir/API.cpp.o" \
+"CMakeFiles/tests.dir/Application.cpp.o" \
 "CMakeFiles/tests.dir/Renderer.cpp.o" \
 "CMakeFiles/tests.dir/VertexBuffer.cpp.o" \
 "CMakeFiles/tests.dir/IndexBuffer.cpp.o" \
@@ -475,7 +475,7 @@ tests_OBJECTS = \
 # External object files for target tests
 tests_EXTERNAL_OBJECTS =
 
-tests: CMakeFiles/tests.dir/API.cpp.o
+tests: CMakeFiles/tests.dir/Application.cpp.o
 tests: CMakeFiles/tests.dir/Renderer.cpp.o
 tests: CMakeFiles/tests.dir/VertexBuffer.cpp.o
 tests: CMakeFiles/tests.dir/IndexBuffer.cpp.o

@@ -30,10 +30,10 @@ public:
     GridMatrix(/* args */);
     ~GridMatrix();
 
-   unsigned int GridValueMx( int* array,unsigned int width,unsigned int height );
-   unsigned int GridVertexMx ( float* array );
+   unsigned int GridValueMx( int* array,unsigned int width,unsigned int height );/* prebaceno */
+   unsigned int GridVertexMx ( float* array );/* prebaceno */
    
-   unsigned int GridVertex ( float* array );
+   unsigned int GridVertex ( float* array );/* prebaceno */
    
 
    unsigned int GridIndexQuads ( std::vector<unsigned int>& indices);

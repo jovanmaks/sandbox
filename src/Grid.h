@@ -1,14 +1,14 @@
 #pragma once
 #include "Atributes.h"
+#include <vector>
 
 
 
-namespace grid
+namespace grid 
 {
-    class BufferData : public Atributes
+    class BufferData  : public Atributes
     {
     private:
-
     public:
         BufferData();
         ~BufferData();
@@ -32,13 +32,14 @@ namespace grid
         Buffer(/* args */);
         ~Buffer();
 
-        float VertexBufferTest(float* array);
-
-        float VertexBuffer_XY(float* array);
-        float VertexBuffer_XYZ(float* array, float* Xpositions, float* Ypositions, float* Zpositions);
+        float VertexBuffer_XY(float* buffer);
+        float VertexBuffer_XYZ(float* buffer, float* Xpositions, float* Ypositions, float* Zpositions);
        
-        float VertexBuffer_XY_RGBA(float* array, float* Xpositions, float* Ypositions, float* R, float* G, float* B, float* A);
-        float VertexBuffer_XYZ_RGBA(float* array, float* Xpositions, float* Ypositions, float* Zposition, float* R, float* G, float* B, float* A);
+        float VertexBuffer_XY_RGBA(float* buffer, float* Xpositions, float* Ypositions, float* R, float* G, float* B, float* A);
+        float VertexBuffer_XYZ_RGBA(float* buffer, float* Xpositions, float* Ypositions, float* Zposition, float* R, float* G, float* B, float* A);
+
+        unsigned int IndexBuffer(std::vector<unsigned int>& indices);
+
 
 
     };

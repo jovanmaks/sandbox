@@ -8,11 +8,11 @@ namespace test
 {
 
  Atributes atr;
- GridMatrix grid; 
+ grid::Buffer B;
 
 
- float sirina = atr.width;
- float visina = atr.height;
+ float sirina = atr.rows;
+ float visina = atr.colums;
 
 
       
@@ -26,36 +26,33 @@ namespace test
         /* ovdje si doveo svih osam verteksa posto pravis samo jedan */
         //=============================
 
-        unsigned int BrojIndeksa;
-        BrojIndeksa = atr.indexCountTriangles;
+        int countIndeks = atr.countIndeks;
+        int countVertex = atr.countCoordinates;
 
-        unsigned int BrojVertexa;
-        BrojVertexa = atr.vertexCount;
+        int count = countVertex/2;
 
     
-        float* verteksi;
-        verteksi = new float [BrojVertexa];
-
-        grid.GridVertexMx(verteksi);
-
-        std::vector <unsigned int> indeksi;//Declarises vektor za unos koordinata  
-        grid.GridIndexTriangles(indeksi);
+        float* verteksi = new float[countVertex];
+        B.VertexBuffer_XY(verteksi);
 
 
-        unsigned int* indeksiNiz;
-        indeksiNiz = new unsigned int [BrojIndeksa]; //Deklarises niz u koji ces smjestiti koordinate
-        indeksiNiz = &indeksi[0];//Index buffer mora biti array pa ovdje vektor pretvaras u array
+        std::vector <unsigned int> indeksi;
+        B.IndexBuffer(indeksi);
+
+
+        unsigned int* indeksiNiz = new unsigned int [countIndeks];
+        indeksiNiz = &indeksi[0];
 
 
 
 
         m_VAO = std::make_unique<VertexArray>();     
-        m_VertexBuffer = std::make_unique<VertexBuffer> (verteksi, BrojVertexa * 2 * sizeof(float));
+        m_VertexBuffer = std::make_unique<VertexBuffer> (verteksi, countVertex * 2 * sizeof(float));
         VertexBufferLayout layout;
         layout.Push<float>(2);
 
         m_VAO->AddBuffer(*m_VertexBuffer, layout);
-        m_IndexBuffer = std::make_unique<IndexBuffer>(indeksiNiz, BrojIndeksa);
+        m_IndexBuffer = std::make_unique<IndexBuffer>(indeksiNiz, countIndeks);
 
         m_Shader = std::make_unique<Shader> ("../res/shaders/Basic2.shader");
         m_Shader-> Bind();

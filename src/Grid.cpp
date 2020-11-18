@@ -1,4 +1,5 @@
 #include "Grid.h"
+#include "Atributes.h"
 
 namespace grid
 {
@@ -78,6 +79,7 @@ namespace grid
         float BufferData::TextureCoordinates ( float* array )
         {
                 /* ovo ostaje da se uradi - TODO */
+                return 0;
         }
 
 
@@ -86,7 +88,7 @@ namespace grid
         {
 
             /* trebaju ti tri vrijednosti */
-
+            return 0;
         }
 
 
@@ -102,30 +104,7 @@ namespace grid
         }        
 
 
-        float Buffer::VertexBufferTest(float* array)
-        {
-            
-            int count = countCoordinates + countValues*4;
-            /*  
-            float* array;
-            array = new float [count];
-            */
-
-            for(int i=0; i<count/6; i++)
-            {
-                array[  i*6      ]= 0 ;/* za X1 poziciju  */
-                array[ (i*6) + 1 ]= 1 ;/* za Y1 poziciju  */
-                array[ (i*6) + 2 ]= 2 ;/* za R boju  */
-                array[ (i*6) + 3 ]= 3 ;/* za G boju  */
-                array[ (i*6) + 4 ]= 4 ;/* za B boju  */
-                array[ (i*6) + 5 ]= 5 ;/* za alfa kanal  */
-
-            }
-
-            return 0;    
-        }
-
-        float Buffer::VertexBuffer_XY(float* array)
+        float Buffer::VertexBuffer_XY(float* buffer)
         {
             int count = countCoordinates;
 
@@ -142,8 +121,8 @@ namespace grid
             
             for(int i=0; i<count/2; i++)
             {
-                array[  i*2      ]= Xpositions[i] ;/* za X1 poziciju  */
-                array[ (i*2) + 1 ]= Ypositions[i] ;/* za Y1 poziciju  */
+                buffer[  i*2      ]= Xpositions[i] ;/* za X1 poziciju  */
+                buffer[ (i*2) + 1 ]= Ypositions[i] ;/* za Y1 poziciju  */
 
             }
 
@@ -154,16 +133,16 @@ namespace grid
 
 
 
-        float Buffer::VertexBuffer_XYZ(float* array, float* Xpositions, float* Ypositions, float* Zpositions)
+        float Buffer::VertexBuffer_XYZ(float* buffer, float* Xpositions, float* Ypositions, float* Zpositions)
         {
             int count = countCoordinates;
             
             for(int i=0; i<count/3; i++)
             {
 
-                array[  i*3      ]= Xpositions[i] ;/* za X1 poziciju  */
-                array[ (i*3) + 1 ]= Ypositions[i] ;/* za Y1 poziciju  */
-                array[ (i*3) + 2 ]= Zpositions[i] ;/* za Z1 poziciju  */
+                buffer[  i*3      ]= Xpositions[i] ;/* za X1 poziciju  */
+                buffer[ (i*3) + 1 ]= Ypositions[i] ;/* za Y1 poziciju  */
+                buffer[ (i*3) + 2 ]= Zpositions[i] ;/* za Z1 poziciju  */
 
             }
 
@@ -172,20 +151,44 @@ namespace grid
         }
 
 
-
-
-        float VertexBuffer_XY_RGBA(float* array, float* Xpositions, float* Ypositions, float* R, float* G, float* B, float* A)
+        float Buffer::VertexBuffer_XY_RGBA(float* buffer, float* Xpositions, float* Ypositions, float* R, float* G, float* B, float* A)
         {
 
             return 0;
         }
 
-        float VertexBuffer_XYZ_RGBA(float* array, float* Xpositions, float* Ypositions, float* Zposition, float* R, float* G, float* B, float* A)
+        float Buffer::VertexBuffer_XYZ_RGBA(float* buffer, float* Xpositions, float* Ypositions, float* Zposition, float* R, float* G, float* B, float* A)
         {
 
             return 0;
         }
 
+        unsigned int Buffer::IndexBuffer( std::vector<unsigned int>& indices )
+        {
+           
+             // indices.reserve(2*(width-1) * (height-1));
+
+            for(int i = 0; i<colums; i++)
+            {
+                for(int j = 0; j<rows; j++)
+                {
+
+                int  xPos = j + i*(rows+1);
+
+                indices.push_back(xPos);
+                indices.push_back(xPos+1);
+                indices.push_back(xPos+rows +1);
+
+
+                indices.push_back(xPos+1);
+                indices.push_back(xPos + rows+2);        
+                indices.push_back(xPos + rows+1);        
+
+                }
+            }
+                      
+          return 0;
+        }
 
 
 
