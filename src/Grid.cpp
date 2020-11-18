@@ -75,6 +75,29 @@ namespace grid
         }
 
 
+        float BufferData::ColorRGB ( float* rgb)
+        {
+
+
+             for(int i=0; i<countCoordinates/2;i++)
+            {
+                rgb[i] = RGB;
+            } 
+            
+            return 0;
+        }
+
+        float BufferData::ColorAlpha ( float* alpha )
+        {
+            
+            for(int i=0; i<countCoordinates/2;i++)
+            {
+                alpha[i] = 1;
+            }
+
+            return 0;
+        }
+
         /* Texture coordinates */
         float BufferData::TextureCoordinates ( float* array )
         {
@@ -83,13 +106,7 @@ namespace grid
         }
 
 
-        /* Color values */
-        float BufferData::Color ( float* array)
-        {
-
-            /* trebaju ti tri vrijednosti */
-            return 0;
-        }
+        
 
 
 
@@ -106,7 +123,7 @@ namespace grid
 
         float Buffer::VertexBuffer_XY(float* buffer)
         {
-            int count = countCoordinates;
+            unsigned int count = countCoordinates;
 
             float* Xpositions;
             float* Ypositions;
@@ -151,10 +168,39 @@ namespace grid
         }
 
 
-        float Buffer::VertexBuffer_XY_RGBA(float* buffer, float* Xpositions, float* Ypositions, float* R, float* G, float* B, float* A)
+        float Buffer::VertexBuffer_XY_RGBA(float* buffer)
         {
 
-            return 0;
+            
+            
+            float* Xpositions = new float[countCoordinates/2];
+            float* Ypositions = new float[countCoordinates/2]; 
+
+            float* rgb = new float[countValues];            
+            float* A = new float[countValues];
+
+
+            BufferData BD;
+            BD.XPositionCoordinates(Xpositions);
+            BD.YPositionCoordinates(Ypositions);
+            BD.ColorRGB(rgb);
+            BD.ColorAlpha(A);
+            
+
+
+            for(int i=0; i<countAll/6; i++)
+            {
+                buffer[  i*6      ]= Xpositions[i] ;/* za X1 poziciju  */
+                buffer[ (i*6) + 1 ]= Ypositions[i] ;/* za Y1 poziciju  */
+                buffer[ (i*6) + 2 ]= rgb[i] ;/* za Y1 poziciju  */
+                buffer[ (i*6) + 3 ]= rgb[i] ;/* za Y1 poziciju  */
+                buffer[ (i*6) + 4 ]= rgb[i] ;/* za Y1 poziciju  */
+                buffer[ (i*6) + 5 ]= A[i] ;/* za Y1 poziciju  */
+
+
+            }
+
+            return 0;    
         }
 
         float Buffer::VertexBuffer_XYZ_RGBA(float* buffer, float* Xpositions, float* Ypositions, float* Zposition, float* R, float* G, float* B, float* A)

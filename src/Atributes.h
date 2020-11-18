@@ -10,15 +10,16 @@ public:
     unsigned  int moduo;
 
     float GridValue = 0.5;/* VAZNO */
+    float RGB       = 0.5;/* VAZNO */
 
 //============== GRID - CELL ==========================
 
-    unsigned int rows = 5;/* VAZNO */
-    unsigned int colums = 2;/* VAZNO */
+    unsigned int rows = 1;/* VAZNO */
+    unsigned int colums = 1;/* VAZNO */
 
     /* Isto */
     unsigned int width = 2;
-    unsigned int height = 2;
+    unsigned int height = 1;
 
 //============== GRID - VERTEX ========================= 
 
@@ -37,6 +38,13 @@ public:
 
     unsigned int countValues = rows * colums;
     unsigned int countIndeks = rows * colums * 6;
+
+    unsigned int countColor = countCoordinates/2 * 3;
+    unsigned int countAlfa = countCoordinates/2;
+
+
+    unsigned int countAll = countCoordinates + countColor + countAlfa;
+
 
     /* Isto */
     unsigned int indexCount= width *height * 4;

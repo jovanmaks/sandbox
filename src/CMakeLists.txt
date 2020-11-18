@@ -13,8 +13,8 @@ find_package( glfw3 REQUIRED )
 
 set( SRCS
 
-../src/Application.cpp
-# ../src/API.cpp
+# ../src/Application.cpp
+../src/API.cpp
 
 
 

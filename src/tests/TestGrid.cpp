@@ -7,18 +7,18 @@
 namespace test
 {
 
- Atributes atr;
- grid::Buffer B;
+     Atributes atr;
+     grid::Buffer B;
 
 
- float sirina = atr.rows;
- float visina = atr.colums;
+     float sirina = atr.rows;
+     float visina = atr.colums;
 
 
       
 
-    TestGrid::TestGrid()      
-          :  m_View(glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, 0))), 
+        TestGrid::TestGrid()      
+         :  m_View(glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, 0))), 
           m_TranslationA(500,220,0)  
     { 
 

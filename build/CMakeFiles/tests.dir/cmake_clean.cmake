@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/tests.dir/Application.cpp.o"
+  "CMakeFiles/tests.dir/API.cpp.o"
   "CMakeFiles/tests.dir/Grid.cpp.o"
   "CMakeFiles/tests.dir/GridMatrix.cpp.o"
   "CMakeFiles/tests.dir/IndexBuffer.cpp.o"
