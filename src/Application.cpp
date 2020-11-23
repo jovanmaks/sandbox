@@ -126,7 +126,7 @@ int main (void)
     testMenu->RegisterTest<test::TestMVP>               (" MVP              ");
     testMenu->RegisterTest<test::TestPerspectiveView>   (" Perspective view - TODO  ");
 
-    testMenu->RegisterTest<test::TestAddingElement>     (" ASSEMBLIED 1   ");
+    testMenu->RegisterTest<test::TestAssemblied1>       (" ASSEMBLIED 1   ");
 
 
 

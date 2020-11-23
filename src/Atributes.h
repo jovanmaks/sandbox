@@ -10,52 +10,40 @@ public:
     unsigned  int moduo;
 
     float GridValue = 0.5;/* VAZNO */
-    float RGB       = 0.5;/* VAZNO */
+    float RGB1      = 0.6;/* VAZNO */
+    float RGB2      = 0.6;/* VAZNO */
+
 
 //============== GRID - CELL ==========================
 
-    unsigned int rows = 1;/* VAZNO */
-    unsigned int colums = 1;/* VAZNO */
-
-    /* Isto */
-    unsigned int width = 2;
-    unsigned int height = 1;
+    unsigned int rows = 20;/* VAZNO */
+    unsigned int colums = 20;/* VAZNO */
 
 //============== GRID - VERTEX ========================= 
 
-
-    unsigned int widthVertex = rows + 1;/* VAZNO */
-    unsigned int heightVertex = colums + 1;/* VAZNO */
-
-    /* Isto */
-    unsigned int GridVertexWidth = width + 1;
-    unsigned int GridVertexHeight = height + 1;
+    unsigned int widthVertex  = rows   + 1;/* VAZNO */
+    unsigned int heightVertex = colums + 1;/* VAZNO */  
 
 //============= BUFFERS - COUNT =======================
 
-    unsigned int countCoordinates = widthVertex * heightVertex * 2; /* VAZNO */
-    unsigned int countVerteks = widthVertex * heightVertex; /* VAZNO */
+    unsigned int countVerteks           = widthVertex * heightVertex; /* VAZNO */
+    unsigned int countCoordinatesXY     = widthVertex * heightVertex * 2; /* VAZNO */
+    unsigned int countCoordinatesXYZ    = widthVertex * heightVertex * 3; /* VAZNO */
+
 
     unsigned int countValues = rows * colums;
     unsigned int countIndeks = rows * colums * 6;
 
-    unsigned int countColor = countCoordinates/2 * 3;
-    unsigned int countAlfa = countCoordinates/2;
+    unsigned int countSingleColor = countVerteks;
+    unsigned int countAlfa        = countVerteks;
+    unsigned int countColor       = countVerteks * 3;
 
 
-    unsigned int countAll = countCoordinates + countColor + countAlfa;
+    unsigned int countAllXY  = countCoordinatesXY  + countColor + countAlfa;
+    unsigned int countAllXYZ = countCoordinatesXYZ + countColor + countAlfa;
 
 
-    /* Isto */
-    unsigned int indexCount= width *height * 4;
-    unsigned int indexCountTriangles= width *height * 4 *1.5;
 
-    unsigned int vertexCount = GridVertexWidth * GridVertexHeight *2;
-    /*
-    it goes * 2 becouse each vertex has 2 component (X and Y)
-    */
-
-    unsigned int GridVertexCount = GridVertexWidth * GridVertexHeight * 2; 
 
 //======================================================
 ////// ovo jos nije odradjeno //////

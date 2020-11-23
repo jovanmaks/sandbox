@@ -35,11 +35,11 @@ namespace grid
         Buffer(/* args */);
         ~Buffer();
 
-        float VertexBuffer_XY(float* buffer);
-        float VertexBuffer_XYZ(float* buffer, float* Xpositions, float* Ypositions, float* Zpositions);
+        float VertexBuffer_XY(float* bufferXY);
+        float VertexBuffer_XYZ(float* bufferXYZ);
        
-        float VertexBuffer_XY_RGBA(float* buffer );
-        float VertexBuffer_XYZ_RGBA(float* buffer, float* Xpositions, float* Ypositions, float* Zposition, float* R, float* G, float* B, float* A);
+        float VertexBuffer_XY_RGBA(float* bufferXY_RGBA );
+        float VertexBuffer_XYZ_RGBA(float* bufferXYZ_RGBA);
 
         unsigned int IndexBuffer(std::vector<unsigned int>& indices);
 

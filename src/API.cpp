@@ -6,60 +6,103 @@ int main()
 
 /* DEKLARACIJA */
 
-grid::BufferData BD;
-grid::Buffer     B;
-Atributes        atr;
+grid::BufferData BD2;
+grid::Buffer     B2;
+Atributes        atr2;
 
-int countVertex = atr.countCoordinates;
-int countIndeks = atr.countIndeks;
+int countVertexXY = atr2.countCoordinatesXY;
+int countVertexXYZ = atr2.countCoordinatesXYZ;
 
-int countBoja = atr.countAll;
+
+int countIndeks = atr2.countIndeks;
+
+
+
+int countRGB_XY = atr2.countAllXY;
+int countRGB_XYZ = atr2.countAllXYZ;
+
 
 
 /* VERTEXI XY*/
 
 
-float* Niz = new float[countVertex];
-B.VertexBuffer_XY(Niz);
+float* NizXY = new float[countVertexXY];
+B2.VertexBuffer_XY(NizXY);
+
+/* VERTEXI XYZ*/
+
+float* NizXYZ = new float[countVertexXYZ];
+B2.VertexBuffer_XYZ(NizXYZ);
+
+
 
 /* VERTEXI XY + RGBA*/
 
-float* NizSve = new float[countBoja];
-B.VertexBuffer_XY_RGBA(NizSve);
+float* NizXY_RGB = new float[countRGB_XY];
+B2.VertexBuffer_XY_RGBA(NizXY_RGB);
+
+/* VERTEXI XYZ + RGBA*/
+
+float* NizXYZ_RGB = new float[countRGB_XYZ];
+B2.VertexBuffer_XYZ_RGBA(NizXYZ_RGB);
 
 
 
-/* INDEKSI */
+// /* INDEKSI */
 std::vector <unsigned int> indeksi;
-B.IndexBuffer(indeksi);
+B2.IndexBuffer(indeksi);
 
 unsigned int* indeksiNiz = new unsigned int [countIndeks];
 indeksiNiz = &indeksi[0];//Index buffer mora biti array pa ovdje vektor pretvaras u array
 
-/* R G B */
-float* Boja = new float [countVertex/2];
-BD.ColorRGB ( Boja );
+// /* R G B */
+// float* Boja = new float [countVertex/2];
+// BD.ColorRGB ( Boja );
 
 
-/* ALFA */
-float* Alfa = new float [countVertex/2];
-BD.ColorAlpha( Alfa );
+// /* ALFA */
+// float* Alfa = new float [countVertex/2];
+// BD.ColorAlpha( Alfa );
+
+
 
 
 /* ISPIS */
 
-std::cout<<"Verteksi:"<<std::endl;
-for(int i=0; i<countVertex; i++)
-    std::cout<< Niz[i] << "  ";
+std::cout<<"XY Bufer:"<<std::endl;
+for(int i=0; i<countVertexXY; i++)
+    std::cout<< NizXY[i] << "  ";
+
+    std::cout<<std::endl;
+
+std::cout<<"XYZ Bufer:"<<std::endl;
+for(int i=0; i<countVertexXYZ; i++)
+    std::cout<< NizXYZ[i] << "  ";
 
     std::cout<<std::endl;
 
 
-std::cout<<"Indeksi:"<<std::endl;
+std::cout<<"XY_RGBA Bufer:"<<std::endl;
+for(int i=0; i<countRGB_XY; i++)
+    std::cout<< NizXY_RGB[i] << "  ";
+
+    std::cout<<std::endl;
+
+
+std::cout<<"XYZ_RGBA Bufer:"<<std::endl;
+for(int i=0; i<countRGB_XYZ; i++)
+    std::cout<< NizXYZ_RGB[i] << "  ";
+
+    std::cout<<std::endl;
+
+
+    std::cout<<std::endl;
+ std::cout<<"Indeksi:"<<std::endl;
 for(int i=0; i<countIndeks; i++)
     std::cout<< indeksiNiz[i] << "  ";
 
     std::cout<<std::endl;
+/* 
  
 
 std::cout<<"R G B:"<<std::endl;
@@ -77,14 +120,7 @@ for(int i=0; i<countVertex/2; i++)
 
 
 
-std::cout<<"Spojeno:"<<std::endl;
-for(int i=0; i<countBoja; i++)
-    std::cout<< NizSve[i] << "  ";
-
-    std::cout<<std::endl;
-
-
-
+ */
 
 return 0;
 }

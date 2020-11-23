@@ -7,39 +7,39 @@
 namespace test
 {
 
-     Atributes atr;
-     grid::Buffer B;
-
-
-     float sirina = atr.rows;
-     float visina = atr.colums;
+    Atributes atr2;
+    grid::Buffer B2;
+    float sirina = atr2.rows;
+    float visina = atr2.colums;
 
 
       
 
-        TestGrid::TestGrid()      
-         :  m_View(glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, 0))), 
-          m_TranslationA(500,220,0)  
+    TestGrid::TestGrid()      
+    : m_View(glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, 0))), 
+    m_TranslationA(500,220,0)  
     { 
 
         //=============================
         /* ovdje si doveo svih osam verteksa posto pravis samo jedan */
         //=============================
 
-        int countIndeks = atr.countIndeks;
-        int countVertex = atr.countCoordinates;
 
-        int count = countVertex/2;
+        // int count = countVertex/2;
+
 
     
+        int countVertex = atr2.countCoordinatesXY;
         float* verteksi = new float[countVertex];
-        B.VertexBuffer_XY(verteksi);
+        B2.VertexBuffer_XY(verteksi);
+
 
 
         std::vector <unsigned int> indeksi;
-        B.IndexBuffer(indeksi);
+        B2.IndexBuffer(indeksi);
 
 
+        int countIndeks = atr2.countIndeks;
         unsigned int* indeksiNiz = new unsigned int [countIndeks];
         indeksiNiz = &indeksi[0];
 

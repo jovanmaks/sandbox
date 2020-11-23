@@ -79,9 +79,12 @@ namespace grid
         {
 
 
-             for(int i=0; i<countCoordinates/2;i++)
+             for(int i=0; i<countSingleColor/2;i++)
             {
-                rgb[i] = RGB;
+                
+                rgb[i*2] = RGB1;
+                rgb[i*2 + 1] = RGB2;
+
             } 
             
             return 0;
@@ -90,7 +93,7 @@ namespace grid
         float BufferData::ColorAlpha ( float* alpha )
         {
             
-            for(int i=0; i<countCoordinates/2;i++)
+            for(int i=0; i<countAlfa;i++)
             {
                 alpha[i] = 1;
             }
@@ -104,9 +107,7 @@ namespace grid
                 /* ovo ostaje da se uradi - TODO */
                 return 0;
         }
-
-
-        
+       
 
 
 
@@ -121,25 +122,46 @@ namespace grid
         }        
 
 
-        float Buffer::VertexBuffer_XY(float* buffer)
-        {
-            unsigned int count = countCoordinates;
+        float Buffer::VertexBuffer_XY(float* bufferXY)
+        {       
 
-            float* Xpositions;
-            float* Ypositions;
-
-
-            Xpositions = new float[count/2];
-            Ypositions = new float[count/2];
+           float* Xpositions = new float[countVerteks];
+           float* Ypositions = new float[countVerteks];
 
             BufferData BD;
             BD.XPositionCoordinates(Xpositions);
             BD.YPositionCoordinates(Ypositions);
             
-            for(int i=0; i<count/2; i++)
+            for(int i=0; i<countCoordinatesXY/2; i++)
             {
-                buffer[  i*2      ]= Xpositions[i] ;/* za X1 poziciju  */
-                buffer[ (i*2) + 1 ]= Ypositions[i] ;/* za Y1 poziciju  */
+                bufferXY[  i*2      ]= Xpositions[i] ;/* za X1 poziciju  */
+                bufferXY[ (i*2) + 1 ]= Ypositions[i] ;/* za Y1 poziciju  */
+
+            }
+
+            return 0;    
+        }
+
+
+        float Buffer::VertexBuffer_XYZ(float* bufferXYZ)
+        {
+
+            float* Xpositions = new float[countVerteks];
+            float* Ypositions = new float[countVerteks];
+            float* Zpositions = new float[countVerteks];
+
+            BufferData BD;
+            BD.XPositionCoordinates(Xpositions);
+            BD.YPositionCoordinates(Ypositions);
+            BD.ZPositionCoordinates(Zpositions);
+
+            
+            for(int i=0; i<countCoordinatesXYZ/3; i++)
+            {
+
+                bufferXYZ[  i*3      ]= Xpositions[i] ;/* za X1 poziciju  */
+                bufferXYZ[ (i*3) + 1 ]= Ypositions[i] ;/* za Y1 poziciju  */
+                bufferXYZ[ (i*3) + 2 ]= Zpositions[i] ;/* za Z1 poziciju  */                 
 
             }
 
@@ -148,36 +170,14 @@ namespace grid
         }
 
 
-
-
-        float Buffer::VertexBuffer_XYZ(float* buffer, float* Xpositions, float* Ypositions, float* Zpositions)
-        {
-            int count = countCoordinates;
+        float Buffer::VertexBuffer_XY_RGBA(float* bufferXY_RGBA)
+        {            
             
-            for(int i=0; i<count/3; i++)
-            {
+            float* Xpositions = new float[countVerteks];
+            float* Ypositions = new float[countVerteks]; 
 
-                buffer[  i*3      ]= Xpositions[i] ;/* za X1 poziciju  */
-                buffer[ (i*3) + 1 ]= Ypositions[i] ;/* za Y1 poziciju  */
-                buffer[ (i*3) + 2 ]= Zpositions[i] ;/* za Z1 poziciju  */
-
-            }
-
-            return 0;    
-
-        }
-
-
-        float Buffer::VertexBuffer_XY_RGBA(float* buffer)
-        {
-
-            
-            
-            float* Xpositions = new float[countCoordinates/2];
-            float* Ypositions = new float[countCoordinates/2]; 
-
-            float* rgb = new float[countValues];            
-            float* A = new float[countValues];
+            float* rgb = new float[countSingleColor];            
+            float* A   = new float[countAlfa];
 
 
             BufferData BD;
@@ -188,25 +188,56 @@ namespace grid
             
 
 
-            for(int i=0; i<countAll/6; i++)
+            for(int i=0; i<countAllXY/6; i++)
             {
-                buffer[  i*6      ]= Xpositions[i] ;/* za X1 poziciju  */
-                buffer[ (i*6) + 1 ]= Ypositions[i] ;/* za Y1 poziciju  */
-                buffer[ (i*6) + 2 ]= rgb[i] ;/* za Y1 poziciju  */
-                buffer[ (i*6) + 3 ]= rgb[i] ;/* za Y1 poziciju  */
-                buffer[ (i*6) + 4 ]= rgb[i] ;/* za Y1 poziciju  */
-                buffer[ (i*6) + 5 ]= A[i] ;/* za Y1 poziciju  */
-
+                bufferXY_RGBA[  i*6      ]= Xpositions[i] ;/* za X1 poziciju  */
+                bufferXY_RGBA[ (i*6) + 1 ]= Ypositions[i] ;/* za Y1 poziciju  */
+                bufferXY_RGBA[ (i*6) + 2 ]= rgb[i] ;/* za Y1 poziciju  */
+                bufferXY_RGBA[ (i*6) + 3 ]= rgb[i] ;/* za Y1 poziciju  */
+                bufferXY_RGBA[ (i*6) + 4 ]= rgb[i] ;/* za Y1 poziciju  */
+                bufferXY_RGBA[ (i*6) + 5 ]= A[i] ;/* za Y1 poziciju  */
 
             }
 
             return 0;    
         }
 
-        float Buffer::VertexBuffer_XYZ_RGBA(float* buffer, float* Xpositions, float* Ypositions, float* Zposition, float* R, float* G, float* B, float* A)
+        float Buffer::VertexBuffer_XYZ_RGBA(float* bufferXYZ_RGBA)
         {
 
-            return 0;
+            
+            float* Xpositions = new float[countVerteks];
+            float* Ypositions = new float[countVerteks];
+            float* Zpositions = new float[countVerteks];
+
+
+            float* rgb = new float[countSingleColor];            
+            float* A = new float[countAlfa];
+
+
+            BufferData BD;
+            BD.XPositionCoordinates(Xpositions);
+            BD.YPositionCoordinates(Ypositions);
+            BD.ColorRGB(rgb);
+            BD.ColorAlpha(A);
+            
+
+
+            for(int i=0; i<countAllXYZ/7; i++)
+            {
+                bufferXYZ_RGBA[  i*7      ]= Xpositions[i] ;/* za X1 poziciju  */
+                bufferXYZ_RGBA[ (i*7) + 1 ]= Ypositions[i] ;/* za Y1 poziciju  */
+                bufferXYZ_RGBA[ (i*7) + 2 ]= Zpositions[i] ;/* za Y1 poziciju  */
+
+                bufferXYZ_RGBA[ (i*7) + 3 ]= rgb[i] ;/* za Y1 poziciju  */
+                bufferXYZ_RGBA[ (i*7) + 4 ]= rgb[i] ;/* za Y1 poziciju  */
+                bufferXYZ_RGBA[ (i*7) + 5 ]= rgb[i] ;/* za Y1 poziciju  */
+                bufferXYZ_RGBA[ (i*7) + 6 ]= A[i] ;/* za Y1 poziciju  */
+
+
+            }
+
+            return 0; 
         }
 
         unsigned int Buffer::IndexBuffer( std::vector<unsigned int>& indices )

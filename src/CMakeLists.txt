@@ -13,8 +13,8 @@ find_package( glfw3 REQUIRED )
 
 set( SRCS
 
-# ../src/Application.cpp
-../src/API.cpp
+../src/Application.cpp
+# ../src/API.cpp
 
 
 
@@ -24,7 +24,7 @@ set( SRCS
 ../src/VertexArray.cpp
 ../src/Shader.cpp
 ../src/Texture.cpp
-../src/GridMatrix.cpp
+# ../src/GridMatrix.cpp
 ../src/Grid.cpp
 
 
