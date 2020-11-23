@@ -71,7 +71,7 @@ namespace test
 
     }
 
-    void TestColorAssign::OnRender(GLFWwindow* window)
+    void TestColorAssign::OnRender(GLFWwindow* window,int* frameBufferWidth,int* frameBufferHeight)
     {
 
  

@@ -12,7 +12,7 @@ namespace test {
         ~TestTexture2D();
 
         void OnUpdate(float deltaTime) override;
-        void OnRender(GLFWwindow* window) override;
+        void OnRender(GLFWwindow* window,int* frameBufferWidth,int* frameBufferHeight) override;
         void OnImGuiRender() override;  
     private:
         std::unique_ptr<VertexArray>     m_VAO;

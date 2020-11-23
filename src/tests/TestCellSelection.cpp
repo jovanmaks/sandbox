@@ -24,7 +24,7 @@ namespace test
 
     }
 
-    void TestCellSelection::OnRender(GLFWwindow* window)
+    void TestCellSelection::OnRender(GLFWwindow* window,int* frameBufferWidth,int* frameBufferHeight)
     {
 
         GLCall(glClearColor(m_ClearColor[0], m_ClearColor[1], m_ClearColor[2], m_ClearColor[3])); 

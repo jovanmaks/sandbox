@@ -26,7 +26,7 @@ namespace test
         virtual ~Test(){}
 
         virtual void OnUpdate( float deltaTime) {}
-        virtual void OnRender(GLFWwindow* window){ }
+        virtual void OnRender(GLFWwindow* window, int* frameBufferWidth,int* frameBufferHeight){ }
         virtual void OnImGuiRender() {}
     };
     

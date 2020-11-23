@@ -56,7 +56,7 @@ namespace test
         
     }
 
-    void TestKeyInput::OnRender(GLFWwindow* window)
+    void TestKeyInput::OnRender(GLFWwindow* window,int* frameBufferWidth,int* frameBufferHeight)
     {
 
         GLCall(glClearColor( 0.0f, 0.0f, 0.0f, 1.0f )); 

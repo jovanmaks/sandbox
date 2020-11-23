@@ -19,7 +19,7 @@
 
 
 
-#define SCREEN_WIDTH 1400
+#define SCREEN_WIDTH 800
 #define SCREEN_HEIGHT 800
 
 
@@ -47,8 +47,8 @@ void updateInput(GLFWwindow* window)
 
 int main (void)
 {
-    int frameBufferWidth = 0;
-    int frameBufferHeight = 0;
+        int frameBufferWidth = 0;
+        int frameBufferHeight = 0;
 
     /* Setting up OpenGL and GLFW */
     GLFWwindow* window;
@@ -73,10 +73,9 @@ int main (void)
     }
 
 
+    glfwGetFramebufferSize(window, &frameBufferWidth, &frameBufferHeight);
     glfwSetFramebufferSizeCallback(window, framebuffer_resize_callback);
-    // glfwGetFramebufferSize(window, &frameBufferWidth, &frameBufferHeight);
     // glViewport(0, 0, frameBufferWidth, frameBufferHeight);
-
     
     glfwMakeContextCurrent(window);
 
@@ -118,21 +117,21 @@ int main (void)
     currentTest = testMenu; 
 
 
-    testMenu->RegisterTest<test::TestClearColor>        (" Clear Color      ");
-    testMenu->RegisterTest<test::TestTexture2D>         (" Texture 2D       ");
-    testMenu->RegisterTest<test::TestKeyInput>          (" Key Input        ");
-    testMenu->RegisterTest<test::TestGrid>              (" Grid             ");
-    testMenu->RegisterTest<test::TestColorAssign>       (" Color assign     ");
-    testMenu->RegisterTest<test::TestMVP>               (" MVP              ");
-    testMenu->RegisterTest<test::TestPerspectiveView>   (" Perspective view - TODO  ");
+    // testMenu->RegisterTest<test::TestClearColor>        (" Clear Color      ");
+    // testMenu->RegisterTest<test::TestTexture2D>         (" Texture 2D       ");
+    // testMenu->RegisterTest<test::TestKeyInput>          (" Key Input        ");
+    // testMenu->RegisterTest<test::TestGrid>              (" Grid             ");
+    // testMenu->RegisterTest<test::TestColorAssign>       (" Color assign     ");
+    // testMenu->RegisterTest<test::TestMVP>               (" MVP              ");
+    // testMenu->RegisterTest<test::TestPerspectiveView>   (" Perspective view - TODO  ");
 
     testMenu->RegisterTest<test::TestAssemblied1>       (" ASSEMBLIED 1   ");
 
 
 
-    testMenu->RegisterTest<test::TestMousePosition>     (" Mouse Position   - TODO  ");
-    testMenu->RegisterTest<test::TestCellSelection>     (" Cell selection   - TODO  ");
-    testMenu->RegisterTest<test::TestAddingElement>     (" Adding Elements  - TODO  ");
+    // testMenu->RegisterTest<test::TestMousePosition>     (" Mouse Position   - TODO  ");
+    // testMenu->RegisterTest<test::TestCellSelection>     (" Cell selection   - TODO  ");
+    // testMenu->RegisterTest<test::TestAddingElement>     (" Adding Elements  - TODO  ");
 
 
     /* Main while loop */
@@ -153,7 +152,7 @@ int main (void)
         {
 
             currentTest->OnUpdate(0.0f);
-            currentTest-> OnRender( window);
+            currentTest-> OnRender( window, &frameBufferWidth, &frameBufferHeight);
 
             /* ImGui UI */
             ImGui::Begin("Test");

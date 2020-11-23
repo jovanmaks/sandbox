@@ -55,7 +55,7 @@ namespace test
 
     }
 
-    void TestMousePosition::OnRender(GLFWwindow* window)
+    void TestMousePosition::OnRender(GLFWwindow* window,int* frameBufferWidth,int* frameBufferHeight)
     {
 
         GLCall(glClearColor( 0.0f, 0.0f, 0.0f, 1.0f )); 
