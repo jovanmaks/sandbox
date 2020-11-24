@@ -17,7 +17,7 @@ namespace test
 
     TestAssemblied1::TestAssemblied1()
     : m_View(glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, 0))), 
-    m_TranslationA(0.0f,0.6f,0.0f), m_Rotation(0.f,0.f,0.01f), m_Scale(-0.02f, -0.02f, -0.02f)
+    m_TranslationA(0.0f,0.3f,0.0f), m_Rotation(0.f,0.f,0.01f), m_Scale(-0.01f, -0.01f, -0.01f)
     {
 
         /* 
@@ -56,12 +56,12 @@ namespace test
 
         m_Shader = std::make_unique<Shader> ("../res/shaders/Basic2.shader");
         m_Shader-> Bind();
-        m_Shader->SetUniform4f("u_Color", 0.8f, 0.4f, 0.2f, 1.0f );
+        m_Shader->SetUniform4f("u_Color", 0.2f, 0.4f, 0.6f, 1.0f );
 
 
         m_Shader2 = std::make_unique<Shader> ("../res/shaders/Basic2.shader");
         m_Shader2-> Bind();
-        m_Shader2->SetUniform4f("u_Color", 0.2f, 0.8f, 0.8f, 1.0f );
+        m_Shader2->SetUniform4f("u_Color", 0.1f, 0.1f, 0.1f, 1.0f );
 
 
 
@@ -128,58 +128,22 @@ namespace test
 
            glm::mat4 mvp = m_Proj * m_View * model;       
 
+            //Filled mesh
            m_Shader -> Bind(); 
            m_Shader -> SetUniformMat4f("u_MVP", mvp);
            renderer.Draw(*m_VAO, *m_IndexBuffer, *m_Shader);
-        }
 
 
-        GLCall(glPolygonMode(GL_FRONT_AND_BACK, GL_LINE));// GL_FRONT, GL_FRONT_AND_BACK...  GL_FILL  GL_LINE  GL_POINT
-          //mora biti 'm v p ' redoslijed kad ih gradis
-        {    
-
-
-            /* Model matrix. mora da ide t r s redoslijed kad ih gradis*/
-           glm::mat4 model(1.0f);//identity matrux with 1 diagonal
-           model = glm::translate( model, m_TranslationA );
-           model = glm::rotate   ( model, glm::radians(45.f), m_Rotation );
-           model = glm::scale    ( model,  m_Scale );
-
-
-            /* Viev matrix */            
-           glm::vec3 camPosition(0.f, 0.f, 2.f);
-           glm::vec3 worldUp(0.f, 1.f, 0.f);
-           glm::vec3 camFront(0.f, 0.f, -1.f);
-           glm::mat4 m_View(1.0);
-           m_View = glm::lookAt(camPosition, camPosition +camFront, worldUp);
-
-
-            /* Projection matrix */
-           
-           float fov = 35.f;
-           float nearPlane = 0.1f;
-           float farPlane = 100.f;
-
-             int r1 = *frameBufferWidth;
-             int r2 = *frameBufferHeight;
-            float ratio = r1/r2;
-
-           glfwGetFramebufferSize(window, &r1, &r2);
-
-           glm::mat4 m_Proj (1.0f);
-        //    m_Proj = glm::ortho(0.0f, width , 0.0f, height, -1.0f, 1.0f);
-            m_Proj = glm::perspective(glm::radians(fov), 
-            static_cast<float>(ratio), nearPlane, farPlane);
-
-
-
-           glm::mat4 mvp = m_Proj * m_View * model;       
-
+            //Wires over filled mesh
+           GLCall(glPolygonMode(GL_FRONT_AND_BACK, GL_LINE));// GL_FRONT, GL_FRONT_AND_BACK...  GL_FILL  GL_LINE  GL_POINT
            m_Shader2 -> Bind(); 
            m_Shader2 -> SetUniformMat4f("u_MVP", mvp);
            renderer.Draw(*m_VAO, *m_IndexBuffer, *m_Shader2);
+
         }
 
+
+       
 
           
 
@@ -188,19 +152,19 @@ namespace test
                  /* Translation */
             if(glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS) 
             {         
-            m_TranslationA.x -= 0.1f;
+            m_TranslationA.x -= 0.03f;
             }else if( glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS){
-             m_TranslationA.x += 0.1f;
+             m_TranslationA.x += 0.03f;
             }else if( glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS){
-             m_TranslationA.y += 0.1f;
+             m_TranslationA.y += 0.03f;
             }else if( glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS){
-             m_TranslationA.y -= 0.1f;
+             m_TranslationA.y -= 0.03f;
             
                    /* Scale */        
             }else if( glfwGetKey(window, GLFW_KEY_Q) == GLFW_PRESS){
-             m_Scale += 0.01f;             
+             m_Scale += 0.001f;             
             }else if( glfwGetKey(window, GLFW_KEY_E) == GLFW_PRESS){
-             m_Scale -= 0.01f;             
+             m_Scale -= 0.001f;             
              
 
                  /* Rotation */
