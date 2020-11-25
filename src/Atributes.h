@@ -16,8 +16,8 @@ public:
 
 //============== GRID - CELL ==========================
 
-    unsigned int rows = 50;/* VAZNO */
-    unsigned int colums = 50;/* VAZNO */
+    unsigned int rows = 10;/* VAZNO */
+    unsigned int colums = 10;/* VAZNO */
 
 //============== GRID - VERTEX ========================= 
 

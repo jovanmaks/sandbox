@@ -7,11 +7,11 @@
 
 namespace test {
 
-    class TestAssemblied1 : public Test
+    class TestIris : public Test
     {
     public:
-        TestAssemblied1();
-        ~TestAssemblied1();
+        TestIris();
+        ~TestIris();
 
         void OnUpdate(float deltaTime) override;
         void OnRender(GLFWwindow* window,int* frameBufferWidth,int* frameBufferHeight) override;

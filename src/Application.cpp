@@ -16,11 +16,18 @@
 #include "tests/TestMVP.h"
 
 #include "tests/TestAssemblied1.h"
+#include "tests/TestIris.h"
 
 
 
 #define SCREEN_WIDTH 800
 #define SCREEN_HEIGHT 800
+
+
+void cursorPositionCallback ( GLFWwindow *window, double xPos, double yPos)
+{
+    std::cout<< xPos << "   :   " << yPos << std::endl;
+}
 
 
 void framebuffer_resize_callback(GLFWwindow* window, int fbW, int fbH)
@@ -53,6 +60,7 @@ int main (void)
     /* Setting up OpenGL and GLFW */
     GLFWwindow* window;
 
+
     if (!glfwInit())
         return -1;
 
@@ -66,6 +74,8 @@ int main (void)
 
     window = glfwCreateWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "sandbox", NULL, NULL);
 
+    glfwSetCursorPosCallback( window, cursorPositionCallback );
+    
     if(!window)
     {
         glfwTerminate();
@@ -116,6 +126,8 @@ int main (void)
     test::TestMenu* testMenu = new test::TestMenu( currentTest );
     currentTest = testMenu; 
 
+    testMenu->RegisterTest<test::TestAssemblied1>       (" PASULJKO       ");
+    testMenu->RegisterTest<test::TestIris>              (" IRIS           ");
 
     // testMenu->RegisterTest<test::TestClearColor>        (" Clear Color      ");
     // testMenu->RegisterTest<test::TestTexture2D>         (" Texture 2D       ");
@@ -125,7 +137,7 @@ int main (void)
     // testMenu->RegisterTest<test::TestMVP>               (" MVP              ");
     // testMenu->RegisterTest<test::TestPerspectiveView>   (" Perspective view - TODO  ");
 
-    testMenu->RegisterTest<test::TestAssemblied1>       (" ASSEMBLIED 1   ");
+
 
 
 
@@ -196,3 +208,8 @@ int main (void)
     return 0;
 
 }
+
+/* static void cursorPositionCallback( GLFWwindow *window, double xPos, double yPos )
+{
+    std::cout<< xPos << "   :   " <<yPos<<std::endl;
+} */

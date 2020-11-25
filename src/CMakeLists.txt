@@ -53,6 +53,7 @@ set( SRCS
 ../src/tests/TestMVP.cpp
 
 ../src/tests/TestAssemblied1.cpp
+../src/tests/TestIris.cpp
 
 
 

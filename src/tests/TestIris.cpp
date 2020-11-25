@@ -1,4 +1,4 @@
-#include "TestAssemblied1.h"
+#include "TestIris.h"
 
 #include "../Renderer.h"
 #include "../vendor/imgui/imgui.h"
@@ -7,17 +7,17 @@
 namespace test
 {
 
-    Atributes atr;
-    grid::Buffer B;
-    float width = atr.rows;
-    float height = atr.colums;
+    Atributes atrIris;
+    grid::Buffer BIrisi;
+    float widthIris = atrIris.rows;
+    float heightIris = atrIris.colums;
 
 
  
 
-    TestAssemblied1::TestAssemblied1()
+    TestIris::TestIris()
     : m_View(glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, 0))), 
-    m_TranslationA(0.0f,0.0f,0.0f), m_Rotation(2.f,0.f,0.f), m_Scale(1.f, 1.f, 1.f)
+    m_TranslationA(0.0f,0.4f,0.0f), m_Rotation(0.f,0.f,0.01f), m_Scale(-0.06f, -0.06f, -0.06f)
     {
 
         /* 
@@ -27,16 +27,16 @@ namespace test
         */
 
 
-        int countVertexXYZ = atr.countCoordinatesXYZ;
+        int countVertexXYZ = atrIris.countCoordinatesXYZ;
         float* verteksi2 = new float[countVertexXYZ];
-        B.VertexBuffer_XYZ( verteksi2);
+        BIrisi.VertexBuffer_XYZ( verteksi2);
 
         std::vector <unsigned int> indeksi;
-        B.IndexBuffer( indeksi );
+        BIrisi.IndexBuffer( indeksi );
 
 
 
-        int countIndeks = atr.countIndeks;
+        int countIndeks = atrIris.countIndeks;
         unsigned int* indeksiNiz = new unsigned int [countIndeks];
         indeksiNiz = &indeksi[0];
 
@@ -81,15 +81,15 @@ namespace test
 
     }
 
-    TestAssemblied1::~TestAssemblied1()
+    TestIris::~TestIris()
     {
     }
 
-    void TestAssemblied1::OnUpdate(float deltaTime)
+    void TestIris::OnUpdate(float deltaTime)
     {
     }
 
-    void TestAssemblied1::OnRender(GLFWwindow* window,int* frameBufferWidth,int* frameBufferHeight)
+    void TestIris::OnRender(GLFWwindow* window,int* frameBufferWidth,int* frameBufferHeight)
     {  
 
         GLCall(glClearColor( 0.0f, 0.0f, 0.0f, 1.0f )); 
@@ -99,8 +99,6 @@ namespace test
 
         GLCall(glPolygonMode(GL_FRONT_AND_BACK, GL_FILL));// GL_FRONT, GL_FRONT_AND_BACK...  GL_FILL  GL_LINE  GL_POINT
 
-
-        
 
         //mora biti 'm v p ' redoslijed kad ih gradis
         {    
@@ -133,9 +131,9 @@ namespace test
 
            glfwGetFramebufferSize(window, &r1, &r2);
 
-        //    glm::mat4 m_Proj (1.0f);
-           glm::mat4 m_Proj = glm::ortho(0.0f, width , 0.0f, height, -1.0f, 1.0f);
-            // m_Proj = glm::perspective(glm::radians(fov), static_cast<float>(ratio), nearPlane, farPlane);
+           glm::mat4 m_Proj (1.0f);
+        //    m_Proj = glm::ortho(0.0f, width , 0.0f, height, -1.0f, 1.0f);
+            m_Proj = glm::perspective(glm::radians(fov), static_cast<float>(ratio), nearPlane, farPlane);
 
 
 
@@ -143,52 +141,22 @@ namespace test
 
             //Filled mesh
            m_Shader -> Bind(); 
-           m_Shader -> SetUniformMat4f("u_MVP", m_Proj);
+           m_Shader -> SetUniformMat4f("u_MVP", mvp);
            renderer.Draw(*m_VAO, *m_IndexBuffer2, *m_Shader);
 
 
             //Wires over filled mesh
            GLCall(glPolygonMode(GL_FRONT_AND_BACK, GL_LINE));// GL_FRONT, GL_FRONT_AND_BACK...  GL_FILL  GL_LINE  GL_POINT
            m_Shader2 -> Bind(); 
-           m_Shader2 -> SetUniformMat4f("u_MVP", m_Proj);
+           m_Shader2 -> SetUniformMat4f("u_MVP", mvp);
            renderer.Draw(*m_VAO, *m_IndexBuffer, *m_Shader2);
-
-           
 
         }
 
-        double xPos, yPos;
-     
-        
 
+       
 
-        
-        // std::cout<<"pozicija misa"<< cursor <<std::endl;
-
-/* 
-        glm::vec3 origin();
-        glm::vec3 direction();
-        glm::vec3 vert0();
-        glm::vec3 vert1();
-        glm::vec3 vert2();
-        glm::vec2 baryposition();
-        float distance = 0;
-
-        if( glm::intersectRayTriangle ( origin, direction, vert0, vert1, vert2, baryposition,  distance)
-            std::cout<<"Jeste presjekao"<<std::endl;
-        else
-            std::cout<<"Nije presjekao"<<std::endl;
-     */
-        
-
-        /*   
-         if ( glm::intersectLineTriangle(s1,s2,p0,p1,p2,intersec) ) 
-            printf("Intersected on (%lf %lf %lf)
-        ",intersec.x,intersec.y,intersec.z);
-            else
-                printf("Not intersected
-        "); 
-        */ 
+          
 
 
             //=========== MODEL MATRIX ============================ 
@@ -226,23 +194,25 @@ namespace test
             } 
     }
     
-    void TestAssemblied1::OnImGuiRender()
+    void TestIris::OnImGuiRender()
     {
-        ImGui::Text("Ukljucena je samo frontalna projektna matrica da bi se dobio frontalni pogled");
-        ImGui::Text("Sve je tvrdo kodirano (indeksi zapravo) pa radi samo trenutno na matrici 10x10 ");
+        ImGui::Text("Ovo bi zapravo trebao da bude test za spatial mapping");
+        ImGui::Text("Gdje projektujes grid u prostor i pomocu depth tacaka dobijas mesh sobe");
+        ImGui::Text("ili predmeta ako povezes sa openCV ");
+        
 
+        ImGui::Text("used projection and model matrices");
+        ImGui::SliderFloat("Visina ",&widthIris, 0, 12);//utice na m_Proj matricu. razvuce ga zapravo na dimenzije ekrana 
+        ImGui::SliderFloat("Sirina `",&heightIris, 0, 8);
 
-        ImGui::SliderFloat("Visina ",&width, 0, 12);//utice na m_Proj matricu. razvuce ga zapravo na dimenzije ekrana 
-        ImGui::SliderFloat("Sirina `",&height, 0, 8);
+        ImGui::Text("Use W A S D for moving ");
+        ImGui::SliderFloat2("translationA", &m_TranslationA.x, 0.0f, 960.0f);
 
-        // ImGui::Text("Use W A S D for moving ");
-        // ImGui::SliderFloat2("translationA", &m_TranslationA.x, 0.0f, 960.0f);
+        ImGui::Text("Use G H J  &  T Y U for rotating");
+        ImGui::SliderFloat3("rotation", &m_Rotation.x, 0.0f, 1960.0f);
 
-        // ImGui::Text("Use G H J  &  T Y U for rotating");
-        // ImGui::SliderFloat3("rotation", &m_Rotation.x, 0.0f, 1960.0f);
-
-        // ImGui::Text("Use Q E  for scaling");
-        // ImGui::SliderFloat("Scale", &m_Scale.x, 0.0f, 960.0f);
+        ImGui::Text("Use Q E  for scaling");
+        ImGui::SliderFloat("Scale", &m_Scale.x, 0.0f, 960.0f);
 
 
 

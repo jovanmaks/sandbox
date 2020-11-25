@@ -548,6 +548,33 @@ tests/TestGrid.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/TestGrid.cpp.s
 .PHONY : tests/TestGrid.cpp.s
 
+tests/TestIris.o: tests/TestIris.cpp.o
+
+.PHONY : tests/TestIris.o
+
+# target to build an object file
+tests/TestIris.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/TestIris.cpp.o
+.PHONY : tests/TestIris.cpp.o
+
+tests/TestIris.i: tests/TestIris.cpp.i
+
+.PHONY : tests/TestIris.i
+
+# target to preprocess a source file
+tests/TestIris.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/TestIris.cpp.i
+.PHONY : tests/TestIris.cpp.i
+
+tests/TestIris.s: tests/TestIris.cpp.s
+
+.PHONY : tests/TestIris.s
+
+# target to generate assembly for a file
+tests/TestIris.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/TestIris.cpp.s
+.PHONY : tests/TestIris.cpp.s
+
 tests/TestKeyInput.o: tests/TestKeyInput.cpp.o
 
 .PHONY : tests/TestKeyInput.o
@@ -926,6 +953,9 @@ help:
 	@echo "... tests/TestGrid.o"
 	@echo "... tests/TestGrid.i"
 	@echo "... tests/TestGrid.s"
+	@echo "... tests/TestIris.o"
+	@echo "... tests/TestIris.i"
+	@echo "... tests/TestIris.s"
 	@echo "... tests/TestKeyInput.o"
 	@echo "... tests/TestKeyInput.i"
 	@echo "... tests/TestKeyInput.s"

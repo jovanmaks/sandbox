@@ -9,6 +9,7 @@
 #include "../Texture.h"
 
 #include "../vendor/glm/glm.hpp"
+#include "../vendor/glm/gtx/intersect.hpp"
 #include "../vendor/glm/gtc/matrix_transform.hpp"
 
 #include <memory>
