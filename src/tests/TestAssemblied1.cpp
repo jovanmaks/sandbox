@@ -67,16 +67,22 @@ namespace test
         m_IndexBuffer2 = std::make_unique<IndexBuffer>(indeksiNiz2, countIndeks2);
 
 
-
+        //shader 1 je za selekciju
         m_Shader = std::make_unique<Shader> ("../res/shaders/Basic2.shader");
         m_Shader-> Bind();
-        m_Shader->SetUniform4f("u_Color", 0.2f, 0.4f, 0.6f, 0.7f );
+        m_Shader->SetUniform4f("u_Color", 0.2f, 0.4f, 0.6f, 0.7f ); 
+
 
 
         //shader 2 je za zice
         m_Shader2 = std::make_unique<Shader> ("../res/shaders/Basic2.shader");
         m_Shader2-> Bind();
-        m_Shader2->SetUniform4f("u_Color", 0.6f, 0.6f, 0.6f, 0.5f );
+        m_Shader2-> SetUniform4f("u_Color", 0.6f, 0.6f, 0.6f, 0.5f );
+
+        //shader 3 je za element
+        m_Shader3 = std::make_unique<Shader> ("../res/shaders/Basic2.shader");
+        m_Shader3-> Bind();
+        m_Shader3-> SetUniform4f("u_Color", 1.f, 0.f, 0.f, 1.f );
 
 
 
@@ -175,7 +181,8 @@ namespace test
             std::cout<<std::endl;         
             
              m_IndexBuffer2 = std::make_unique<IndexBuffer>(test, kvadrat);
-
+             m_IndexBuffer3 = std::make_unique<IndexBuffer>(test, kvadrat);
+             
 
             //bindujes novi indeks bufer ili novi VAO
             //m_IndexBuffer2 -> Bind();
@@ -222,10 +229,13 @@ namespace test
             std::cout<<"Nije presjekao"<<std::endl; 
              */
 
-         //Filled mesh
+        
+
+        //Filled mesh
         m_Shader -> Bind(); 
         m_Shader -> SetUniformMat4f("u_MVP", m_Proj);
-        renderer.Draw(*m_VAO, *m_IndexBuffer2, *m_Shader);
+        renderer.Draw(*m_VAO, *m_IndexBuffer2, * m_Shader);
+
 
         
         //mozda ces morati da unbindujes
@@ -234,18 +244,38 @@ namespace test
         //i da bindujes onda novi indeks bufer za grid
         // m_IndexBuffer->Bind();
 
+        //===========================================================
+        /* OVDJE CRTAS MREZU  */
+        //===========================================================
+
+        //============ MOUSE INPUT ============================
+    
+
+
+        if( glfwGetMouseButton (  window, GLFW_MOUSE_BUTTON_LEFT ) == GLFW_PRESS )
+        {
+
+            /* kod za iscrtavanje kvadrata */
+            m_Shader3 ->Bind();
+            m_Shader3 -> SetUniformMat4f("u_MVP", m_Proj);
+            renderer.Draw(*m_VAO, * m_IndexBuffer3, * m_Shader3);    
+
+
+        }
 
 
          //Wires over filled mesh
         GLCall(glPolygonMode(GL_FRONT_AND_BACK, GL_LINE));// GL_FRONT, GL_FRONT_AND_BACK...  GL_FILL  GL_LINE  GL_POINT
         m_Shader2 -> Bind(); 
         m_Shader2 -> SetUniformMat4f("u_MVP", m_Proj);
-        renderer.Draw(*m_VAO, *m_IndexBuffer, *m_Shader2);           
+        renderer.Draw(*m_VAO, *m_IndexBuffer, *m_Shader2);         
+
+
+
+
 
         }
   
-
-       
 
 
             //=========== MODEL MATRIX ============================ 

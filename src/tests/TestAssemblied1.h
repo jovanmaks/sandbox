@@ -19,11 +19,16 @@ namespace test {
     private:
         std::unique_ptr<VertexArray>     m_VAO;
         std::unique_ptr<VertexBuffer>    m_VertexBuffer;
+        
         std::unique_ptr<IndexBuffer>     m_IndexBuffer;
         std::unique_ptr<IndexBuffer>     m_IndexBuffer2;
+        std::unique_ptr<IndexBuffer>     m_IndexBuffer3;
+
 
         std::unique_ptr<Shader>          m_Shader;
         std::unique_ptr<Shader>          m_Shader2;
+        std::unique_ptr<Shader>          m_Shader3;
+        
 
 
 
