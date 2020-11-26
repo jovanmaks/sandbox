@@ -9,6 +9,9 @@ private:
 public:
     unsigned  int moduo;
 
+    int ScreenWidth = 900;
+    int ScreenHeight = 900;
+
     float GridValue = 0.5;/* VAZNO */
     float RGB1      = 0.6;/* VAZNO */
     float RGB2      = 0.6;/* VAZNO */
@@ -16,8 +19,8 @@ public:
 
 //============== GRID - CELL ==========================
 
-    unsigned int rows = 10;/* VAZNO */
-    unsigned int colums = 10;/* VAZNO */
+    unsigned int rows = 3;/* VAZNO */
+    unsigned int colums = 3;/* VAZNO */
 
 //============== GRID - VERTEX ========================= 
 

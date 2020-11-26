@@ -258,14 +258,38 @@ namespace grid
 
 
                 indices.push_back(xPos+1);
-                indices.push_back(xPos + rows+2);        
                 indices.push_back(xPos + rows+1);        
+                indices.push_back(xPos + rows+2);        
 
                 }
             }
                       
           return 0;
         }
+ 
+        unsigned int Buffer::IndexBufferElement(double mouseX, double mouseY, unsigned int* IndeksiElement)
+        {
+            
+
+            double celijaX = ScreenWidth/rows;
+            double celijaY = ScreenHeight/colums;
+
+            int Ix = mouseX/celijaX;//treba da zaokruzis ovo na donju
+            int Iy = (ScreenWidth - mouseY)/celijaY;//treba da zaokruzis ovo na donju
+           
+
+            //formula za racunanje ugaonog indeksa
+            unsigned int I0= Ix + Iy*(rows+1);//prvi indeks. Donji lijevi
+
+            for(int i = 0; i<4; i++)
+            {
+            IndeksiElement[i] = I0;
+
+            }
+
+        }
+
+    
 
 
 

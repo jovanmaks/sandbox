@@ -41,8 +41,8 @@ namespace test
         indeksiNiz = &indeksi[0];
 
         unsigned int indeksiNiz2[6] = {
-            0, 1 , 11,
-            1, 11, 12};
+            0, 1 , 4,
+            1, 4, 5};
 
         int countIndeks2 = 6; 
 
@@ -63,7 +63,7 @@ namespace test
         m_IndexBuffer  = std::make_unique<IndexBuffer>(indeksiNiz,  countIndeks);
 
 
-        /* ovdje */
+        /* ovdje dodajes obojeni kvadratic */
         m_IndexBuffer2 = std::make_unique<IndexBuffer>(indeksiNiz2, countIndeks2);
 
 
@@ -139,25 +139,67 @@ namespace test
         //    glm::mat4 m_Proj (1.0f);
            glm::mat4 m_Proj = glm::ortho(0.0f, width , 0.0f, height, -1.0f, 1.0f);
             // m_Proj = glm::perspective(glm::radians(fov), static_cast<float>(ratio), nearPlane, farPlane);
-
-
-
            glm::mat4 mvp = m_Proj * m_View * model;  
+
+            //===========================================================
+            /* OVDJE RADIS SELEKCIJU  */
+            //===========================================================
 
 
             double mouseX;
             double mouseY;
         
             glfwGetCursorPos(window, &mouseX, &mouseY);       
+            std::cout<<"Pozicija: "<<"  X= "<<mouseX << "   Y= "<< mouseY <<std::endl;
             
-            // std::cout<<"pozicija misa:  "<< mouseX <<"  :  " << mouseY <<std::endl;
+            unsigned int* test = new unsigned int[4];
+            B.IndexBufferElement(mouseX, mouseY,test);
+
+            for(int i=0; i<4; i++)
+            std::cout<< test[i] << "  ";
+
+            std::cout<<std::endl;
+            //ako je ovo pozicija misa izbaci indekse za iscrtavanje
+            //ili odmah pravi indekse na osnovu pozicije misa
+
+            //
+
+            // Indeks1 = mouseX * nesto;
+            // Indeks2 = Indeks1 + nesto;
+            // Indeks3 = Indeks2 + nesto;
+            // Indeks4 = Indeks2 + nesto;
+
+            //indeksiNiz2[4] = {Indeks1, Indeks2, Indeks3, Indeks4 };
+            
+            // int countIndeks2 = 4;
+            
+            // m_IndexBuffer2 = std::make_unique<IndexBuffer>(indeksiNiz2, countIndeks2);
+
+
+            //bindujes novi indeks bufer ili novi VAO
+            //m_IndexBuffer2 -> Bind();
+
+
+
+            // vert0X = 
+            // vert0Y = 
+
+            // vert1X =
+            // vert1Y = 
+
+            // vert2X =
+            // vert2Y =
+
+
+            
+/* 
 
             glm::vec3 origin(mouseX, mouseY, -1.f);
             glm::vec3 direction(mouseX, mouseY, 1.f);
 
-            glm::vec3 vert0( 0.f, 0.f, 0.f);
-            glm::vec3 vert1( 800.f, 800.f, 0.f);
-            glm::vec3 vert2( 0.f, 800.f, 0.f);
+            glm::vec3 vert0( 0.f, 1600.0f-160.0f, 0.f);
+            glm::vec3 vert1( 1600.0f/10, 1600.f, 0.f);
+            glm::vec3 vert2( 0.f, 1600.f, 0.f);
 
 
             float distance;
@@ -165,13 +207,15 @@ namespace test
             float baryY;
             glm::vec2 baryposition(baryX, baryY);
 
+            std::cout<<"Pozicija: "<<"  X= "<<mouseX << "   Y= "<< mouseY <<std::endl;
 
 
 
-        if( glm::intersectRayTriangle ( origin, direction, vert0, vert1, vert2, baryposition,  distance))
+        if( glm::intersectRayTriangle ( origin, direction, vert0, vert1, vert2, baryposition,  distance))//ovdje samo dodas && i trougao pored da ti selektuje kvadratic
         {
-
             std::cout<<"Presjekao na: "<<"  X= "<<mouseX << "   Y= "<< mouseY <<std::endl;
+
+            //Filled mesh
             m_Shader -> Bind(); 
             m_Shader -> SetUniformMat4f("u_MVP", m_Proj);
             renderer.Draw(*m_VAO, *m_IndexBuffer2, *m_Shader);
@@ -179,17 +223,19 @@ namespace test
 
         else
             std::cout<<"Nije presjekao"<<std::endl; 
-            
+             */
 
+             //Filled mesh
+            m_Shader -> Bind(); 
+            m_Shader -> SetUniformMat4f("u_MVP", m_Proj);
+            renderer.Draw(*m_VAO, *m_IndexBuffer2, *m_Shader);
 
-            //Filled mesh
         
+        //mozda ces morati da unbindujes
+        // m_IndexBuffer2 ->Unbind();
 
-
-
-
-
-
+        //i da bindujes onda novi indeks bufer za grid
+        // m_IndexBuffer->Bind();
 
 
 

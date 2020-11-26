@@ -1,3 +1,5 @@
+/* Atributes */
+#include "Atributes.h"
 
 /* UI */
 #include "vendor/imgui/imgui_impl_glfw.h"
@@ -20,8 +22,8 @@
 
 
 
-#define SCREEN_WIDTH 800
-#define SCREEN_HEIGHT 800
+// #define SCREEN_WIDTH 900
+// #define SCREEN_HEIGHT 900
 
 
 void cursorPositionCallback ( GLFWwindow *window, double xPos, double yPos)
@@ -54,8 +56,13 @@ void updateInput(GLFWwindow* window)
 
 int main (void)
 {
-        int frameBufferWidth = 0;
-        int frameBufferHeight = 0;
+    Atributes atr;
+
+    int SCREEN_WIDTH = atr.ScreenWidth;
+    int SCREEN_HEIGHT = atr.ScreenHeight;
+
+    int frameBufferWidth = 0;
+    int frameBufferHeight = 0;
 
     /* Setting up OpenGL and GLFW */
     GLFWwindow* window;
