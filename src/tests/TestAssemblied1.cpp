@@ -70,13 +70,13 @@ namespace test
 
         m_Shader = std::make_unique<Shader> ("../res/shaders/Basic2.shader");
         m_Shader-> Bind();
-        m_Shader->SetUniform4f("u_Color", 0.2f, 0.4f, 0.6f, 1.0f );
+        m_Shader->SetUniform4f("u_Color", 0.2f, 0.4f, 0.6f, 0.7f );
 
 
         //shader 2 je za zice
         m_Shader2 = std::make_unique<Shader> ("../res/shaders/Basic2.shader");
         m_Shader2-> Bind();
-        m_Shader2->SetUniform4f("u_Color", 0.6f, 0.6f, 0.6f, 1.0f );
+        m_Shader2->SetUniform4f("u_Color", 0.6f, 0.6f, 0.6f, 0.5f );
 
 
 
@@ -136,7 +136,7 @@ namespace test
 
            glfwGetFramebufferSize(window, &r1, &r2);
 
-        //    glm::mat4 m_Proj (1.0f);
+            //glm::mat4 m_Proj (1.0f);
            glm::mat4 m_Proj = glm::ortho(0.0f, width , 0.0f, height, -1.0f, 1.0f);
             // m_Proj = glm::perspective(glm::radians(fov), static_cast<float>(ratio), nearPlane, farPlane);
            glm::mat4 mvp = m_Proj * m_View * model;  
@@ -149,37 +149,36 @@ namespace test
             double mouseX;
             double mouseY;
         
-            glfwGetCursorPos(window, &mouseX, &mouseY);       
-            std::cout<<"Pozicija: "<<"  X= "<<mouseX << "   Y= "<< mouseY <<std::endl;
+            unsigned int kvadrat = 6;
             
-            unsigned int* test = new unsigned int[4];
-            B.IndexBufferElement(mouseX, mouseY,test);
 
-            for(int i=0; i<4; i++)
+            glfwGetCursorPos(window, &mouseX, &mouseY);       
+            
+             if(mouseX<0 || mouseY<0 || mouseX>atr.ScreenWidth || mouseY>atr.ScreenHeight)
+             {
+                mouseX = 2;
+                mouseY = 2;
+                kvadrat = 0;
+             }
+             
+          
+
+            
+            std::cout<<"Pozicija: "<<"  X= "<<mouseX << "   Y= "<< mouseY <<std::endl;
+
+            unsigned int* test = new unsigned int[kvadrat];
+            B.IndexBufferElement(mouseX, mouseY, test);
+
+            for(int i=0; i<kvadrat; i++)
             std::cout<< test[i] << "  ";
 
-            std::cout<<std::endl;
-            //ako je ovo pozicija misa izbaci indekse za iscrtavanje
-            //ili odmah pravi indekse na osnovu pozicije misa
-
-            //
-
-            // Indeks1 = mouseX * nesto;
-            // Indeks2 = Indeks1 + nesto;
-            // Indeks3 = Indeks2 + nesto;
-            // Indeks4 = Indeks2 + nesto;
-
-            //indeksiNiz2[4] = {Indeks1, Indeks2, Indeks3, Indeks4 };
+            std::cout<<std::endl;         
             
-            // int countIndeks2 = 4;
-            
-            // m_IndexBuffer2 = std::make_unique<IndexBuffer>(indeksiNiz2, countIndeks2);
+             m_IndexBuffer2 = std::make_unique<IndexBuffer>(test, kvadrat);
 
 
             //bindujes novi indeks bufer ili novi VAO
             //m_IndexBuffer2 -> Bind();
-
-
 
             // vert0X = 
             // vert0Y = 
@@ -190,8 +189,6 @@ namespace test
             // vert2X =
             // vert2Y =
 
-
-            
 /* 
 
             glm::vec3 origin(mouseX, mouseY, -1.f);
@@ -225,10 +222,10 @@ namespace test
             std::cout<<"Nije presjekao"<<std::endl; 
              */
 
-             //Filled mesh
-            m_Shader -> Bind(); 
-            m_Shader -> SetUniformMat4f("u_MVP", m_Proj);
-            renderer.Draw(*m_VAO, *m_IndexBuffer2, *m_Shader);
+         //Filled mesh
+        m_Shader -> Bind(); 
+        m_Shader -> SetUniformMat4f("u_MVP", m_Proj);
+        renderer.Draw(*m_VAO, *m_IndexBuffer2, *m_Shader);
 
         
         //mozda ces morati da unbindujes
@@ -239,22 +236,14 @@ namespace test
 
 
 
-            //Wires over filled mesh
-           GLCall(glPolygonMode(GL_FRONT_AND_BACK, GL_LINE));// GL_FRONT, GL_FRONT_AND_BACK...  GL_FILL  GL_LINE  GL_POINT
-           m_Shader2 -> Bind(); 
-           m_Shader2 -> SetUniformMat4f("u_MVP", m_Proj);
-           renderer.Draw(*m_VAO, *m_IndexBuffer, *m_Shader2);
-
-           
+         //Wires over filled mesh
+        GLCall(glPolygonMode(GL_FRONT_AND_BACK, GL_LINE));// GL_FRONT, GL_FRONT_AND_BACK...  GL_FILL  GL_LINE  GL_POINT
+        m_Shader2 -> Bind(); 
+        m_Shader2 -> SetUniformMat4f("u_MVP", m_Proj);
+        renderer.Draw(*m_VAO, *m_IndexBuffer, *m_Shader2);           
 
         }
-    /////////////////////////////////////////////////////////////
-    /////////////////////////////////////////////////////////////
-
-
- 
-    /////////////////////////////////////////////////////////////
-    /////////////////////////////////////////////////////////////
+  
 
        
 

@@ -271,19 +271,27 @@ namespace grid
         {
             
 
+
             double celijaX = ScreenWidth/rows;
             double celijaY = ScreenHeight/colums;
 
-            int Ix = mouseX/celijaX;//treba da zaokruzis ovo na donju
-            int Iy = (ScreenWidth - mouseY)/celijaY;//treba da zaokruzis ovo na donju
+            unsigned int Ix = mouseX/celijaX;//treba da zaokruzis ovo na donju
+            unsigned int Iy = (ScreenHeight - mouseY)/celijaY;//treba da zaokruzis ovo na donju
            
 
             //formula za racunanje ugaonog indeksa
             unsigned int I0= Ix + Iy*(rows+1);//prvi indeks. Donji lijevi
 
-            for(int i = 0; i<4; i++)
+            for(int i = 0; i<1; i++)
             {
-            IndeksiElement[i] = I0;
+            IndeksiElement[i]   = I0;
+            IndeksiElement[i+1] = I0+1;
+            IndeksiElement[i+2] = I0+1+rows ;
+            
+            IndeksiElement[i+3] = I0+1;
+            IndeksiElement[i+4] = I0+1+rows;
+            IndeksiElement[i+5] = I0+1+rows + 1;
+
 
             }
 

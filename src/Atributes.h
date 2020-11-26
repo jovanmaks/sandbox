@@ -1,5 +1,6 @@
     #ifndef __ATRIBUTES_H__
 #define __ATRIBUTES_H__
+// #include <GLFW/glfw3.h>
 
 
 class Atributes
@@ -7,7 +8,9 @@ class Atributes
 private:
     
 public:
+
     unsigned  int moduo;
+
 
     int ScreenWidth = 900;
     int ScreenHeight = 900;
@@ -19,8 +22,8 @@ public:
 
 //============== GRID - CELL ==========================
 
-    unsigned int rows = 3;/* VAZNO */
-    unsigned int colums = 3;/* VAZNO */
+    unsigned int rows = 20;/* VAZNO */
+    unsigned int colums = 20;/* VAZNO */
 
 //============== GRID - VERTEX ========================= 
 
