@@ -74,8 +74,8 @@ int main (void)
 
     window = glfwCreateWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "sandbox", NULL, NULL);
 
-    glfwSetCursorPosCallback( window, cursorPositionCallback );
-    
+    // glfwSetCursorPosCallback( window, cursorPositionCallback );
+
     if(!window)
     {
         glfwTerminate();
@@ -186,7 +186,8 @@ int main (void)
         
     
 
-        updateInput(window);//ovo ti je funkcija za tastaturu koja pravi core dumped. Nastaje zato sto zatvoris prozor a ostane neizbrisan delta time u imguiu
+        updateInput(window);//ovo ti je funkcija za tastaturu koja pravi core dumped.
+        // Nastaje zato sto zatvoris prozor a ostane neizbrisan delta time u imguiu. Mora ovdje jer prima window kontekst. Dolje ne moze jer nema konteksta.
         glfwSwapBuffers(window);
         glfwPollEvents();
         
@@ -209,7 +210,3 @@ int main (void)
 
 }
 
-/* static void cursorPositionCallback( GLFWwindow *window, double xPos, double yPos )
-{
-    std::cout<< xPos << "   :   " <<yPos<<std::endl;
-} */

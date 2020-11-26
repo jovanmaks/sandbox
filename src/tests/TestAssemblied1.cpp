@@ -61,6 +61,9 @@ namespace test
 
 
         m_IndexBuffer  = std::make_unique<IndexBuffer>(indeksiNiz,  countIndeks);
+
+
+        /* ovdje */
         m_IndexBuffer2 = std::make_unique<IndexBuffer>(indeksiNiz2, countIndeks2);
 
 
@@ -139,12 +142,55 @@ namespace test
 
 
 
-           glm::mat4 mvp = m_Proj * m_View * model;       
+           glm::mat4 mvp = m_Proj * m_View * model;  
+
+
+            double mouseX;
+            double mouseY;
+        
+            glfwGetCursorPos(window, &mouseX, &mouseY);       
+            
+            // std::cout<<"pozicija misa:  "<< mouseX <<"  :  " << mouseY <<std::endl;
+
+            glm::vec3 origin(mouseX, mouseY, -1.f);
+            glm::vec3 direction(mouseX, mouseY, 1.f);
+
+            glm::vec3 vert0( 0.f, 0.f, 0.f);
+            glm::vec3 vert1( 800.f, 800.f, 0.f);
+            glm::vec3 vert2( 0.f, 800.f, 0.f);
+
+
+            float distance;
+            float baryX;
+            float baryY;
+            glm::vec2 baryposition(baryX, baryY);
+
+
+
+
+        if( glm::intersectRayTriangle ( origin, direction, vert0, vert1, vert2, baryposition,  distance))
+        {
+
+            std::cout<<"Presjekao na: "<<"  X= "<<mouseX << "   Y= "<< mouseY <<std::endl;
+            m_Shader -> Bind(); 
+            m_Shader -> SetUniformMat4f("u_MVP", m_Proj);
+            renderer.Draw(*m_VAO, *m_IndexBuffer2, *m_Shader);
+        }
+
+        else
+            std::cout<<"Nije presjekao"<<std::endl; 
+            
+
 
             //Filled mesh
-           m_Shader -> Bind(); 
-           m_Shader -> SetUniformMat4f("u_MVP", m_Proj);
-           renderer.Draw(*m_VAO, *m_IndexBuffer2, *m_Shader);
+        
+
+
+
+
+
+
+
 
 
             //Wires over filled mesh
@@ -156,39 +202,15 @@ namespace test
            
 
         }
-
-        double xPos, yPos;
-     
-        
+    /////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////
 
 
-        
-        // std::cout<<"pozicija misa"<< cursor <<std::endl;
+ 
+    /////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////
 
-/* 
-        glm::vec3 origin();
-        glm::vec3 direction();
-        glm::vec3 vert0();
-        glm::vec3 vert1();
-        glm::vec3 vert2();
-        glm::vec2 baryposition();
-        float distance = 0;
-
-        if( glm::intersectRayTriangle ( origin, direction, vert0, vert1, vert2, baryposition,  distance)
-            std::cout<<"Jeste presjekao"<<std::endl;
-        else
-            std::cout<<"Nije presjekao"<<std::endl;
-     */
-        
-
-        /*   
-         if ( glm::intersectLineTriangle(s1,s2,p0,p1,p2,intersec) ) 
-            printf("Intersected on (%lf %lf %lf)
-        ",intersec.x,intersec.y,intersec.z);
-            else
-                printf("Not intersected
-        "); 
-        */ 
+       
 
 
             //=========== MODEL MATRIX ============================ 
