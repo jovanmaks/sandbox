@@ -43,8 +43,8 @@ namespace grid
         float VertexBuffer_XYZ_RGBA(float* bufferXYZ_RGBA);
 
         unsigned int IndexBuffer(std::vector<unsigned int>& indices);
-        unsigned int IndexBufferElement(double mouseX, double mouseY, unsigned int* IndeksiElement);
-
+        unsigned int IndexBufferTracker( double mouseX, double mouseY, unsigned int* IndeksiElement);
+        unsigned int IndexBufferElement( unsigned int* Igraliste );
 
 
     };

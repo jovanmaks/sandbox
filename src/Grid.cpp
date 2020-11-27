@@ -26,6 +26,7 @@ namespace grid
             return 0;
         }  
 
+
         /* X position */
         float BufferData::XPositionCoordinates ( float* Xpositions )
         {
@@ -267,7 +268,7 @@ namespace grid
           return 0;
         }
  
-        unsigned int Buffer::IndexBufferElement(double mouseX, double mouseY, unsigned int* IndeksiElement)
+        unsigned int Buffer::IndexBufferTracker(double mouseX, double mouseY, unsigned int* IndeksiElement)
         {
             
 
@@ -297,7 +298,27 @@ namespace grid
 
         }
 
-    
+        unsigned int Buffer::IndexBufferElement( unsigned int* Igraliste )
+        {
+
+                for(int i =0; i<1; i++)
+                {
+
+                    Igraliste[i]   = 0;
+                    Igraliste[i+1] = 1;
+                    Igraliste[i+2] = 21;
+                    Igraliste[i+3] = 1;
+                    Igraliste[i+4] = 21;
+                    Igraliste[i+5] = 22;
+
+                    // 1, 2 , 22,
+                    // 2, 22, 23};
+                
+                }
+                    
+                return 0;
+        }
+
 
 
 

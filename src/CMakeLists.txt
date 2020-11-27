@@ -41,16 +41,17 @@ set( SRCS
 
 
 ../src/tests/Test.cpp
-../src/tests/TestClearColor.cpp
-../src/tests/TestTexture2D.cpp
-../src/tests/TestKeyInput.cpp
-../src/tests/TestGrid.cpp
-../src/tests/TestMousePosition.cpp
-../src/tests/TestColorAssign.cpp
-../src/tests/TestCellSelection.cpp
-../src/tests/TestPerspectiveView.cpp
-../src/tests/TestAddingElement.cpp
-../src/tests/TestMVP.cpp
+# ../src/tests/TestClearColor.cpp
+# ../src/tests/TestTexture2D.cpp
+# ../src/tests/TestKeyInput.cpp
+# ../src/tests/TestGrid.cpp
+# ../src/tests/TestColorAssign.cpp
+# ../src/tests/TestMVP.cpp
+# ../src/tests/TestPerspectiveView.cpp
+
+# ../src/tests/TestMousePosition.cpp
+# ../src/tests/TestCellSelection.cpp
+# ../src/tests/TestAddingElement.cpp
 
 ../src/tests/TestAssemblied1.cpp
 ../src/tests/TestIris.cpp

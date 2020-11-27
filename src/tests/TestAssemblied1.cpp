@@ -22,9 +22,15 @@ namespace test
 
         /* 
         int countVertexXYZ_RGBA = atr.countAllXYZ;
-        float* verteksi = new float[countVertexXYZ_RGBA];
+        float* verteksi = new float[countVertexXYZ _RGBA];
         B.VertexBuffer_XYZ_RGBA( verteksi); 
         */
+
+ 
+       
+        
+
+
 
 
         int countVertexXYZ = atr.countCoordinatesXYZ;
@@ -40,6 +46,11 @@ namespace test
 
 
         
+        // if( glfwGetMouseButton (  window, GLFW_MOUSE_BUTTON_RIGHT ) == GLFW_PRESS )
+        // {
+            
+        // }
+
 
         
 
@@ -183,15 +194,15 @@ namespace test
                       
 
             
-            std::cout<<"Pozicija: "<<"  X= "<<mouseX << "   Y= "<< mouseY <<std::endl;
+            // std::cout<<"Pozicija: "<<"  X= "<<mouseX << "   Y= "<< mouseY <<std::endl;
 
             unsigned int* test = new unsigned int[kvadrat];
-            B.IndexBufferElement(mouseX, mouseY, test);
+            B.IndexBufferTracker(mouseX, mouseY, test);
 
             for(int i=0; i<kvadrat; i++)
-            std::cout<< test[i] << "  ";
+            // std::cout<< test[i] << "  ";
 
-            std::cout<<std::endl;         
+            // std::cout<<std::endl;         
             
             /* Indeksi za traker svijetli */
              m_IndexBuffer2 = std::make_unique<IndexBuffer>(test, kvadrat);
@@ -240,42 +251,30 @@ namespace test
             renderer.Draw(*m_VAO, *m_IndexBuffer2, * m_Shader);    
 
 
-        // unsigned int* indeksiNiz = new unsigned int [countIndeks];
 
 
-            /* Ovo ti je za igraliste hard code */
-            int countIgraliste = 6;  
-            // unsigned int* Igraliste = new unsigned int [countIgraliste];
-            unsigned int  Igraliste[6] = {
-                1, 2 , 22,
-                2, 22, 23};
 
-            
-
-
-            // unsigned int Igraliste[6];
 
 
             if( glfwGetMouseButton (  window, GLFW_MOUSE_BUTTON_LEFT ) == GLFW_PRESS )
             {
-                /* kod za iscrtavanje kvadrata */
+                /* kod za iscrtavanje crvenog select kvadrata */
                 m_Shader3 ->Bind();
                 m_Shader3 -> SetUniformMat4f("u_MVP", m_Proj);
-                renderer.Draw(*m_VAO, * m_IndexBuffer2, * m_Shader3);
-
-                /* treba ti ovdje prosirenje indeks buffera */
-                //dodaj za sada samo da se iscrta na klik ovaj donji hard code
-
-                  /* Ovo ti je za igraliste hard code */
-              
+                renderer.Draw(*m_VAO, * m_IndexBuffer2, * m_Shader3);    
 
 
+            }
+
+
+           
 
             //===========================================================
             /* OVDJE ISCRTAVAS IGRALISTE  */
             //===========================================================
+            int countIgraliste = 6;  
+            unsigned int* Igraliste = new unsigned int [countIgraliste];
 
-            }
 
             /* ovdje dodajes indekse za igraliste */
             m_IndexBuffer4 = std::make_unique<IndexBuffer>(Igraliste, countIgraliste);

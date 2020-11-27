@@ -96,7 +96,8 @@ int main (void)
     
     glfwMakeContextCurrent(window);
 
-    glfwSwapInterval(1);
+    glfwSwapInterval(0.5);
+
 
     GLenum err1 = glewInit();
     if (GLEW_OK != err1)
