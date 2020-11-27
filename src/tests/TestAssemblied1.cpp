@@ -34,37 +34,47 @@ namespace test
         std::vector <unsigned int> indeksi;
         B.IndexBuffer( indeksi );
 
-
-
         int countIndeks = atr.countIndeks;
         unsigned int* indeksiNiz = new unsigned int [countIndeks];
         indeksiNiz = &indeksi[0];
 
-        unsigned int indeksiNiz2[6] = {
-            0, 1 , 4,
-            1, 4, 5};
 
-        int countIndeks2 = 6; 
+        
 
-        m_VAO = std::make_unique<VertexArray>();     
+         unsigned int Igraliste[6] = {
+            0, 1 , 21,
+            1, 21, 22};
+
+        int countIgraliste = 6;  
+
+        /* GLOBALNI VERTEX BUFFER */
         m_VertexBuffer = std::make_unique<VertexBuffer> (verteksi2, countVertexXYZ  *3 * sizeof(float));
+
+
+        /* VAO za grid i tracker */
+        m_VAO = std::make_unique<VertexArray>();     
         VertexBufferLayout layout;
-
         layout.Push<float>(3);
-
-        // layout.Push<float>(3);
-        // layout.Push<float>(4);
-
-
-
         m_VAO->AddBuffer(*m_VertexBuffer, layout);
+        
+
+        /* VAO2 za igraliste */
+        m_VAO2 = std::make_unique<VertexArray>();     
+        VertexBufferLayout layout2;
+        layout2.Push<float>(3);
+        m_VAO2->AddBuffer(*m_VertexBuffer, layout2);
 
 
+
+        /* ovdje dodajes indekse za zice */
         m_IndexBuffer  = std::make_unique<IndexBuffer>(indeksiNiz,  countIndeks);
 
+        /* ovdje dodajes indekse za igraliste */
+        m_IndexBuffer4 = std::make_unique<IndexBuffer>(Igraliste, countIgraliste);
 
-        /* ovdje dodajes obojeni kvadratic */
-        m_IndexBuffer2 = std::make_unique<IndexBuffer>(indeksiNiz2, countIndeks2);
+
+
+
 
 
         //shader 1 je za selekciju
@@ -72,17 +82,20 @@ namespace test
         m_Shader-> Bind();
         m_Shader->SetUniform4f("u_Color", 0.2f, 0.4f, 0.6f, 0.7f ); 
 
-
-
         //shader 2 je za zice
         m_Shader2 = std::make_unique<Shader> ("../res/shaders/Basic2.shader");
         m_Shader2-> Bind();
         m_Shader2-> SetUniform4f("u_Color", 0.6f, 0.6f, 0.6f, 0.5f );
 
-        //shader 3 je za element
+        //shader 3 je za selekciju klik crveni
         m_Shader3 = std::make_unique<Shader> ("../res/shaders/Basic2.shader");
         m_Shader3-> Bind();
         m_Shader3-> SetUniform4f("u_Color", 1.f, 0.f, 0.f, 1.f );
+
+        //shader 4 je za Igraliste
+        m_Shader4 = std::make_unique<Shader> ("../res/shaders/Basic2.shader");
+        m_Shader4-> Bind();
+        m_Shader4-> SetUniform4f("u_Color", 1.f, 1.f, 0.f, 1.f );
 
 
 
@@ -130,6 +143,7 @@ namespace test
            m_View = glm::lookAt(camPosition, camPosition +camFront, worldUp);
 
 
+
             /* Projection matrix */
            
            float fov = 35.f;
@@ -146,6 +160,18 @@ namespace test
            glm::mat4 m_Proj = glm::ortho(0.0f, width , 0.0f, height, -1.0f, 1.0f);
             // m_Proj = glm::perspective(glm::radians(fov), static_cast<float>(ratio), nearPlane, farPlane);
            glm::mat4 mvp = m_Proj * m_View * model;  
+
+
+            //===========================================================
+            /* OVDJE ISCRTAVAS IGRALISTE  */
+            //===========================================================
+
+            m_Shader4 -> Bind(); 
+            m_Shader4 -> SetUniformMat4f("u_MVP", m_Proj);
+            renderer.Draw(*m_VAO, *m_IndexBuffer4, * m_Shader4);  
+
+
+
 
             //===========================================================
             /* OVDJE RADIS SELEKCIJU  */
@@ -166,8 +192,7 @@ namespace test
                 mouseY = 2;
                 kvadrat = 0;
              }
-             
-          
+                      
 
             
             std::cout<<"Pozicija: "<<"  X= "<<mouseX << "   Y= "<< mouseY <<std::endl;
@@ -180,23 +205,12 @@ namespace test
 
             std::cout<<std::endl;         
             
+            /* Indeksi za traker svijetli */
              m_IndexBuffer2 = std::make_unique<IndexBuffer>(test, kvadrat);
-             m_IndexBuffer3 = std::make_unique<IndexBuffer>(test, kvadrat);
              
+      
 
-            //bindujes novi indeks bufer ili novi VAO
-            //m_IndexBuffer2 -> Bind();
-
-            // vert0X = 
-            // vert0Y = 
-
-            // vert1X =
-            // vert1Y = 
-
-            // vert2X =
-            // vert2Y =
-
-/* 
+            /*  ovaj dio koda nije izbrisan jer pokazuje kako sa glm-om mozes odraditi intersect
 
             glm::vec3 origin(mouseX, mouseY, -1.f);
             glm::vec3 direction(mouseX, mouseY, 1.f);
@@ -213,68 +227,52 @@ namespace test
 
             std::cout<<"Pozicija: "<<"  X= "<<mouseX << "   Y= "<< mouseY <<std::endl;
 
+            if( glm::intersectRayTriangle ( origin, direction, vert0, vert1, vert2, baryposition,  distance))//ovdje samo dodas && i trougao pored da ti selektuje kvadratic
+            {
+                std::cout<<"Presjekao na: "<<"  X= "<<mouseX << "   Y= "<< mouseY <<std::endl;
 
+                //Filled mesh
+                m_Shader -> Bind(); 
+                m_Shader -> SetUniformMat4f("u_MVP", m_Proj);
+                renderer.Draw(*m_VAO, *m_IndexBuffer2, *m_Shader);
+            }
 
-        if( glm::intersectRayTriangle ( origin, direction, vert0, vert1, vert2, baryposition,  distance))//ovdje samo dodas && i trougao pored da ti selektuje kvadratic
-        {
-            std::cout<<"Presjekao na: "<<"  X= "<<mouseX << "   Y= "<< mouseY <<std::endl;
+            else
+                std::cout<<"Nije presjekao"<<std::endl; 
+                */
+
+        
+            //===============================================================        
+            /* TRACKER I MOUSE INPUT */
+            //===============================================================
 
             //Filled mesh
             m_Shader -> Bind(); 
             m_Shader -> SetUniformMat4f("u_MVP", m_Proj);
-            renderer.Draw(*m_VAO, *m_IndexBuffer2, *m_Shader);
-        }
-
-        else
-            std::cout<<"Nije presjekao"<<std::endl; 
-             */
-
-        
-
-        //Filled mesh
-        m_Shader -> Bind(); 
-        m_Shader -> SetUniformMat4f("u_MVP", m_Proj);
-        renderer.Draw(*m_VAO, *m_IndexBuffer2, * m_Shader);
+            renderer.Draw(*m_VAO, *m_IndexBuffer2, * m_Shader);    
 
 
-        
-        //mozda ces morati da unbindujes
-        // m_IndexBuffer2 ->Unbind();
-
-        //i da bindujes onda novi indeks bufer za grid
-        // m_IndexBuffer->Bind();
-
-        //===========================================================
-        /* OVDJE CRTAS MREZU  */
-        //===========================================================
-
-        //============ MOUSE INPUT ============================
-    
+            if( glfwGetMouseButton (  window, GLFW_MOUSE_BUTTON_LEFT ) == GLFW_PRESS )
+            {
+                /* kod za iscrtavanje kvadrata */
+                m_Shader3 ->Bind();
+                m_Shader3 -> SetUniformMat4f("u_MVP", m_Proj);
+                renderer.Draw(*m_VAO, * m_IndexBuffer2, * m_Shader3);
+            }
 
 
-        if( glfwGetMouseButton (  window, GLFW_MOUSE_BUTTON_LEFT ) == GLFW_PRESS )
-        {
+            //===========================================================
+            /* OVDJE CRTAS MREZU  */
+            //===========================================================
 
-            /* kod za iscrtavanje kvadrata */
-            m_Shader3 ->Bind();
-            m_Shader3 -> SetUniformMat4f("u_MVP", m_Proj);
-            renderer.Draw(*m_VAO, * m_IndexBuffer3, * m_Shader3);    
-
+            //Wires over filled mesh
+            GLCall(glPolygonMode(GL_FRONT_AND_BACK, GL_LINE));// GL_FRONT, GL_FRONT_AND_BACK...  GL_FILL  GL_LINE  GL_POINT
+            m_Shader2 -> Bind(); 
+            m_Shader2 -> SetUniformMat4f("u_MVP", m_Proj);
+            renderer.Draw(*m_VAO, *m_IndexBuffer, *m_Shader2); 
 
         }
 
-
-         //Wires over filled mesh
-        GLCall(glPolygonMode(GL_FRONT_AND_BACK, GL_LINE));// GL_FRONT, GL_FRONT_AND_BACK...  GL_FILL  GL_LINE  GL_POINT
-        m_Shader2 -> Bind(); 
-        m_Shader2 -> SetUniformMat4f("u_MVP", m_Proj);
-        renderer.Draw(*m_VAO, *m_IndexBuffer, *m_Shader2);         
-
-
-
-
-
-        }
   
 
 
@@ -311,6 +309,7 @@ namespace test
             }else if( glfwGetKey(window, GLFW_KEY_U) == GLFW_PRESS){
              m_Rotation.z -= 1.f;             
             } 
+
     }
     
     void TestAssemblied1::OnImGuiRender()
