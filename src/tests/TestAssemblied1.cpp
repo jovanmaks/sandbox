@@ -41,11 +41,7 @@ namespace test
 
         
 
-         unsigned int Igraliste[6] = {
-            0, 1 , 21,
-            1, 21, 22};
-
-        int countIgraliste = 6;  
+        
 
         /* GLOBALNI VERTEX BUFFER */
         m_VertexBuffer = std::make_unique<VertexBuffer> (verteksi2, countVertexXYZ  *3 * sizeof(float));
@@ -56,7 +52,7 @@ namespace test
         VertexBufferLayout layout;
         layout.Push<float>(3);
         m_VAO->AddBuffer(*m_VertexBuffer, layout);
-        
+
 
         /* VAO2 za igraliste */
         m_VAO2 = std::make_unique<VertexArray>();     
@@ -69,8 +65,7 @@ namespace test
         /* ovdje dodajes indekse za zice */
         m_IndexBuffer  = std::make_unique<IndexBuffer>(indeksiNiz,  countIndeks);
 
-        /* ovdje dodajes indekse za igraliste */
-        m_IndexBuffer4 = std::make_unique<IndexBuffer>(Igraliste, countIgraliste);
+        
 
 
 
@@ -162,14 +157,7 @@ namespace test
            glm::mat4 mvp = m_Proj * m_View * model;  
 
 
-            //===========================================================
-            /* OVDJE ISCRTAVAS IGRALISTE  */
-            //===========================================================
-
-            m_Shader4 -> Bind(); 
-            m_Shader4 -> SetUniformMat4f("u_MVP", m_Proj);
-            renderer.Draw(*m_VAO, *m_IndexBuffer4, * m_Shader4);  
-
+        
 
 
 
@@ -252,14 +240,53 @@ namespace test
             renderer.Draw(*m_VAO, *m_IndexBuffer2, * m_Shader);    
 
 
+        // unsigned int* indeksiNiz = new unsigned int [countIndeks];
+
+
+            /* Ovo ti je za igraliste hard code */
+            int countIgraliste = 6;  
+            // unsigned int* Igraliste = new unsigned int [countIgraliste];
+            unsigned int  Igraliste[6] = {
+                1, 2 , 22,
+                2, 22, 23};
+
+            
+
+
+            // unsigned int Igraliste[6];
+
+
             if( glfwGetMouseButton (  window, GLFW_MOUSE_BUTTON_LEFT ) == GLFW_PRESS )
             {
                 /* kod za iscrtavanje kvadrata */
                 m_Shader3 ->Bind();
                 m_Shader3 -> SetUniformMat4f("u_MVP", m_Proj);
                 renderer.Draw(*m_VAO, * m_IndexBuffer2, * m_Shader3);
+
+                /* treba ti ovdje prosirenje indeks buffera */
+                //dodaj za sada samo da se iscrta na klik ovaj donji hard code
+
+                  /* Ovo ti je za igraliste hard code */
+              
+
+
+
+            //===========================================================
+            /* OVDJE ISCRTAVAS IGRALISTE  */
+            //===========================================================
+
             }
 
+            /* ovdje dodajes indekse za igraliste */
+            m_IndexBuffer4 = std::make_unique<IndexBuffer>(Igraliste, countIgraliste);
+
+            m_Shader4 -> Bind(); 
+            m_Shader4 -> SetUniformMat4f("u_MVP", m_Proj);
+            renderer.Draw(*m_VAO, *m_IndexBuffer4, * m_Shader4);  
+
+
+
+            
 
             //===========================================================
             /* OVDJE CRTAS MREZU  */
