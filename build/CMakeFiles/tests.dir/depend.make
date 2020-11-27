@@ -15,7 +15,6 @@ CMakeFiles/tests.dir/Application.cpp.o: /home/demijan/Projects/tests/src/tests/T
 CMakeFiles/tests.dir/Application.cpp.o: /home/demijan/Projects/tests/src/tests/TestAddingElement.h
 CMakeFiles/tests.dir/Application.cpp.o: /home/demijan/Projects/tests/src/tests/TestAssemblied1.h
 CMakeFiles/tests.dir/Application.cpp.o: /home/demijan/Projects/tests/src/tests/TestCellSelection.h
-CMakeFiles/tests.dir/Application.cpp.o: /home/demijan/Projects/tests/src/tests/TestClearColor.h
 CMakeFiles/tests.dir/Application.cpp.o: /home/demijan/Projects/tests/src/tests/TestColorAssign.h
 CMakeFiles/tests.dir/Application.cpp.o: /home/demijan/Projects/tests/src/tests/TestGrid.h
 CMakeFiles/tests.dir/Application.cpp.o: /home/demijan/Projects/tests/src/tests/TestIris.h
