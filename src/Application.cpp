@@ -128,10 +128,21 @@ int main (void)
     ImGui::StyleColorsDark();
 
 
+
+
+
+
+
+
+
+
     /* Calling the tests*/
     test::Test* currentTest = nullptr;
     test::TestMenu* testMenu = new test::TestMenu( currentTest );
     currentTest = testMenu; 
+
+
+
 
     testMenu->RegisterTest<test::TestAssemblied1>       (" PASULJKO       ");
     testMenu->RegisterTest<test::TestIris>              (" IRIS           ");
@@ -145,13 +156,16 @@ int main (void)
     // testMenu->RegisterTest<test::TestPerspectiveView>   (" Perspective view - TODO  ");
 
 
-
-
-
     // testMenu->RegisterTest<test::TestMousePosition>     (" Mouse Position   - TODO  ");
     // testMenu->RegisterTest<test::TestCellSelection>     (" Cell selection   - TODO  ");
     // testMenu->RegisterTest<test::TestAddingElement>     (" Adding Elements  - TODO  ");
 
+
+
+
+
+    /* Main if loop */
+ 
 
     /* Main while loop */
     while(!glfwWindowShouldClose(window))

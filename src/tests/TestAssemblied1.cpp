@@ -26,9 +26,7 @@ namespace test
         B.VertexBuffer_XYZ_RGBA( verteksi); 
         */
 
- 
-       
-        
+      
 
 
 
@@ -102,6 +100,12 @@ namespace test
         m_Shader4 = std::make_unique<Shader> ("../res/shaders/Basic2.shader");
         m_Shader4-> Bind();
         m_Shader4-> SetUniform4f("u_Color", 1.f, 1.f, 0.f, 1.f );
+
+
+        int countIgraliste2 = 6;  
+        unsigned int* NovoIgraliste = new unsigned int [countIgraliste2];
+
+       
 
 
 
@@ -253,7 +257,8 @@ namespace test
 
 
 
-
+            int countIgraliste = 6;  
+            unsigned int* Igraliste = new unsigned int [countIgraliste];
 
 
             if( glfwGetMouseButton (  window, GLFW_MOUSE_BUTTON_LEFT ) == GLFW_PRESS )
@@ -263,17 +268,16 @@ namespace test
                 m_Shader3 -> SetUniformMat4f("u_MVP", m_Proj);
                 renderer.Draw(*m_VAO, * m_IndexBuffer2, * m_Shader3);    
 
+                B.IndexBufferElement(Igraliste);
 
             }
 
-
+            
            
 
             //===========================================================
             /* OVDJE ISCRTAVAS IGRALISTE  */
             //===========================================================
-            int countIgraliste = 6;  
-            unsigned int* Igraliste = new unsigned int [countIgraliste];
 
 
             /* ovdje dodajes indekse za igraliste */
