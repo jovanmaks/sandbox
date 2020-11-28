@@ -32,28 +32,6 @@
 #include "vendor/glm/glm.hpp"
 #include "vendor/glm/gtc/matrix_transform.hpp"
 
-/* Tests */
-/* #include "tests/TestClearColor.h"
-#include "tests/TestTexture2D.h"
-#include "tests/TestKeyInput.h"
-#include "tests/TestGrid.h"
-#include "tests/TestMousePosition.h"
-#include "tests/TestColorAssign.h"
-#include "tests/TestCellSelection.h"
-#include "tests/TestPerspectiveView.h"
-#include "tests/TestAddingElement.h"
-#include "tests/TestMVP.h"
-
-#include "tests/TestAssemblied1.h"
-#include "tests/TestIris.h" */
-
-
-
-
-
-
-// #define SCREEN_WIDTH 900
-// #define SCREEN_HEIGHT 900
 
 
 void cursorPositionCallback ( GLFWwindow *window, double xPos, double yPos)
@@ -81,6 +59,27 @@ void updateInput(GLFWwindow* window)
 
 }
 
+void mouseButtonCallback ( GLFWwindow *window, int button, int action, int mods);
+float ColorClick = 0.f;
+
+
+
+
+void mouseButtonCallback ( GLFWwindow *window, int button, int action, int mods)
+{
+    if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS)
+    {
+        std::cout<<"kliknuo sam"<<std::endl;
+        ColorClick = 1.0f;
+        std::cout<<ColorClick<<std::endl;
+
+
+    }
+
+    
+
+}
+
 
 
 
@@ -90,6 +89,8 @@ int main (void)
     grid::Buffer B;
     float width = atr.rows;
     float height = atr.colums;
+
+
 
     int SCREEN_WIDTH = atr.ScreenWidth;
     int SCREEN_HEIGHT = atr.ScreenHeight;
@@ -114,7 +115,6 @@ int main (void)
 
     window = glfwCreateWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "sandbox", NULL, NULL);
 
-    // glfwSetCursorPosCallback( window, cursorPositionCallback );
 
     if(!window)
     {
@@ -127,6 +127,9 @@ int main (void)
     glfwSetFramebufferSizeCallback(window, framebuffer_resize_callback);
     // glViewport(0, 0, frameBufferWidth, frameBufferHeight);
     
+
+
+
     glfwMakeContextCurrent(window);
 
     glfwSwapInterval(0.5);
@@ -149,15 +152,20 @@ int main (void)
 
 
 
-
     /* Important stuf */
  {
 
     //===========  BATCHED POSITIONS =======================
 
-    int countPlayground = 6;  
+    int countPlayground = 6;    
     unsigned int* Playground = new unsigned int [countPlayground];
     B.IndexBufferElement(Playground);
+
+    
+
+    
+
+
 
 
     int countVertexXYZ = atr.countCoordinatesXYZ;
@@ -197,6 +205,8 @@ int main (void)
     // glm::mat4 view  = glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, 0));
 
 
+
+
     /* Shader for wires */
     Shader shaderWires("../res/shaders/Basic2.shader");
     shaderWires.Bind();
@@ -207,10 +217,18 @@ int main (void)
     shaderTracker.Bind();
     shaderTracker.SetUniform4f("u_Color",0.2f, 0.4f, 0.6f, 0.7f );
 
-    /* Shader for playground */
+
+     /* Shader for playground */
     Shader shaderPlayground("../res/shaders/Basic2.shader");
     shaderPlayground.Bind();
-    shaderPlayground.SetUniform4f("u_Color",1.f, 1.f, 0.f, 1.f );
+
+
+
+
+
+
+
+    std::cout<<ColorClick<<std::endl;
 
     va.Unbind();
     vb.Unbind();
@@ -238,8 +256,15 @@ int main (void)
 
 
 
-    /* Main if loop */
- 
+        glfwSetMouseButtonCallback ( window, mouseButtonCallback );
+        ColorClick = 0.1f;
+       
+
+
+
+
+
+
 
     /* Main while loop */
     while(!glfwWindowShouldClose(window))
@@ -251,7 +276,9 @@ int main (void)
         ImGui_ImplGlfw_NewFrame();  
         ImGui_ImplOpenGL3_NewFrame();
         ImGui::NewFrame();           
+
    
+
 
         //===========================================================
         /* BLOK KODA ZA TRAKER */
@@ -274,7 +301,7 @@ int main (void)
             countIndexTracker = 0;
             }
 
-            std::cout<<"Position: "<<"  X= "<<mouseX << "   Y= "<< mouseY <<std::endl;
+            // std::cout<<"Position: "<<"  X= "<<mouseX << "   Y= "<< mouseY <<std::endl;
 
             unsigned int* tracker = new unsigned int[countIndexTracker];
             B.IndexBufferTracker(mouseX, mouseY, tracker);
@@ -289,6 +316,7 @@ int main (void)
         /* Playground */
         {
             shaderPlayground.Bind();
+            shaderPlayground.SetUniform4f("u_Color",ColorClick, 0.f, 0.f, 1.f );
             shaderPlayground.SetUniformMat4f("u_MVP", proj);
             renderer.Draw(va, ib_Playground, shaderPlayground);            
         }
@@ -300,6 +328,16 @@ int main (void)
             shaderWires.SetUniformMat4f("u_MVP", proj);
             renderer.Draw(va, ib_Wires, shaderWires);      
         }
+
+
+        //========================== moci ces iskoristiti za dragovanje ================
+        //  /* Main if loop for mouse click *///MOGAO BI OVO I DA ZAMJENIS SA PRAVIM KOLBACKOM
+        //  if( glfwGetMouseButton (  window, GLFW_MOUSE_BUTTON_LEFT ) == GLFW_PRESS )
+        //  {
+            //  std::cout<<"radi klik"<<std::endl;
+        //  }
+        //========================== moci ces iskoristiti za dragovanje ================
+
 
 
         /* ImGui UI */
