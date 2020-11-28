@@ -76,7 +76,14 @@ void mouseButtonCallback ( GLFWwindow *window, int button, int action, int mods)
 
     }
 
-    
+       if (button == GLFW_MOUSE_BUTTON_RIGHT && action == GLFW_PRESS)
+    {
+        std::cout<<"kliknuo sam"<<std::endl;
+        ColorClick = 0.0f;
+        std::cout<<ColorClick<<std::endl;
+
+
+    }
 
 }
 
@@ -257,7 +264,7 @@ int main (void)
 
 
         glfwSetMouseButtonCallback ( window, mouseButtonCallback );
-        ColorClick = 0.1f;
+        // ColorClick = 0.1f;
        
 
 
