@@ -37,7 +37,7 @@ float ColorClick = 1.f;
 int countPlayground = 12;    
 bool adder = false;
 grid::Buffer B;
-        double xpos, ypos;
+double MouseXpos, MouseYpos;
 
 
 void cursorPositionCallback ( GLFWwindow *window, double xPos, double yPos)
@@ -79,8 +79,8 @@ void mouseButtonCallback ( GLFWwindow *window, int button, int action, int mods)
 
 
         //getting cursor position
-        glfwGetCursorPos(window, &xpos, &ypos);
-        std::cout << "Cursor Position at (" << xpos << " : " << ypos << std::endl;
+        glfwGetCursorPos(window, &MouseXpos, &MouseYpos);
+        std::cout << "Cursor Position at (" << MouseXpos << " : " << MouseYpos << std::endl;
 
     }
 
@@ -366,8 +366,10 @@ int main (void)
             IndexBuffer ib_Playground(Tracker, tracker);//ovo ti je hard koded za jedan kvadratic. u biblioteci tamo racuna pozicije indeksa na osnovu pozicije misa
            
             //Base
+            B.IndexBufferElement(MouseXpos, MouseYpos, Memory);//ovo ti samo vraca niz koji saljes u indeks buffer. trebao bi na klik da doda jos sest indeksa
+            IndexBuffer ib_Memory (Memory, countPlayground);
 
-
+ 
             //Memory
             // B.IndexBufferMemory (Memory, Base, Tracker, countBase, countElement, adder);
             // IndexBuffer ib_Memory (Memory, countPlayground);
@@ -391,7 +393,16 @@ int main (void)
             shaderPlayground.SetUniform4f("u_Color",ColorClick, 0.f, 0.f, 1.f );
             shaderPlayground.SetUniformMat4f("u_MVP", proj);
             renderer.Draw(va, ib_Playground, shaderPlayground);       
-            // renderer.Draw(va, ib_Memory, shaderPlayground);            
+
+
+       
+        //     shaderTracker.SetUniformMat4f("u_MVP", proj);
+
+            /* Sending color to shader */
+            shaderTracker.Bind();
+            shaderTracker.SetUniform4f("u_Color",ColorClick, 0.3f, 0.6f, 1.f );
+            shaderTracker.SetUniformMat4f("u_MVP", proj);
+            renderer.Draw(va, ib_Memory, shaderTracker);            
 
 
             //u principu ti treba na klik da povecas vrijednost niza. niz ti je za sada hard coded na 6 indeksa. taj broj indeksa mora da se povecava znaci da i on ide u klik
