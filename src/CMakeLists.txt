@@ -53,7 +53,7 @@ set( SRCS
 # ../src/tests/TestCellSelection.cpp
 # ../src/tests/TestAddingElement.cpp
 
-../src/tests/TestAssemblied1.cpp
+# ../src/tests/TestAssemblied1.cpp
 ../src/tests/TestIris.cpp
 
 

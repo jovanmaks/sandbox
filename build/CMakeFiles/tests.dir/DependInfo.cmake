@@ -13,7 +13,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/demijan/Projects/tests/src/VertexArray.cpp" "/home/demijan/Projects/tests/build/CMakeFiles/tests.dir/VertexArray.cpp.o"
   "/home/demijan/Projects/tests/src/VertexBuffer.cpp" "/home/demijan/Projects/tests/build/CMakeFiles/tests.dir/VertexBuffer.cpp.o"
   "/home/demijan/Projects/tests/src/tests/Test.cpp" "/home/demijan/Projects/tests/build/CMakeFiles/tests.dir/tests/Test.cpp.o"
-  "/home/demijan/Projects/tests/src/tests/TestAssemblied1.cpp" "/home/demijan/Projects/tests/build/CMakeFiles/tests.dir/tests/TestAssemblied1.cpp.o"
   "/home/demijan/Projects/tests/src/tests/TestIris.cpp" "/home/demijan/Projects/tests/build/CMakeFiles/tests.dir/tests/TestIris.cpp.o"
   "/home/demijan/Projects/tests/src/vendor/imgui/imgui.cpp" "/home/demijan/Projects/tests/build/CMakeFiles/tests.dir/vendor/imgui/imgui.cpp.o"
   "/home/demijan/Projects/tests/src/vendor/imgui/imgui_demo.cpp" "/home/demijan/Projects/tests/build/CMakeFiles/tests.dir/vendor/imgui/imgui_demo.cpp.o"

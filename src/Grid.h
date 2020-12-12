@@ -44,8 +44,10 @@ namespace grid
 
         unsigned int IndexBuffer(std::vector<unsigned int>& indices);
         unsigned int IndexBufferTracker( double mouseX, double mouseY, unsigned int* IndeksiElement);
-        unsigned int IndexBufferElement( unsigned int* Igraliste );
 
+        // unsigned int IndexBufferBase ()
+        unsigned int IndexBufferElement( double mouseX,double mouseY, unsigned int* Igraliste );
+        unsigned int IndexBufferMemory( unsigned int* Merged, unsigned int* Base, unsigned int* Element,  int countBase, int countElement, bool clicked );
 
     };
     

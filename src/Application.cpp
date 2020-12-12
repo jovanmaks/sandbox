@@ -33,6 +33,12 @@
 #include "vendor/glm/gtc/matrix_transform.hpp"
 
 
+float ColorClick = 1.f;
+int countPlayground = 12;    
+bool adder = false;
+grid::Buffer B;
+        double xpos, ypos;
+
 
 void cursorPositionCallback ( GLFWwindow *window, double xPos, double yPos)
 {
@@ -47,7 +53,7 @@ void framebuffer_resize_callback(GLFWwindow* window, int fbW, int fbH)
 }
 
 
-
+/* Escape button for terminateing the window */
 void updateInput(GLFWwindow* window)
 {
 
@@ -59,28 +65,34 @@ void updateInput(GLFWwindow* window)
 
 }
 
-void mouseButtonCallback ( GLFWwindow *window, int button, int action, int mods);
-float ColorClick = 0.f;
 
-
-
-
+/* On click comands */
 void mouseButtonCallback ( GLFWwindow *window, int button, int action, int mods)
 {
     if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS)
     {
-        std::cout<<"kliknuo sam"<<std::endl;
+        // std::cout<<"Upalio sam"<<std::endl;
         ColorClick = 1.0f;
-        std::cout<<ColorClick<<std::endl;
+        countPlayground += 6;
+        // adder = true;
+        std::cout<<countPlayground<<std::endl;  
 
+
+        //getting cursor position
+        glfwGetCursorPos(window, &xpos, &ypos);
+        std::cout << "Cursor Position at (" << xpos << " : " << ypos << std::endl;
 
     }
 
        if (button == GLFW_MOUSE_BUTTON_RIGHT && action == GLFW_PRESS)
     {
-        std::cout<<"kliknuo sam"<<std::endl;
+        // std::cout<<"Ugasio sam"<<std::endl;
         ColorClick = 0.0f;
-        std::cout<<ColorClick<<std::endl;
+        countPlayground -= 6;
+        // adder = false;
+        std::cout<<countPlayground<<std::endl;
+
+        // std::cout<<ColorClick<<std::endl;
 
 
     }
@@ -93,7 +105,7 @@ void mouseButtonCallback ( GLFWwindow *window, int button, int action, int mods)
 int main (void)
 {
     Atributes atr;
-    grid::Buffer B;
+    // grid::Buffer B;
     float width = atr.rows;
     float height = atr.colums;
 
@@ -164,29 +176,31 @@ int main (void)
 
     //===========  BATCHED POSITIONS =======================
 
-    int countPlayground = 6;    
-    unsigned int* Playground = new unsigned int [countPlayground];
-    B.IndexBufferElement(Playground);
 
-    
+    /* Setting up the Batch coordinates */
 
-    
-
-
-
-
+    //verteksi
     int countVertexXYZ = atr.countCoordinatesXYZ;
     float* verteksi2 = new float[countVertexXYZ];
     B.VertexBuffer_XYZ( verteksi2);
+   
 
+    //=============== INDECIES =============================
+
+    /* Wires indecies */
     std::vector <unsigned int> indeksi;
     B.IndexBuffer( indeksi );
 
-
-
+    //pretvaras vektor u array
     int countIndeks = atr.countIndeks;
     unsigned int* indeksiNiz = new unsigned int [countIndeks];
     indeksiNiz = &indeksi[0];
+
+
+     /* Playground indecies */
+    // int countPlayground = 6;    
+    // unsigned int* Playground = new unsigned int [countPlayground];
+    // B.IndexBufferElement(Playground);
 
     //======================================================
 
@@ -202,16 +216,14 @@ int main (void)
     va.AddBuffer(vb, layout);
 
 
-    /* Index array */
+    /* Index arrays */
     IndexBuffer ib_Wires(indeksiNiz, countIndeks);
-    IndexBuffer ib_Playground(Playground, countPlayground);
+    // IndexBuffer ib_Playground(Playground, countPlayground);
 
 
     /* Matrices   */
     glm::mat4 proj  = glm::ortho(0.0f, width, 0.0f, height, -1.0f, 1.0f);
     // glm::mat4 view  = glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, 0));
-
-
 
 
     /* Shader for wires */
@@ -229,13 +241,6 @@ int main (void)
     Shader shaderPlayground("../res/shaders/Basic2.shader");
     shaderPlayground.Bind();
 
-
-
-
-
-
-
-    std::cout<<ColorClick<<std::endl;
 
     va.Unbind();
     vb.Unbind();
@@ -264,9 +269,7 @@ int main (void)
 
 
         glfwSetMouseButtonCallback ( window, mouseButtonCallback );
-        // ColorClick = 0.1f;
        
-
 
 
 
@@ -293,39 +296,105 @@ int main (void)
 
 
         /* Tracker */
+        // {
+        //     GLCall(glPolygonMode(GL_FRONT_AND_BACK, GL_FILL));// GL_FRONT, GL_FRONT_AND_BACK...  GL_FILL  GL_LINE  GL_POINT
+            
+               /* Mouse position */
+        //     double mouseX;
+        //     double mouseY;
+        //     int countIndexTracker = 6;
+        //     glfwGetCursorPos(window, &mouseX, &mouseY);     
+
+        //     /* test for out of screen  */
+        //     if(mouseX<0 || mouseY<0 || mouseX>atr.ScreenWidth || mouseY>atr.ScreenHeight)
+        //     {
+        //     mouseX = 2;
+        //     mouseY = 2;
+        //     countIndexTracker = 0;
+        //     }
+        //     // std::cout<<"Position: "<<"  X= "<<mouseX << "   Y= "<< mouseY <<std::endl;
+
+        //     /* Sending color to shader */
+        //     unsigned int* tracker = new unsigned int[countIndexTracker];
+        //     B.IndexBufferTracker(mouseX, mouseY, tracker);
+        //     IndexBuffer ib_Tracker(tracker, countIndexTracker);
+
+        //     //pointer ti vrati samo prvu tacku niza. Za kompletan niz trevba ti for petlja
+        //     std::cout<<*tracker<<std::endl;
+
+        //     shaderTracker.Bind();
+        ////// u trackeru ovdje samo nema linija za promjenu boje na klik
+        //     shaderTracker.SetUniformMat4f("u_MVP", proj);
+        //     renderer.Draw(va, ib_Tracker, shaderTracker);
+        // }
+
+
+
+
+        /* Playground */
         {
+
             GLCall(glPolygonMode(GL_FRONT_AND_BACK, GL_FILL));// GL_FRONT, GL_FRONT_AND_BACK...  GL_FILL  GL_LINE  GL_POINT
             
+            /* Mouse position */
             double mouseX;
             double mouseY;
-            int countIndexTracker = 6;
+            int    tracker = 6;
+
+            int countBase = 0;
+            int countElement = 6;
+            // int countPlayground = 6;    // ovo je prebaceno na vrh da bi ga povecavao na klik
             glfwGetCursorPos(window, &mouseX, &mouseY);       
+
             /* test for out of screen  */
             if(mouseX<0 || mouseY<0 || mouseX>atr.ScreenWidth || mouseY>atr.ScreenHeight)
             {
             mouseX = 2;
             mouseY = 2;
-            countIndexTracker = 0;
+            countPlayground = 0;
             }
 
-            // std::cout<<"Position: "<<"  X= "<<mouseX << "   Y= "<< mouseY <<std::endl;
+            int BrojKocki = countPlayground/6;
+           
+            /* Making the element and memory*/
+            unsigned int* Base = new unsigned int [countBase];
+            unsigned int* Tracker = new unsigned int [tracker];
+            unsigned int* Memory = new unsigned int [countPlayground];//count je dinamican i mora se racunati       
 
-            unsigned int* tracker = new unsigned int[countIndexTracker];
-            B.IndexBufferTracker(mouseX, mouseY, tracker);
-            IndexBuffer ib_Tracker(tracker, countIndexTracker);
-
-            shaderTracker.Bind();
-            shaderTracker.SetUniformMat4f("u_MVP", proj);
-            renderer.Draw(va, ib_Tracker, shaderTracker);
-        }
+            //Tracker
+            B.IndexBufferElement(mouseX, mouseY, Tracker);//ovo ti samo vraca niz koji saljes u indeks buffer. trebao bi na klik da doda jos sest indeksa
+            IndexBuffer ib_Playground(Tracker, tracker);//ovo ti je hard koded za jedan kvadratic. u biblioteci tamo racuna pozicije indeksa na osnovu pozicije misa
+           
+            //Base
 
 
-        /* Playground */
-        {
+            //Memory
+            // B.IndexBufferMemory (Memory, Base, Tracker, countBase, countElement, adder);
+            // IndexBuffer ib_Memory (Memory, countPlayground);
+
+
+
+            // for(int i =0; i<countElement; i++)
+            // {
+            //     std::cout<<"Memorija"<< Tracker[i]<<std::endl;
+            // }
+
+            // std::cout<< adder <<std::endl;
+
+
+            // std::cout<<"Mouse Position in px: "<<"  X= "<<mouseX << "   Y= "<< mouseY <<std::endl;
+            // std::cout<< "Broj kocki: "<<  BrojKocki  << " Ugaoni Indeksi: "<< *Memory <<std::endl;
+
+
+            /* Sending color to shader */
             shaderPlayground.Bind();
             shaderPlayground.SetUniform4f("u_Color",ColorClick, 0.f, 0.f, 1.f );
             shaderPlayground.SetUniformMat4f("u_MVP", proj);
-            renderer.Draw(va, ib_Playground, shaderPlayground);            
+            renderer.Draw(va, ib_Playground, shaderPlayground);       
+            // renderer.Draw(va, ib_Memory, shaderPlayground);            
+
+
+            //u principu ti treba na klik da povecas vrijednost niza. niz ti je za sada hard coded na 6 indeksa. taj broj indeksa mora da se povecava znaci da i on ide u klik
         }
 
         /* Wires */
@@ -365,15 +434,12 @@ int main (void)
         glfwPollEvents();        
 
     }
-
     
  }
- 
     ImGui_ImplGlfw_Shutdown();   
     ImGui_ImplOpenGL3_Shutdown();
     ImGui::DestroyContext();    
     glfwTerminate();
-
     return 0;
 
 }

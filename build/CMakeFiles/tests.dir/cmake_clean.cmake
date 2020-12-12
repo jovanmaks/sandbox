@@ -8,7 +8,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/tests.dir/VertexArray.cpp.o"
   "CMakeFiles/tests.dir/VertexBuffer.cpp.o"
   "CMakeFiles/tests.dir/tests/Test.cpp.o"
-  "CMakeFiles/tests.dir/tests/TestAssemblied1.cpp.o"
   "CMakeFiles/tests.dir/tests/TestIris.cpp.o"
   "CMakeFiles/tests.dir/vendor/imgui/imgui.cpp.o"
   "CMakeFiles/tests.dir/vendor/imgui/imgui_demo.cpp.o"

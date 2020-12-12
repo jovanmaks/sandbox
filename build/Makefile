@@ -386,33 +386,6 @@ tests/Test.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/Test.cpp.s
 .PHONY : tests/Test.cpp.s
 
-tests/TestAssemblied1.o: tests/TestAssemblied1.cpp.o
-
-.PHONY : tests/TestAssemblied1.o
-
-# target to build an object file
-tests/TestAssemblied1.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/TestAssemblied1.cpp.o
-.PHONY : tests/TestAssemblied1.cpp.o
-
-tests/TestAssemblied1.i: tests/TestAssemblied1.cpp.i
-
-.PHONY : tests/TestAssemblied1.i
-
-# target to preprocess a source file
-tests/TestAssemblied1.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/TestAssemblied1.cpp.i
-.PHONY : tests/TestAssemblied1.cpp.i
-
-tests/TestAssemblied1.s: tests/TestAssemblied1.cpp.s
-
-.PHONY : tests/TestAssemblied1.s
-
-# target to generate assembly for a file
-tests/TestAssemblied1.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/TestAssemblied1.cpp.s
-.PHONY : tests/TestAssemblied1.cpp.s
-
 tests/TestIris.o: tests/TestIris.cpp.o
 
 .PHONY : tests/TestIris.o
@@ -665,9 +638,6 @@ help:
 	@echo "... tests/Test.o"
 	@echo "... tests/Test.i"
 	@echo "... tests/Test.s"
-	@echo "... tests/TestAssemblied1.o"
-	@echo "... tests/TestAssemblied1.i"
-	@echo "... tests/TestAssemblied1.s"
 	@echo "... tests/TestIris.o"
 	@echo "... tests/TestIris.i"
 	@echo "... tests/TestIris.s"
