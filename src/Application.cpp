@@ -34,7 +34,13 @@
 
 
 float ColorClick = 1.f;
-int countPlayground = 12;    
+int countPlayground = 12;   
+int countOne = 0;//ovaj je dinamican
+
+int brojac =0;
+double PozicijaX[5];
+
+
 bool adder = false;
 grid::Buffer B;
 double MouseXpos, MouseYpos;
@@ -73,14 +79,26 @@ void mouseButtonCallback ( GLFWwindow *window, int button, int action, int mods)
     {
         // std::cout<<"Upalio sam"<<std::endl;
         ColorClick = 1.0f;
-        countPlayground += 6;
-        // adder = true;
-        std::cout<<countPlayground<<std::endl;  
+        // countPlayground += 6;
+        countOne += 6;//ovaj je dinamican
+        // std::cout<<countPlayground<<std::endl;  
 
 
-        //getting cursor position
         glfwGetCursorPos(window, &MouseXpos, &MouseYpos);
-        std::cout << "Cursor Position at (" << MouseXpos << " : " << MouseYpos << std::endl;
+        // std::cout << "Cursor Position at (" << MouseXpos << " : " << MouseYpos << std::endl;
+
+        brojac +=1;
+
+        PozicijaX[brojac]=MouseXpos;       
+
+           if (brojac == 4)
+        {
+            for (int i=0; i<4; i++)
+            {
+            std::cout<<"Pozicije X:  "<<PozicijaX[i]<<std::endl;
+            }
+            
+        }
 
     }
 
@@ -88,9 +106,9 @@ void mouseButtonCallback ( GLFWwindow *window, int button, int action, int mods)
     {
         // std::cout<<"Ugasio sam"<<std::endl;
         ColorClick = 0.0f;
-        countPlayground -= 6;
+        // countPlayground -= 6;
         // adder = false;
-        std::cout<<countPlayground<<std::endl;
+        // std::cout<<countPlayground<<std::endl;
 
         // std::cout<<ColorClick<<std::endl;
 
@@ -268,10 +286,11 @@ int main (void)
 
 
 
-        glfwSetMouseButtonCallback ( window, mouseButtonCallback );
+    glfwSetMouseButtonCallback ( window, mouseButtonCallback );
        
 
 
+     
 
 
 
@@ -341,8 +360,8 @@ int main (void)
             double mouseY;
             int    tracker = 6;
 
-            int countBase = 0;
-            int countElement = 6;
+            int countTwo = 6;
+            int countMerged =countTwo + countOne;
             // int countPlayground = 6;    // ovo je prebaceno na vrh da bi ga povecavao na klik
             glfwGetCursorPos(window, &mouseX, &mouseY);       
 
@@ -351,37 +370,39 @@ int main (void)
             {
             mouseX = 2;
             mouseY = 2;
-            countPlayground = 0;
             }
+            countPlayground = countOne + tracker;
 
             int BrojKocki = countPlayground/6;
            
             /* Making the element and memory*/
-            unsigned int* Base = new unsigned int [countBase];
+            unsigned int* Base = new unsigned int [countOne];
             unsigned int* Tracker = new unsigned int [tracker];
-            unsigned int* Memory = new unsigned int [countPlayground];//count je dinamican i mora se racunati       
+            unsigned int* Element = new unsigned int [countPlayground];//count je dinamican i mora se racunati       
+
+
+            unsigned int* Merged = new unsigned int [countMerged];//count je dinamican i mora se racunati       
 
             //Tracker
             B.IndexBufferElement(mouseX, mouseY, Tracker);//ovo ti samo vraca niz koji saljes u indeks buffer. trebao bi na klik da doda jos sest indeksa
             IndexBuffer ib_Playground(Tracker, tracker);//ovo ti je hard koded za jedan kvadratic. u biblioteci tamo racuna pozicije indeksa na osnovu pozicije misa
            
             //Base
-            B.IndexBufferElement(MouseXpos, MouseYpos, Memory);//ovo ti samo vraca niz koji saljes u indeks buffer. trebao bi na klik da doda jos sest indeksa
-            IndexBuffer ib_Memory (Memory, countPlayground);
+            B.IndexBufferElement(MouseXpos, MouseYpos, Element);//ovo ti samo vraca niz koji saljes u indeks buffer. trebao bi na klik da doda jos sest indeksa
+            IndexBuffer ib_Memory (Element, countPlayground);
 
  
             //Memory
-            // B.IndexBufferMemory (Memory, Base, Tracker, countBase, countElement, adder);
-            // IndexBuffer ib_Memory (Memory, countPlayground);
+            B.IndexBufferMemory (countOne, countTwo, Tracker, Element, Merged);
+            // IndexBuffer ib_Memory (Merged, countMerged);
 
-
-
-            // for(int i =0; i<countElement; i++)
+            // std::cout<<"count Merged:  "<< countMerged <<std::endl;c
+            // for(int i =0; i<countTwo; i++)
             // {
-            //     std::cout<<"Memorija"<< Tracker[i]<<std::endl;
+
+            //     std::cout<<"Merged"<< Merged[i]<<std::endl;
             // }
 
-            // std::cout<< adder <<std::endl;
 
 
             // std::cout<<"Mouse Position in px: "<<"  X= "<<mouseX << "   Y= "<< mouseY <<std::endl;
@@ -396,7 +417,6 @@ int main (void)
 
 
        
-        //     shaderTracker.SetUniformMat4f("u_MVP", proj);
 
             /* Sending color to shader */
             shaderTracker.Bind();

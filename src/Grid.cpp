@@ -301,7 +301,7 @@ namespace grid
 
 
         /* ovo treba da modifikujes da bude dinamican da moze da se poveca jer je hardcodded */
-        unsigned int Buffer::IndexBufferElement( double mouseX,double mouseY, unsigned int* Igraliste )
+        unsigned int Buffer::IndexBufferElement( double mouseX, double mouseY, unsigned int* Igraliste )
         {
             /* dimenzije celije u pixelima */
             double celijaX = ScreenWidth/rows;      
@@ -331,44 +331,45 @@ namespace grid
 
         }
 
-        unsigned int Buffer::IndexBufferMemory( unsigned int* Merged, unsigned int* Base, unsigned int* Element, int countBase, int countElement, bool clicked )
-        {
-
-            int countMerged = countBase + countElement;
-
-            /* uslov da li je kliknuto */
-            if( clicked == true)
-            {
+        unsigned int Buffer::IndexBufferMemory( int countOne, int countTwo, unsigned int* Base, unsigned int* Element, unsigned int* Memory )
+        {      
+            int countMerged = countOne + countTwo;
                 
-                // for (int i = 0; i<countOne; i++)
-                // {
-                //     Base[i]=22;
-                //     Merged[i] = Base[i];
-                // }
+            for (int i = 0; i<countTwo; i++)
+             {
+                 Memory[i] = Element[i];         
 
-            
-                // for (int i = 0; i<countElement; i++)//count element je 6 hard coded
-                // {
-                    // Merged[i]= Element[i];
-                    // Element[i]=44;
-                    for(int j=countBase; j<countMerged; j++)
-                    {
-                        // Merged[j] = Element[i];
-                        Merged[j] = Element[j];
-
-                    }
-
-                // }
+             }
 
 
-                    }else{
-                        
-                        for(int j=countBase; j<countMerged; j++)                
-                        Merged[j] = Element[j];             
+             for(int j=countTwo; j<countMerged; j++)
+             {
+                //  Memory[j] = Base[j];
+             }
 
-            }
 
-            
+
+            //  for (int i = 0; i<countOne; i++)
+            //  {
+            //     //  Base[i]=22;
+            //      Merged[i] = Base[i];
+            //  }
+
+
+        
+            //  for (int i = 0; i<countTwo; i++)//count element je 6 hard coded
+            //  {
+
+            //      Merged[i]= Element[i];
+            //      // Element[i]=44;
+            //      for(int j=countOne; j<countMerged; j++)
+            //      {
+            //          // Merged[j] = Element[i];
+            //          Merged[j] = Element[j];
+            //      }
+
+            //  }
+                   
             return 0;
         }
 
