@@ -37,8 +37,14 @@ float ColorClick = 1.f;
 int countPlayground = 12;   
 int countOne = 0;//ovaj je dinamican
 
-int brojac =0;
-double PozicijaX[5];
+
+int brojac = 0;
+
+double* PozicijeX= new double [brojac];
+double* PozicijeY= new double [brojac];
+
+// int PozicijeCount = brojac*6;
+// unsigned int* Pozicije= new unsigned int [PozicijeCount];//PozicijeCount
 
 
 bool adder = false;
@@ -77,32 +83,48 @@ void mouseButtonCallback ( GLFWwindow *window, int button, int action, int mods)
 {
     if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS)
     {
-        // std::cout<<"Upalio sam"<<std::endl;
         ColorClick = 1.0f;
         // countPlayground += 6;
         countOne += 6;//ovaj je dinamican
-        // std::cout<<countPlayground<<std::endl;  
 
 
         glfwGetCursorPos(window, &MouseXpos, &MouseYpos);
         // std::cout << "Cursor Position at (" << MouseXpos << " : " << MouseYpos << std::endl;
 
-        brojac +=1;
+        brojac =brojac+ 1;
 
-        PozicijaX[brojac]=MouseXpos;       
+        // B.MouseTest(MouseXpos,MouseYpos, brojac,Test);
 
-           if (brojac == 4)
-        {
-            for (int i=0; i<4; i++)
-            {
-            std::cout<<"Pozicije X:  "<<PozicijaX[i]<<std::endl;
-            }
+           std::cout<<brojac<<std::endl;
+            // if(brojac == 3)
+            // for(int i=0; i<brojac*6;i++)
+            // {
+            // std::cout<<Test[i]<<std::endl;
+            // }
+
+
+        // PozicijeX[brojac]=MouseXpos;
+        // PozicijeY[brojac]=MouseYpos;
+
+
+        // for (int i=0; i<brojac; i++)
+        //  {
+        //  std::cout<<Pozicije[i]<<std::endl;
+        //  }
+
+        // if (brojac == 5)
+        // {
+        //     for (int i=0; i<brojac; i++)
+        //     {
+        //     std::cout<<"Pozicije X:  "<<PozicijeX[i]<< "   Pozicije Y:  " << PozicijeY[i]<<std::endl;
+        //     }
             
-        }
+        // }
 
     }
 
-       if (button == GLFW_MOUSE_BUTTON_RIGHT && action == GLFW_PRESS)
+
+    if (button == GLFW_MOUSE_BUTTON_RIGHT && action == GLFW_PRESS)
     {
         // std::cout<<"Ugasio sam"<<std::endl;
         ColorClick = 0.0f;
@@ -111,7 +133,6 @@ void mouseButtonCallback ( GLFWwindow *window, int button, int action, int mods)
         // std::cout<<countPlayground<<std::endl;
 
         // std::cout<<ColorClick<<std::endl;
-
 
     }
 
@@ -214,6 +235,7 @@ int main (void)
     unsigned int* indeksiNiz = new unsigned int [countIndeks];
     indeksiNiz = &indeksi[0];
 
+    unsigned int* Test= new unsigned int [6];//PozicijeCount
 
      /* Playground indecies */
     // int countPlayground = 6;    
@@ -287,12 +309,6 @@ int main (void)
 
 
     glfwSetMouseButtonCallback ( window, mouseButtonCallback );
-       
-
-
-     
-
-
 
 
     /* Main while loop */
@@ -358,7 +374,11 @@ int main (void)
             /* Mouse position */
             double mouseX;
             double mouseY;
-            int    tracker = 6;
+            int    trackerCount = 6;
+            countPlayground = countOne + trackerCount;
+
+
+            int PozicijeCount = brojac*6;
 
             int countTwo = 6;
             int countMerged =countTwo + countOne;
@@ -371,45 +391,48 @@ int main (void)
             mouseX = 2;
             mouseY = 2;
             }
-            countPlayground = countOne + tracker;
 
             int BrojKocki = countPlayground/6;
            
             /* Making the element and memory*/
-            unsigned int* Base = new unsigned int [countOne];
-            unsigned int* Tracker = new unsigned int [tracker];
+            unsigned int* Tracker = new unsigned int [trackerCount];
             unsigned int* Element = new unsigned int [countPlayground];//count je dinamican i mora se racunati       
 
+            unsigned int* Pozicije= new unsigned int [PozicijeCount];//PozicijeCount
 
+           
+
+            unsigned int* Base = new unsigned int [countOne];
             unsigned int* Merged = new unsigned int [countMerged];//count je dinamican i mora se racunati       
 
             //Tracker
             B.IndexBufferElement(mouseX, mouseY, Tracker);//ovo ti samo vraca niz koji saljes u indeks buffer. trebao bi na klik da doda jos sest indeksa
-            IndexBuffer ib_Playground(Tracker, tracker);//ovo ti je hard koded za jedan kvadratic. u biblioteci tamo racuna pozicije indeksa na osnovu pozicije misa
+            IndexBuffer ib_Playground(Tracker, trackerCount);//ovo ti je hard koded za jedan kvadratic. u biblioteci tamo racuna pozicije indeksa na osnovu pozicije misa
            
             //Base
             B.IndexBufferElement(MouseXpos, MouseYpos, Element);//ovo ti samo vraca niz koji saljes u indeks buffer. trebao bi na klik da doda jos sest indeksa
-            IndexBuffer ib_Memory (Element, countPlayground);
+            B.IndexBufferElement2(MouseXpos, MouseYpos, brojac, Pozicije);  
+               B.MouseTest(MouseXpos,MouseYpos, brojac,Test);
+           
+            // IndexBuffer ib_Memory (Element, countPlayground);
+            // IndexBuffer ib_Memory (Pozicije, PozicijeCount);
+            IndexBuffer ib_Memory (Test, PozicijeCount);
 
+
+            // std::cout<<brojac<<std::endl;
+            // if(brojac ==4)
+            // for(int i=0; i<brojac;i++)
+            // {
+            // std::cout<<Test[i]<<std::endl;
+            // }
  
             //Memory
             B.IndexBufferMemory (countOne, countTwo, Tracker, Element, Merged);
             // IndexBuffer ib_Memory (Merged, countMerged);
 
-            // std::cout<<"count Merged:  "<< countMerged <<std::endl;c
-            // for(int i =0; i<countTwo; i++)
-            // {
-
-            //     std::cout<<"Merged"<< Merged[i]<<std::endl;
-            // }
-
-
-
-            // std::cout<<"Mouse Position in px: "<<"  X= "<<mouseX << "   Y= "<< mouseY <<std::endl;
-            // std::cout<< "Broj kocki: "<<  BrojKocki  << " Ugaoni Indeksi: "<< *Memory <<std::endl;
-
 
             /* Sending color to shader */
+            //Ovo je shader za tracker
             shaderPlayground.Bind();
             shaderPlayground.SetUniform4f("u_Color",ColorClick, 0.f, 0.f, 1.f );
             shaderPlayground.SetUniformMat4f("u_MVP", proj);
@@ -419,6 +442,7 @@ int main (void)
        
 
             /* Sending color to shader */
+            //Ovo je shader za memoriju
             shaderTracker.Bind();
             shaderTracker.SetUniform4f("u_Color",ColorClick, 0.3f, 0.6f, 1.f );
             shaderTracker.SetUniformMat4f("u_MVP", proj);

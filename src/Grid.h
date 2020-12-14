@@ -47,7 +47,11 @@ namespace grid
 
         // unsigned int IndexBufferBase ()
         unsigned int IndexBufferElement( double mouseX,double mouseY, unsigned int* Igraliste );
+        unsigned int IndexBufferElement2( double mouseX,double mouseY, int brojac, unsigned int* Igraliste );
+       
         unsigned int IndexBufferMemory( int countOne, int countTwo, unsigned int* Base, unsigned int* Element, unsigned int* Memory);
+
+        unsigned int MouseTest( double mouseX,  double mouseY, int brojac, unsigned int* Igraliste );
 
     };
     
