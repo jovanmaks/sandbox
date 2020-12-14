@@ -398,7 +398,7 @@ namespace grid
 
             unsigned int Ix = mouseX/celijaX;//treba da zaokruzis ovo na donju
             unsigned int Iy = (ScreenHeight - mouseY)/celijaY;//treba da zaokruzis ovo na donju
-           
+          
             //formula za racunanje ugaonog indeksa
             unsigned int I0= Ix + Iy*(rows+1);//prvi indeks. Donji lijevi
             unsigned int I1=I0 +1;
@@ -415,6 +415,41 @@ namespace grid
             Igraliste[brojac*6 -3]= I3;
             Igraliste[brojac*6 -2]= I4;
             Igraliste[brojac*6 -1]= I5;
+
+         
+         return 0;
+        }
+
+        unsigned int Buffer::IndexBufferMemory2( double mouseX, double mouseY, int brojac, unsigned int* Igraliste )
+        {
+
+            double celijaX = ScreenWidth/rows;      
+            double celijaY = ScreenHeight/colums;
+
+            unsigned int Ix = mouseX/celijaX;//treba da zaokruzis ovo na donju
+            unsigned int Iy = (ScreenHeight - mouseY)/celijaY;//treba da zaokruzis ovo na donju
+           
+           
+
+             //formula za racunanje ugaonog indeksa
+            unsigned int I0= Ix + Iy*(rows+1);//prvi indeks. Donji lijevi
+            unsigned int I1=I0 +2;
+            unsigned int I2=I0 +2 + rows*2;
+
+            unsigned int I3=I0 +2;
+            unsigned int I4=I0 +2 + rows*2;
+            unsigned int I5=I0 +2 + rows*2 + 2;       
+
+            Igraliste[brojac*6 -6]= I0;
+            Igraliste[brojac*6 -5]= I1;
+            Igraliste[brojac*6 -4]= I2;
+ 
+            Igraliste[brojac*6 -3]= I3;
+            Igraliste[brojac*6 -2]= I4;
+            Igraliste[brojac*6 -1]= I5;
+
+
+
 
          
          return 0;
