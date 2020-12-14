@@ -11,8 +11,6 @@ namespace grid
         {            
         }
 
-
-
         float BufferData::Value ( float* values )
         {
 
@@ -25,7 +23,6 @@ namespace grid
             }
             return 0;
         }  
-
 
         /* X position */
         float BufferData::XPositionCoordinates ( float* Xpositions )
@@ -42,8 +39,6 @@ namespace grid
             return 0;
         }
 
-
-
         /* Y position */
         float BufferData::YPositionCoordinates ( float* Ypositions )
         {
@@ -59,7 +54,6 @@ namespace grid
             return 0;            
         }
 
-
         /* Z position */
         float BufferData::ZPositionCoordinates ( float* Zpositions )
         {
@@ -74,7 +68,6 @@ namespace grid
 
             return 0;            
         }
-
 
         float BufferData::ColorRGB ( float* rgb)
         {
@@ -267,39 +260,35 @@ namespace grid
                       
           return 0;
         }
- 
-        unsigned int Buffer::IndexBufferTracker(double mouseX, double mouseY, unsigned int* IndeksiElement)
+    
+
+        unsigned int Buffer::IndexBufferWires( std::vector<unsigned int>& indices )
         {
-            
-
-
-            double celijaX = ScreenWidth/rows;
-            double celijaY = ScreenHeight/colums;
-
-            unsigned int Ix = mouseX/celijaX;//treba da zaokruzis ovo na donju
-            unsigned int Iy = (ScreenHeight - mouseY)/celijaY;//treba da zaokruzis ovo na donju
            
+             // indices.reserve(2*(width-1) * (height-1));
 
-            //formula za racunanje ugaonog indeksa
-            unsigned int I0= Ix + Iy*(rows+1);//prvi indeks. Donji lijevi
-
-            for(int i = 0; i<1; i++)
+            for(int i = 0; i<colums; i++)
             {
-            IndeksiElement[i]   = I0;
-            IndeksiElement[i+1] = I0+1;
-            IndeksiElement[i+2] = I0+1+rows ;
-            
-            IndeksiElement[i+3] = I0+1;
-            IndeksiElement[i+4] = I0+1+rows;
-            IndeksiElement[i+5] = I0+1+rows + 1;
+                for(int j = 0; j<rows; j++)
+                {
+
+                int  xPos = j + i*(rows+1);
+
+                indices.push_back(xPos);
+                indices.push_back(xPos+1);
+                indices.push_back(xPos+rows +1);
 
 
+                indices.push_back(xPos+1);
+                indices.push_back(xPos + rows+1);        
+                indices.push_back(xPos + rows+2);        
+
+                }
             }
-
-            return 0;
+                      
+          return 0;
         }
-
-
+    
         /* ovo treba da modifikujes da bude dinamican da moze da se poveca jer je hardcodded */
         unsigned int Buffer::IndexBufferElement( double mouseX, double mouseY, unsigned int* Igraliste )
         {
@@ -325,104 +314,13 @@ namespace grid
             Igraliste[i+5] = I0+1+rows + 1;
             }
 
-            //igraliste ti postaje novo igraliste sa dodatim kockama
-
             return 0;
 
         }
 
-           unsigned int Buffer::IndexBufferElement2( double mouseX, double mouseY, int brojac, unsigned int* Igraliste )
-        {
-
-            //MORAS DA PRIHVATIS POZICIJE KAO NIZ I ZA SVAKO DA NADJES RACUNSKI RIJESENJE
-            /* dimenzije celije u pixelima */
-            double celijaX = ScreenWidth/rows;      
-            double celijaY = ScreenHeight/colums;
-
-            unsigned int Ix = mouseX/celijaX;//treba da zaokruzis ovo na donju
-            unsigned int Iy = (ScreenHeight - mouseY)/celijaY;//treba da zaokruzis ovo na donju
-           
-            //formula za racunanje ugaonog indeksa
-            unsigned int I0= Ix + Iy*(rows+1);//prvi indeks. Donji lijevi
-            unsigned int I1=I0 +1;
-            unsigned int I2=I0 +1 + rows;
-
-            unsigned int I3=I0 +1;
-            unsigned int I4=I0 +1 + rows;
-            unsigned int I5=I0 +1 + rows + 1;
-
-            /* ne radi ovaj metod */
-            // for(int i = 0; i<1; i++)
-            // {
-            // Igraliste[brojac*6]= I0;
-
-            // Igraliste[i]   = I0;
-            // Igraliste[i+1] = I0+1;
-            // Igraliste[i+2] = I0+1+rows ;
-            
-            // Igraliste[i+3] = I0+1;
-            // Igraliste[i+4] = I0+1+rows;
-            // Igraliste[i+5] = I0+1+rows + 1;
-            // }
-
-
-            /* Ne radi ni ovaj metod */
-            if (brojac == 0)
-            {
-            Igraliste[0]= I0;
-            Igraliste[1]= I1;
-            Igraliste[2]= I2;
-
-            Igraliste[3]= I3;
-            Igraliste[4]= I4;
-            Igraliste[5]= I5;
-
-            }else{
-
-            //otprilike je prepisao mnovu vrijednost I0 u staru vrijednost
-            Igraliste[brojac*6 -6]= I0;
-            Igraliste[brojac*6 -5]= I1;
-            Igraliste[brojac*6 -4]= I2;
-
-            Igraliste[brojac*6 -3]= I3;
-            Igraliste[brojac*6 -2]= I4;
-            Igraliste[brojac*6 -1]= I5;
-            }
-            
-            // }else if(brojac == 1){
-
-            // Igraliste[brojac*6 -6]= 0;
-            // Igraliste[brojac*6 -5]= 1;
-            // Igraliste[brojac*6 -4]= 21;
-
-            // Igraliste[brojac*6 -3]= 1;
-            // Igraliste[brojac*6 -2]= 21;
-            // Igraliste[brojac*6 -1]= 22;
-
-            // }else if(brojac ==2){
-            // Igraliste[brojac*6 -6]= 1;
-            // Igraliste[brojac*6 -5]= 2;
-            // Igraliste[brojac*6 -4]= 22;
-
-            // Igraliste[brojac*6 -3]= 2;
-            // Igraliste[brojac*6 -2]= 22;
-            // Igraliste[brojac*6 -1]= 23; 
-            // }
-
-            /* Ovaj metod radi */
-
-            //Ulazi ti brojac koji govori koji po redu je klik
-
-
-
-
-            //igraliste ti postaje novo igraliste sa dodatim kockama
-
-            return 0;
-
-        }
-
-        unsigned int Buffer::IndexBufferMemory( int countOne, int countTwo, unsigned int* Base, unsigned int* Element, unsigned int* Memory )
+    
+        /* Ovo je ostavljeno da ima kako se radi mergovanje nizova */
+        unsigned int Buffer::IndexBufferMerged( int countOne, int countTwo, unsigned int* Base, unsigned int* Element, unsigned int* Memory )
         {      
             int countMerged = countOne + countTwo;
                 
@@ -464,7 +362,7 @@ namespace grid
             return 0;
         }
 
-        unsigned int Buffer::MouseTest( double mouseX, double mouseY, int brojac, unsigned int* Igraliste )
+        unsigned int Buffer::IndexBufferMemory( double mouseX, double mouseY, int brojac, unsigned int* Igraliste )
         {
 
             double celijaX = ScreenWidth/rows;      
@@ -480,21 +378,7 @@ namespace grid
 
             unsigned int I3=I0 +1;
             unsigned int I4=I0 +1 + rows;
-            unsigned int I5=I0 +1 + rows + 1;
-
-            // if (brojac == 0)
-            // {
-            // Igraliste[0]= I0;
-            // Igraliste[1]= I1;
-            // Igraliste[2]= I2;
-
-            // Igraliste[3]= I3;
-            // Igraliste[4]= I4;
-            // Igraliste[5]= I5;
-
-     
-            
-            // }else if(brojac != 0){
+            unsigned int I5=I0 +1 + rows + 1;       
 
             Igraliste[brojac*6 -6]= I0;
             Igraliste[brojac*6 -5]= I1;
