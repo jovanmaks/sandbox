@@ -466,7 +466,6 @@ namespace grid
 
         unsigned int Buffer::MouseTest( double mouseX, double mouseY, int brojac, unsigned int* Igraliste )
         {
-            // Memory[brojac]=mouseX;
 
             double celijaX = ScreenWidth/rows;      
             double celijaY = ScreenHeight/colums;
@@ -505,17 +504,8 @@ namespace grid
             Igraliste[brojac*6 -2]= I4;
             Igraliste[brojac*6 -1]= I5;
 
-            // } else if(brojac == 2 ) {
-            // Igraliste[2*6 -6]= 1;
-            // Igraliste[2*6 -5]= 2;
-            // Igraliste[2*6 -4]= 22;
-
-            // Igraliste[2*6 -3]= 2;
-            // Igraliste[2*6 -2]= 22;
-            // Igraliste[2*6 -1]= 23; 
-
-            // }
          
+         return 0;
         }
 
 
