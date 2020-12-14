@@ -23,7 +23,6 @@ namespace grid
         float ColorRGB                    ( float* rgb );//TODO 
         float ColorAlpha                  ( float* alpha );//TODO 
 
-
         float TextureCoordinates          ( float* array );//TODO
 
 
@@ -47,6 +46,8 @@ namespace grid
         unsigned int IndexBufferWires(std::vector<unsigned int>& indices);
         //tracker
         unsigned int IndexBufferElement( double mouseX,double mouseY, unsigned int* Igraliste );
+        unsigned int IndexBufferElement2( double mouseX,double mouseY, unsigned int* Igraliste );
+        
         //memory
         unsigned int IndexBufferMemory ( double mouseX,  double mouseY, int brojac, unsigned int* Igraliste );
 

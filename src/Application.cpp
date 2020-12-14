@@ -38,6 +38,13 @@ grid::Buffer B;
 float ColorClick = 1.f;
 int brojac = 0;
 double MouseXpos, MouseYpos;
+int tt = 0;
+
+// int trackerCount = 6;
+
+// unsigned int* Element   = new unsigned int [trackerCount];
+// unsigned int* Tracker   = new unsigned int [trackerCount];
+// unsigned int* Tracker2 = new unsigned int [trackerCount];
 
 
 void cursorPositionCallback ( GLFWwindow *window, double xPos, double yPos)
@@ -84,6 +91,30 @@ void mouseButtonCallback ( GLFWwindow *window, int button, int action, int mods)
 
 }
 
+/* Scroll comands */
+void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
+{
+    if (yoffset > 0)
+    {
+    // Element = Tracker2;
+         /* Ovo je shader za tracker 2 */
+           
+     tt = 1;      
+
+	std::cout << tt << std::endl;
+    }
+	else{
+    // Element = Tracker;
+
+       /* Ovo je shader za tracker */
+     tt = 0;      
+      
+
+	std::cout << tt << std::endl;
+    }
+
+    
+}
 
 
 
@@ -212,15 +243,21 @@ int main (void)
     shaderWires.Bind();
     shaderWires.SetUniform4f("u_Color",0.6f, 0.6f, 0.6f, 0.5f );
 
-    /* Shader for tracker */
+    /* Shader for Memory */
     Shader shaderMemory("../res/shaders/Basic2.shader");
     shaderMemory.Bind();
     shaderMemory.SetUniform4f("u_Color",0.2f, 0.4f, 0.6f, 0.7f );
 
 
-     /* Shader for playground */
+
+
+     /* Shader for tracker */
     Shader shaderTracker("../res/shaders/Basic2.shader");
     shaderTracker.Bind();
+
+      /* Shader for tracker 2 */
+    Shader shaderTracker2("../res/shaders/Basic2.shader");
+    shaderTracker2.Bind();
 
 
     va.Unbind();
@@ -229,7 +266,7 @@ int main (void)
     shaderWires.Unbind();
     shaderMemory.Unbind();
     shaderTracker.Unbind();
-
+    shaderTracker2.Unbind();
 
     Renderer renderer;
 
@@ -250,7 +287,6 @@ int main (void)
 
 
     glfwSetMouseButtonCallback ( window, mouseButtonCallback );
-
 
     /* Main while loop */
     while(!glfwWindowShouldClose(window))
@@ -294,18 +330,44 @@ int main (void)
             unsigned int* Tracker = new unsigned int [trackerCount];
             B.IndexBufferElement(mouseX, mouseY, Tracker);
             IndexBuffer ib_Tracker(Tracker, trackerCount);
+
            
+           //Tracker II
+            unsigned int* Tracker2 = new unsigned int [trackerCount];
+            B.IndexBufferElement2(mouseX, mouseY, Tracker2);
+            IndexBuffer ib_Tracker2(Tracker2, trackerCount);
+
+
             //Memory  
             //Uzimas pozicije misa iz funkcije za klik
             B.IndexBufferMemory (MouseXpos,MouseYpos, brojac, Memory);           
             IndexBuffer ib_Memory (Memory, memoryCount);
 
 
+            glfwSetScrollCallback(window, scroll_callback);
+
+
+
+            if(tt == 0)
+            {
+
+              /* Ovo je shader za tracker 2 */
+            shaderTracker2.Bind();
+            shaderTracker2.SetUniform4f("u_Color",ColorClick, 0.2f, 0.2f, 1.f );
+            shaderTracker2.SetUniformMat4f("u_MVP", proj);
+            renderer.Draw(va, ib_Tracker2, shaderTracker2); 
+
+            }else if(tt == 1){
+
             /* Ovo je shader za tracker */
             shaderTracker.Bind();
-            shaderTracker.SetUniform4f("u_Color",ColorClick, 0.f, 0.f, 1.f );
+            shaderTracker.SetUniform4f("u_Color",ColorClick, 0.2f, 0.8f, 0.8f );
             shaderTracker.SetUniformMat4f("u_MVP", proj);
             renderer.Draw(va, ib_Tracker, shaderTracker);       
+
+            }
+
+
 
             /* Ovo je shader za memoriju */
             shaderMemory.Bind();
@@ -340,6 +402,7 @@ int main (void)
             ImGui::Text("Dugme za save");
             ImGui::Text("Dugme za reset");
             ImGui::Text("mijenjanje elementa na skrol");
+            ImGui::Text("Novi gridovi");
 
 
             ImGui::End();

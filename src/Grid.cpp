@@ -318,6 +318,34 @@ namespace grid
 
         }
 
+        unsigned int Buffer::IndexBufferElement2( double mouseX, double mouseY, unsigned int* Igraliste )
+        {
+            /* dimenzije celije u pixelima */
+            double celijaX = ScreenWidth/rows;      
+            double celijaY = ScreenHeight/colums;
+
+            unsigned int Ix = mouseX/celijaX;//treba da zaokruzis ovo na donju
+            unsigned int Iy = (ScreenHeight - mouseY)/celijaY;//treba da zaokruzis ovo na donju
+           
+            //formula za racunanje ugaonog indeksa
+            unsigned int I0= Ix + Iy*(rows+1);//prvi indeks. Donji lijevi
+
+
+            for(int i = 0; i<1; i++)
+            {
+            Igraliste[i]   = I0;
+            Igraliste[i+1] = I0+2;
+            Igraliste[i+2] = I0+2+rows*2 ;
+            
+            Igraliste[i+3] = I0+2;
+            Igraliste[i+4] = I0+2+rows*2;
+            Igraliste[i+5] = I0+2+rows*2 + 2;
+            }
+
+            return 0;
+
+        }
+
     
         /* Ovo je ostavljeno da ima kako se radi mergovanje nizova */
         unsigned int Buffer::IndexBufferMerged( int countOne, int countTwo, unsigned int* Base, unsigned int* Element, unsigned int* Memory )
