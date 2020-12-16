@@ -36,15 +36,14 @@ grid::Buffer B;
 
 
 float ColorClick = 1.f;
-int brojac = 0;
-double MouseXpos, MouseYpos;
+int brojacZid,brojacStub ;
+double MouseXpos, MouseYpos, MouseXpos2, MouseYpos2;
 int tt = 0;
+int trackerCount;
+int element = 0;
+int memoryCount, memoryCount2;
 
-// int trackerCount = 6;
 
-// unsigned int* Element   = new unsigned int [trackerCount];
-// unsigned int* Tracker   = new unsigned int [trackerCount];
-// unsigned int* Tracker2 = new unsigned int [trackerCount];
 
 
 void cursorPositionCallback ( GLFWwindow *window, double xPos, double yPos)
@@ -70,47 +69,64 @@ void updateInput(GLFWwindow* window)
 
 }
 
-
 /* On click comands */
 void mouseButtonCallback ( GLFWwindow *window, int button, int action, int mods)
 {
     if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS)
     {
-        ColorClick = 1.0f;
-        glfwGetCursorPos(window, &MouseXpos, &MouseYpos);
-        brojac += 1;
-        std::cout<<brojac<<std::endl;
+        // ColorClick = 1.0f;
    
     }
 
-    // if (button == GLFW_MOUSE_BUTTON_RIGHT && action == GLFW_PRESS)
-    // {
-    //     ColorClick = 0.0f;
+    if (button == GLFW_MOUSE_BUTTON_RIGHT && action == GLFW_PRESS)
+    {
+        if(element == 0)
+        {
 
-    // }
+        glfwGetCursorPos(window, &MouseXpos, &MouseYpos);
+        brojacZid += 1;
+        }else if(element == 1)
+        {
+        glfwGetCursorPos(window, &MouseXpos2, &MouseYpos2);
+        brojacStub += 1;
+        }
+
+        // std::cout<<brojac<<std::endl;
+        ColorClick = 1.0f;
+
+    }
+
+    
 
 }
 
+/* Mislim da se ne koristi nigdje ali neka ga za sada */
 void mouseButtonCallback2 ( GLFWwindow *window, int button, int action, int mods)
 {
-    if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_RELEASE)
+     if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS)
     {
-        ColorClick = 1.0f;
-        glfwGetCursorPos(window, &MouseXpos, &MouseYpos);
-        brojac += 1;
-        std::cout<<brojac<<std::endl;
+        // ColorClick = 1.0f;
    
     }
 
-    // if (button == GLFW_MOUSE_BUTTON_RIGHT && action == GLFW_PRESS)
-    // {
-    //     ColorClick = 0.0f;
+    if (button == GLFW_MOUSE_BUTTON_RIGHT && action == GLFW_PRESS)
+    {
+        glfwGetCursorPos(window, &MouseXpos, &MouseYpos);
+        if(element == 0)
+        {
 
-    // }
+        brojacZid += 1;
+        }else if(element == 1)
+        {
 
+        brojacStub += 1;
+        }
+
+        // std::cout<<brojac<<std::endl;
+        ColorClick = 1.0f;
+
+    }
 }
-
-
 
 /* Scroll comands */
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
@@ -119,19 +135,42 @@ void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
     {
           
      tt = 0;
-	std::cout << tt << std::endl;
+	// std::cout << tt << std::endl;
     }
 	else{
     tt = 1;   
 
-	std::cout << tt << std::endl;
+	// std::cout << tt << std::endl;
     }
 
     
 }
 
+/* Meny bar */
+static void ShowExampleAppMainMenuBar()
+{
+    if (ImGui::BeginMainMenuBar())
+    {
+        if (ImGui::BeginMenu("File"))
+        {
+            // ShowExampleMenuFile();
+            ImGui::EndMenu();
+        }
+        if (ImGui::BeginMenu("Edit"))
+        {
+            if (ImGui::MenuItem("Undo", "CTRL+Z")) {}
+            if (ImGui::MenuItem("Redo", "CTRL+Y", false, false)) {}  // Disabled item
+            ImGui::Separator();
+            if (ImGui::MenuItem("Cut", "CTRL+X")) {}
+            if (ImGui::MenuItem("Copy", "CTRL+C")) {}
+            if (ImGui::MenuItem("Paste", "CTRL+V")) {}
+            ImGui::EndMenu();
+        }
+        ImGui::EndMainMenuBar();
+    }
+}
 
-
+/* Main function */
 int main (void)
 {
     Atributes atr;
@@ -192,7 +231,8 @@ int main (void)
     fprintf(stdout, "Status: Using GLEW %s\n", glewGetString(GLEW_VERSION));
     fprintf(stdout, "Status: Using GL %s\n", glGetString(GL_VERSION));   
 
-    
+        glfwSetMouseButtonCallback ( window, mouseButtonCallback );
+        glfwSetScrollCallback(window, scroll_callback);
     //=======================================================================
     //=======================================================================
     //=======================================================================
@@ -207,9 +247,14 @@ int main (void)
 
     //verteksi
     int countVertexXYZ = atr.countCoordinatesXYZ;
+    int countVertexXYZ_RGBA = atr.countAllXYZ;
+
     float* verteksi2 = new float[countVertexXYZ];
+    float* verteksiAll = new float[countVertexXYZ_RGBA];
+
+
     B.VertexBuffer_XYZ( verteksi2);
-   
+    B.VertexBuffer_XYZ_RGBA (verteksiAll);
 
     //=============== INDECIES =============================
 
@@ -223,18 +268,21 @@ int main (void)
     indeksiNiz = &indeksi[0];
 
 
-    /* Indeksi koji se memorisu */
-    unsigned int* Memory = new unsigned int [6];//MemoryCount
-    unsigned int* Memory2 = new unsigned int [12];//MemoryCount
+    /* Indeksi koji se memorisu. 1 i 2 zato sto imas dva aktivna elementa 1x1 i 2x2 */
+    //Nemam pojma zasto radi kad mu nisam definisao koliko je count
+   
+    
+
+    unsigned int* Memory = new unsigned int [memoryCount];//MemoryCount
+    unsigned int* Memory2 = new unsigned int [memoryCount2];//MemoryCount
 
 
-  
 
-    //======================================================
+    //=============== LAYOUT =========================
 
 
-    GLCall(glEnable(GL_BLEND));
-    GLCall(glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)  );
+    // GLCall(glEnable(GL_BLEND));
+    // GLCall(glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)  );
 
 
     /* Vertex array layout */
@@ -248,16 +296,27 @@ int main (void)
     /* Index arrays */
     IndexBuffer ib_Wires(indeksiNiz, countIndeks);
 
+    //=============== CAMERA =========================
 
     /* Matrices   */
     glm::mat4 proj  = glm::ortho(0.0f, width, 0.0f, height, -1.0f, 1.0f);
     // glm::mat4 view  = glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, 0));
+
+    //=============== SHADERS =========================
 
 
     /* Shader for wires */
     Shader shaderWires("../res/shaders/Basic2.shader");
     shaderWires.Bind();
     shaderWires.SetUniform4f("u_Color",0.6f, 0.6f, 0.6f, 0.5f );
+
+     /* Shader for tracker */
+    Shader shaderTracker("../res/shaders/Basic2.shader");
+    shaderTracker.Bind();
+
+      /* Shader for tracker 2 */
+    Shader shaderTracker2("../res/shaders/Basic2.shader");
+    shaderTracker2.Bind();
 
     /* Shader for Memory */
     Shader shaderMemory("../res/shaders/Basic2.shader");
@@ -270,14 +329,7 @@ int main (void)
     shaderMemory2.SetUniform4f("u_Color",0.2f, 0.4f, 0.6f, 0.7f );
 
 
-     /* Shader for tracker */
-    Shader shaderTracker("../res/shaders/Basic2.shader");
-    shaderTracker.Bind();
-
-      /* Shader for tracker 2 */
-    Shader shaderTracker2("../res/shaders/Basic2.shader");
-    shaderTracker2.Bind();
-
+    //=============== UNBIND =========================
 
     va.Unbind();
     vb.Unbind();
@@ -293,7 +345,7 @@ int main (void)
 
     Renderer renderer;
 
-
+    //=============== IMGUI =========================
 
     /* Setup Dear ImGui context */     
     IMGUI_CHECKVERSION();
@@ -306,12 +358,19 @@ int main (void)
 
     //flags for trigerring imGui 
     bool show_another_window = true;
+    bool show_demo_window = true;
 
-    glfwSetScrollCallback(window, scroll_callback);
+    bool primarniGrid   = false;
+    bool sekundarniGrid = false;
+
+    bool stub = false;
 
 
+    static bool show_app_main_menu_bar = true;
+    //====================================================
+    //=============== WHILE LOOP =========================
+    //====================================================
 
-    /* Main while loop */
     while(!glfwWindowShouldClose(window))
     {
         GLCall(glClearColor(0.0f, 0.0f, 0.0f, 1.0f));
@@ -330,21 +389,11 @@ int main (void)
         /* Playground */
         {
 
-            GLCall(glPolygonMode(GL_FRONT_AND_BACK, GL_FILL));// GL_FRONT, GL_FRONT_AND_BACK...  GL_FILL  GL_LINE  GL_POINT
-            
+            GLCall(glPolygonMode(GL_FRONT_AND_BACK, GL_FILL));// GL_FRONT, GL_FRONT_AND_BACK...  GL_FILL  GL_LINE  GL_POINT            
             /* Mouse position */
-            double mouseX;
-            double mouseY;
-
-            int trackerCount = 6;
-            int memoryCount = brojac*6;
-            int memoryCount2 = brojac*6;
-
-
+            double mouseX, mouseY;
             /* Detektujes mis za tracker */
-            glfwGetCursorPos(window, &mouseX, &mouseY);       
-
-
+            glfwGetCursorPos(window, &mouseX, &mouseY);   
 
             /* test for out of screen  */
             if(mouseX<0 || mouseY<0 || mouseX>atr.ScreenWidth || mouseY>atr.ScreenHeight)
@@ -352,110 +401,196 @@ int main (void)
             mouseX = 2;
             mouseY = 2;
             }
-           
 
 
+            trackerCount = 6;
+     
+            memoryCount = brojacZid*6;
+            memoryCount2 = brojacStub*6;
 
-            //Memory  
-            //Uzimas pozicije misa iz funkcije za klik
-            // IndexBuffer ib_Memory (Memory, memoryCount);
+         
 
-
-            if(tt == 0)
+            if( element == 0)
             {
-             glfwSetMouseButtonCallback ( window, mouseButtonCallback );
+
             
             //Tracker
             unsigned int* Tracker = new unsigned int [trackerCount];
             B.IndexBufferElement(mouseX, mouseY, Tracker);
             IndexBuffer ib_Tracker(Tracker, trackerCount);
 
-            B.IndexBufferMemory (MouseXpos,MouseYpos, brojac, Memory);      
 
             /* Ovo je shader za tracker */
             shaderTracker.Bind();
-            shaderTracker.SetUniform4f("u_Color",ColorClick, 0.7f, 0.8f, 0.7f );
+            shaderTracker.SetUniform4f("u_Color",ColorClick, 1.f, 0.5f, 0.5f );
             shaderTracker.SetUniformMat4f("u_MVP", proj);
             renderer.Draw(va, ib_Tracker, shaderTracker);  
 
-            }else if(tt == 1){
 
-            // glfwSetMouseButtonCallback ( window, mouseButtonCallback2 );
-             
+            shaderTracker.Unbind();
+            delete[] Tracker;
 
-           //Tracker II
+            }else if(element == 1){   
+
+            //Tracker II
+
+            /* uslov za izuzetak na desnom i gornjem kraju ekrana */
+            if( mouseX >= atr.ScreenWidth - atr.ScreenWidth/ atr.rows || mouseY <= atr.ScreenHeight/ atr.colums  )
+               {
+                mouseX = mouseX - atr.ScreenWidth / atr.rows;
+                mouseY = mouseY + atr.ScreenHeight / atr.colums;
+               }
+
+
             unsigned int* Tracker2 = new unsigned int [trackerCount];
             B.IndexBufferElement2(mouseX, mouseY, Tracker2);
             IndexBuffer ib_Tracker2(Tracker2, trackerCount);
 
-            B.IndexBufferMemory2 (MouseXpos,MouseYpos, brojac, Memory2);  
 
               /* Ovo je shader za tracker 2 */
             shaderTracker2.Bind();
-            shaderTracker2.SetUniform4f("u_Color",ColorClick, 0.7f, 0.8f, 0.7f );
+            shaderTracker2.SetUniform4f("u_Color",ColorClick, 1.f, 0.5f, 0.5f );
             shaderTracker2.SetUniformMat4f("u_MVP", proj);
             renderer.Draw(va, ib_Tracker2, shaderTracker2); 
+            
+        
+            shaderTracker2.Unbind();
+            delete[] Tracker2;
             }
 
-
-
-
+            B.IndexBufferMemory (MouseXpos,MouseYpos, brojacZid, Memory);   
             IndexBuffer ib_Memory (Memory, memoryCount);
+
+
+
+            /* uslov za izuzetak na desnom i gornjem kraju ekrana */
+            if( MouseXpos2 >= atr.ScreenWidth - atr.ScreenWidth/ atr.rows ||  MouseYpos2 <= atr.ScreenHeight/ atr.colums )
+               {
+                MouseXpos2 = MouseXpos2 - atr.ScreenWidth / atr.rows;
+                MouseYpos2 = MouseYpos2 + atr.ScreenHeight / atr.colums;
+               }
+
+            B.IndexBufferMemory2 (MouseXpos2,MouseYpos2, brojacStub, Memory2);  
             IndexBuffer ib_Memory2 (Memory2, memoryCount2);
 
-
-
             //============== SKLADISTENJE ====================================
-            /* Ovo je shader za memoriju */
+             /* Ovo je shader za memoriju  - aka zid */
+           
             shaderMemory.Bind();
             shaderMemory.SetUniform4f("u_Color",ColorClick, 1.f, 1.f, 1.f );
             shaderMemory.SetUniformMat4f("u_MVP", proj);
-            renderer.Draw(va, ib_Memory, shaderMemory);  
+            renderer.Draw(va, ib_Memory, shaderMemory); 
+            shaderMemory.Unbind();
 
-             /* Ovo je shader za memoriju 2 */
+            //============================================
+            /* ovdje ce ti doci vrata jer 
+            vrata mogu preko zida ali ne mogu preko stuba */
+            //============================================
+
+             /* Ovo je shader za memoriju 2 - aka stub */
             shaderMemory2.Bind();
             shaderMemory2.SetUniform4f("u_Color",ColorClick, 0.f, 0.f, 1.f );
             shaderMemory2.SetUniformMat4f("u_MVP", proj);
             renderer.Draw(va, ib_Memory2, shaderMemory2);  
+            shaderMemory2.Unbind();
+
+
 
         }
 
-        /* Wires */
+        if(primarniGrid)
         {
             GLCall(glPolygonMode(GL_FRONT_AND_BACK, GL_LINE));// GL_FRONT, GL_FRONT_AND_BACK...  GL_FILL  GL_LINE  GL_POINT
             shaderWires.Bind();
             shaderWires.SetUniformMat4f("u_MVP", proj);
             renderer.Draw(va, ib_Wires, shaderWires);      
+            shaderWires.Unbind();
         }
 
-
-        //========================== moci ces iskoristiti za dragovanje ================
-        //  /* Main if loop for mouse click *///MOGAO BI OVO I DA ZAMJENIS SA PRAVIM KOLBACKOM
         //  if( glfwGetMouseButton (  window, GLFW_MOUSE_BUTTON_LEFT ) == GLFW_PRESS )
         //  {
-            //  std::cout<<"radi klik"<<std::endl;
+        //      std::cout<<"radi klik"<<std::endl;
         //  }
-        //========================== moci ces iskoristiti za dragovanje ================
 
 
 
         /* ImGui UI */
         if( show_another_window)
         {
-            ImGui::Begin("PASULJKO");         
-            ImGui::Text("Elemente svejedno ces da biras iz panela. ");
-            ImGui::Text("Za sada bug neka ostane ");
+            
 
-            ImGui::Text("Treba da vidis za sabiranje matrica ");
+            ImGui::Begin("PASULJKO");    
+            if (show_app_main_menu_bar)       ShowExampleAppMainMenuBar();
+            //if buttn onda nesto    
+
+            ImGui::RadioButton("Zid", &element, 0); ImGui::SameLine();
+            ImGui::RadioButton("Stub", &element, 1); ImGui::SameLine();
+            ImGui::RadioButton("Greda", &element, 2);
+
+            // ImGui::RadioButton("Vrata", &element, 3); ImGui::SameLine();
+            // ImGui::RadioButton("Prozor", &element, 4); 
+
+            // ImGui::RadioButton("Stepenice", &element, 5); ImGui::SameLine();
+            // ImGui::RadioButton("Lift", &element, 6); 
+
+            // ImGui::RadioButton("Kuhinjski Sto", &element, 7); ImGui::SameLine();
+            // ImGui::RadioButton("Stolica", &element, 8); ImGui::SameLine();
+            // ImGui::RadioButton("Kuhinjski Element", &element, 9); 
+
+            // ImGui::RadioButton("Trosjed", &element, 10);ImGui::SameLine();
+            // ImGui::RadioButton("Dvosjed", &element, 11);ImGui::SameLine();
+            // ImGui::RadioButton("Fotelja", &element, 12);ImGui::SameLine();
+            // ImGui::RadioButton("Klub sto", &element, 13);
+
+            // ImGui::RadioButton("Krevet - Bracni", &element, 14);ImGui::SameLine();
+            // ImGui::RadioButton("Krevet - Djeciji", &element, 15);ImGui::SameLine();
+            // ImGui::RadioButton("Plakar", &element, 16);ImGui::SameLine();
+            // ImGui::RadioButton("Radni sto", &element, 17);
 
 
+        ImGui::Separator();
+         
+            {
+            const char* items[] = { "Zid", "Stub", "Greda", "Otvor", "Vrata", "Prozor", "Stepenice", "Stolica", "Lift", "Kuhinjski Sto", "Stolica","Kuhinjski Element", 
+            "Trosjed", "Dvosjed","Fotelja","Klub sto", "Krevet - Bracni", "Krevet - Djeciji", "Plakar", "Radni sto" };
+            static int item_current = 0;
+            ImGui::Combo("Leyers", &item_current, items, IM_ARRAYSIZE(items));
+            // ImGui::SameLine(); HelpMarker("Refer to the \"Combo\" section below for an explanation of the full BeginCombo/EndCombo API, and demonstration of various flags.\n");
+            }
+        
 
-            ImGui::Text("Dugme za save");
-            ImGui::Text("Dugme za reset");
-            ImGui::Text("Novi gridovi");
+        ImGui::Separator();
+                   
+            ImGui::Checkbox("Primarni Grid", &primarniGrid); ImGui::SameLine();
+            ImGui::Checkbox("Sekundarni Grid", &sekundarniGrid);
 
+
+        ImGui::Separator();
+
+            static int clicked = 0;
+            if(ImGui::Button("Reset"))
+            clicked++;
+            if(clicked & 1)
+            {
+            ImGui::SameLine();
+            ImGui::Text("Klikni jos jednom!");
+            
+            brojacZid = 0;
+            brojacStub = 0;
+            }
+
+            static int hide = 0;
+            if(ImGui::Button("hide"))
+            hide++;
+            if(hide & 1)
+            {
+            renderer.Clear();            
+            }
+
+            // ImGui::ShowDemoWindow(&show_demo_window);
 
             ImGui::End();
+  
         }
 
     
@@ -467,13 +602,22 @@ int main (void)
         glfwSwapBuffers(window);
         glfwPollEvents();        
 
+
     }
+
+    delete[] indeksiNiz;
+    delete[] verteksiAll;
+    delete[] verteksi2;
+
+    delete[] Memory;
+    delete[] Memory2;
     
  }
     ImGui_ImplGlfw_Shutdown();   
     ImGui_ImplOpenGL3_Shutdown();
     ImGui::DestroyContext();    
     glfwTerminate();
+
     return 0;
 
 }

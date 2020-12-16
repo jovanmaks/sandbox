@@ -22,8 +22,8 @@ public:
 
 //============== GRID - CELL ==========================
 
-    unsigned int rows = 20;/* VAZNO */
-    unsigned int colums = 20;/* VAZNO */
+    unsigned int rows = 25;/* VAZNO */
+    unsigned int colums = 25;/* VAZNO */
 
 //============== GRID - VERTEX ========================= 
 
@@ -66,31 +66,6 @@ public:
     unsigned int FurnitureValue = 6;
 
 
-
-    //mozes ubaciti i funkcije koje su globalne
-
-
-    //============================================
-    /*
-    
-    -STUB == 15;
-    -ZID == 14;
-    -OTVOR== -8;   ONDA TI KAD SABERES OTVOR DODJE NPR 14 - 8 = 6
-        -PROZOR
-        -VRATA
-        -PROLAZ
-
-
-    -KOMUNIKACIJA
-        -STEPENISTE
-        -LIFT
-        
-
-    -NAMJESTAJ
-        IIMA KOLKO TI BOG HOCE ALI NEKA GRUBA PODJELA PO SOBAMA
-
-    */
-   //=============================================
 
 
 };
