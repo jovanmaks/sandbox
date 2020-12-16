@@ -289,6 +289,29 @@ namespace grid
           return 0;
         }
     
+        unsigned int Buffer::IndexBufferWiresSecundary(std::vector<unsigned int>& indices)
+        {
+            for(int i = 0; i<colums; i = i+2)
+            {
+                for(int j = 0; j<rows; j = j+2)
+                {
+
+                int  xPos = j + i*(rows+1);
+
+                indices.push_back(xPos);
+                indices.push_back(xPos+2);
+                indices.push_back(xPos+rows*2 +2);
+
+
+                indices.push_back(xPos+2);
+                indices.push_back(xPos + rows*2 + 2);        
+                indices.push_back(xPos + rows*2 + 4);        
+
+                }
+            }
+
+            return 0;
+        }
         /* ovo treba da modifikujes da bude dinamican da moze da se poveca jer je hardcodded */
         unsigned int Buffer::IndexBufferElement( double mouseX, double mouseY, unsigned int* Igraliste )
         {

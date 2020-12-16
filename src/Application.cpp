@@ -267,6 +267,15 @@ int main (void)
     unsigned int* indeksiNiz = new unsigned int [countIndeks];
     indeksiNiz = &indeksi[0];
 
+    //==========
+    /*Secundary Wires indecies */
+    std::vector<unsigned int> wiresSecundaryVector;
+    B.IndexBufferWiresSecundary (wiresSecundaryVector);
+
+    //pretvaras vektor u array
+    int wiresSecundaryCount =atr.countWiresSecundaryIndeks;//ovo da izracunas
+    unsigned int* wiresSecundaryArray = new unsigned int [wiresSecundaryCount];
+    wiresSecundaryArray = &wiresSecundaryVector[0];
 
     /* Indeksi koji se memorisu. 1 i 2 zato sto imas dva aktivna elementa 1x1 i 2x2 */
     //Nemam pojma zasto radi kad mu nisam definisao koliko je count
@@ -295,6 +304,8 @@ int main (void)
 
     /* Index arrays */
     IndexBuffer ib_Wires(indeksiNiz, countIndeks);
+    IndexBuffer ib_WiresSecundary(wiresSecundaryArray, wiresSecundaryCount);
+
 
     //=============== CAMERA =========================
 
@@ -308,7 +319,12 @@ int main (void)
     /* Shader for wires */
     Shader shaderWires("../res/shaders/Basic2.shader");
     shaderWires.Bind();
-    shaderWires.SetUniform4f("u_Color",0.6f, 0.6f, 0.6f, 0.5f );
+    shaderWires.SetUniform4f("u_Color",0.4f, 0.4f, 0.4f, 0.5f );
+
+    /* Shader for secundary wires  */
+    Shader shaderWiresSecundary("../res/shaders/Basic2.shader");
+    shaderWiresSecundary.Bind();
+    shaderWiresSecundary.SetUniform4f("u_Color",0.2f, 0.2f, 0.f, 0.2f);
 
      /* Shader for tracker */
     Shader shaderTracker("../res/shaders/Basic2.shader");
@@ -334,8 +350,11 @@ int main (void)
     va.Unbind();
     vb.Unbind();
     ib_Wires.Unbind();
+    ib_WiresSecundary.Unbind();
 
     shaderWires.Unbind();
+    shaderWiresSecundary.Unbind();
+    
 
     shaderMemory.Unbind();
     shaderMemory2.Unbind();
@@ -361,7 +380,7 @@ int main (void)
     bool show_demo_window = true;
 
     bool primarniGrid   = false;
-    bool sekundarniGrid = false;
+    bool sekundarniGrid = true;
 
     bool stub = false;
 
@@ -396,7 +415,7 @@ int main (void)
             glfwGetCursorPos(window, &mouseX, &mouseY);   
 
             /* test for out of screen  */
-            if(mouseX<0 || mouseY<0 || mouseX>atr.ScreenWidth || mouseY>atr.ScreenHeight)
+            if(mouseX<=0 || mouseY<=0 || mouseX>=atr.ScreenWidth || mouseY>=atr.ScreenHeight)
             {
             mouseX = 2;
             mouseY = 2;
@@ -453,6 +472,11 @@ int main (void)
             shaderTracker2.SetUniformMat4f("u_MVP", proj);
             renderer.Draw(va, ib_Tracker2, shaderTracker2); 
             
+            for(int i=0; i<6; i++)
+            {
+
+            std::cout<<Tracker2[i]<<std::endl;
+            }
         
             shaderTracker2.Unbind();
             delete[] Tracker2;
@@ -505,6 +529,16 @@ int main (void)
             shaderWires.SetUniformMat4f("u_MVP", proj);
             renderer.Draw(va, ib_Wires, shaderWires);      
             shaderWires.Unbind();
+        }
+
+        if(sekundarniGrid)
+        {
+            GLCall(glPolygonMode(GL_FRONT_AND_BACK, GL_LINE));// GL_FRONT, GL_FRONT_AND_BACK...  GL_FILL  GL_LINE  GL_POINT
+            shaderWiresSecundary.Bind();
+            shaderWiresSecundary.SetUniformMat4f("u_MVP", proj);
+            renderer.Draw(va, ib_WiresSecundary, shaderWiresSecundary);      
+            shaderWiresSecundary.Unbind();            
+
         }
 
         //  if( glfwGetMouseButton (  window, GLFW_MOUSE_BUTTON_LEFT ) == GLFW_PRESS )
@@ -574,7 +608,7 @@ int main (void)
             {
             ImGui::SameLine();
             ImGui::Text("Klikni jos jednom!");
-            
+
             brojacZid = 0;
             brojacStub = 0;
             }
@@ -606,6 +640,7 @@ int main (void)
     }
 
     delete[] indeksiNiz;
+    delete[] wiresSecundaryArray;
     delete[] verteksiAll;
     delete[] verteksi2;
 

@@ -22,8 +22,10 @@ public:
 
 //============== GRID - CELL ==========================
 
-    unsigned int rows = 25;/* VAZNO */
-    unsigned int colums = 25;/* VAZNO */
+    /* neka uvijek budu parni da bi mogao da postoji sekundarni grid */
+    unsigned int rows = 24;/* VAZNO */
+    unsigned int colums = 24;/* VAZNO */
+
 
 //============== GRID - VERTEX ========================= 
 
@@ -39,6 +41,7 @@ public:
 
     unsigned int countValues = rows * colums;
     unsigned int countIndeks = rows * colums * 6;
+    unsigned int countWiresSecundaryIndeks =  rows/2 * colums/2 * 6;
 
     unsigned int countSingleColor = countVerteks;
     unsigned int countAlfa        = countVerteks;

@@ -44,6 +44,7 @@ namespace grid
         //wires
         unsigned int IndexBuffer(std::vector<unsigned int>& indices);
         unsigned int IndexBufferWires(std::vector<unsigned int>& indices);
+        unsigned int IndexBufferWiresSecundary(std::vector<unsigned int>& indices);
         //tracker
         unsigned int IndexBufferElement( double mouseX,double mouseY, unsigned int* Igraliste );
         unsigned int IndexBufferElement2( double mouseX,double mouseY, unsigned int* Igraliste );
