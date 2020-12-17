@@ -370,7 +370,9 @@ namespace grid
 
         }
 
-        unsigned int Buffer::IndexBufferGreda (double mouseXStatic, double mouseYStatic, double mouseXDynamic, double mouseYDynamic, unsigned int* Igraliste)
+       
+
+        unsigned int Buffer::IndexBufferElement3 (double mouseXStatic, double mouseYStatic, double mouseXDynamic, double mouseYDynamic, unsigned int* Igraliste)
         {
 
             double celijaX = ScreenWidth/rows;      
@@ -422,13 +424,9 @@ namespace grid
                 Igraliste[i+4] = I03+1+rows;
                 Igraliste[i+5] = I03+1+rows + 1;
                 }
-
             }
             
-
-
             return 0;
-
         }
 
 
@@ -597,5 +595,70 @@ namespace grid
             return 0;
         }
 
+         unsigned int Buffer::IndexBufferGreda (double mouseXStatic, double mouseYStatic, double mouseXDynamic, double mouseYDynamic, int brojac, unsigned int* Igraliste)
+        {
+
+            double celijaX = ScreenWidth/rows;      
+            double celijaY = ScreenHeight/colums;
+
+            unsigned int Ix = mouseXStatic/celijaX;//treba da zaokruzis ovo na donju
+            double res1;
+            res1 = floor( Ix);
+
+            unsigned int Iy = (ScreenHeight - mouseYStatic)/celijaY;//treba da zaokruzis ovo na donju
+            double  res2;
+            res2 = floor(Iy);
+           
+            unsigned int Ix2 = mouseXDynamic/celijaX;//treba da zaokruzis ovo na donju
+            double  res3;
+            res3 = floor(Ix2);
+
+            unsigned int Iy2 = (ScreenHeight - mouseYDynamic)/celijaY;//treba da zaokruzis ovo na donju
+            double  res4;
+            res4 = floor(Iy2);
+
+
+            //formula za racunanje ugaonog indeksa
+            unsigned int I0= res1 + res2*(rows+1);//prvi indeks. Donji lijevi
+            unsigned int I02= res3 + res2*(rows+1);//prvi indeks. Donji lijevi
+            unsigned int I03= res1 + res4*(rows+1);//prvi indeks. Donji lijevi
+
+
+            //Uslovi za orjentisanje
+            //1.Horizontalni uslovi
+
+            int visina = mouseYStatic - mouseYDynamic;
+            int visinaABS = abs(visina);
+
+            int sirina = mouseXDynamic - mouseXStatic;
+            int sirinaABS = abs(sirina);
+
+            if( (visinaABS) <= (sirinaABS) ) 
+            {
+                Igraliste[brojac*6 -6]   = I0;
+                Igraliste[brojac*6 -5] = I02+1;
+                Igraliste[brojac*6 -4] = I0+1+rows;
+                
+                Igraliste[brojac*6 -3] = I02+1;
+                Igraliste[brojac*6 -2] = I0+1+rows;
+                Igraliste[brojac*6 -1] = I02+1+rows + 1;
+
+            }else if(  (visinaABS) > (sirinaABS) ){
+
+                Igraliste[brojac*6 -6]   = I0;
+                Igraliste[brojac*6 -5] = I0+1;
+                Igraliste[brojac*6 -4] = I03+1+rows;
+                
+                Igraliste[brojac*6 -3] = I0+1;
+                Igraliste[brojac*6 -2] = I03+1+rows;
+                Igraliste[brojac*6 -1] = I03+1+rows + 1;
+
+            }
+            
+
+
+            return 0;
+
+        }
 
 } // namespace grid

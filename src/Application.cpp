@@ -43,7 +43,7 @@ double MouseXpos, MouseYpos, MouseXpos2, MouseYpos2, MouseXposGreda, MouseYposGr
 int tt = 0;
 int trackerCount, trackerGredaCount, roolerCount;
 int element = 0;
-int memoryCount, memoryCount2;
+int memoryCount, memoryCount2, MemoryGredaCount;
 
 bool lbutton_down;
 
@@ -87,15 +87,20 @@ void mouseButtonCallback ( GLFWwindow *window, int button, int action, int mods)
 
         brojacZid += 1;
         glfwGetCursorPos(window, &MouseXpos, &MouseYpos);
+
         }else if(element == 1)
         {
+
         brojacStub += 1;
         glfwGetCursorPos(window, &MouseXpos2, &MouseYpos2);
+
         }else if( element ==2)
         {
+
         brojacGreda +=1;
-        lbutton_down = true;
         glfwGetCursorPos(window, &MouseXposGreda, &MouseYposGreda);
+
+        lbutton_down = true;
         }
 
 
@@ -302,6 +307,7 @@ int main (void)
 
     unsigned int* Memory = new unsigned int [18 + memoryCount ];//MemoryCount
     unsigned int* Memory2 = new unsigned int [18 + memoryCount2 ];//MemoryCount
+    unsigned int* MemoryGreda = new unsigned int [18 + MemoryGredaCount];
 
 
 
@@ -364,8 +370,12 @@ int main (void)
     /* Shader for Memory 2 */
     Shader shaderMemory2("../res/shaders/Basic2.shader");
     shaderMemory2.Bind();
-    shaderMemory2.SetUniform4f("u_Color",0.2f, 0.4f, 0.6f, 0.7f );
+    shaderMemory2.SetUniform4f( "u_Color",0.2f, 0.4f, 0.6f, 0.7f );
 
+    /* Shader for Memory greda */
+    Shader shaderMemoryGreda( "../res/shaders/Basic2.shader" );
+    shaderMemoryGreda.Bind();
+    shaderMemoryGreda.SetUniform4f( "u_Color",0.2f, 0.4f, 0.6f, 0.7f );
 
     //=============== UNBIND =========================
 
@@ -380,6 +390,7 @@ int main (void)
 
     shaderMemory.Unbind();
     shaderMemory2.Unbind();
+    shaderMemoryGreda.Unbind();
 
     shaderTracker.Unbind();
     shaderTracker2.Unbind();
@@ -451,6 +462,7 @@ int main (void)
 
             memoryCount = brojacZid*6;
             memoryCount2 = brojacStub*6;
+            MemoryGredaCount = brojacGreda*6;
 
          
          //================ ODABIR ELEMENTA ZA TRAKER ===============
@@ -501,13 +513,8 @@ int main (void)
             shaderTracker2.Bind();
             shaderTracker2.SetUniform4f("u_Color",ColorClick, 1.f, 0.5f, 0.5f );
             shaderTracker2.SetUniformMat4f("u_MVP", proj);
-            renderer.Draw(va, ib_Tracker2, shaderTracker2); 
-            
-            // for(int i=0; i<6; i++)
-            // {
-
-            // std::cout<<Tracker2[i]<<std::endl;
-            // }
+            renderer.Draw(va, ib_Tracker2, shaderTracker2);        
+          
         
             shaderTracker2.Unbind();
             delete[] Tracker2;
@@ -516,7 +523,10 @@ int main (void)
             {
                 //Greda
                 unsigned int* TrackerGreda = new unsigned int [trackerGredaCount];
-                B.IndexBufferGreda(MouseXposGreda,MouseYposGreda, mouseX,mouseY, TrackerGreda);////OVO IMA DA ISPISES
+
+                if(lbutton_down)
+                B.IndexBufferElement3 (MouseXposGreda, MouseYposGreda, mouseX, mouseY, TrackerGreda);
+
                 IndexBuffer ib_TrackerGreda(TrackerGreda,trackerGredaCount);
 
                 /* Ovo je shader za tracker grede */
@@ -532,21 +542,9 @@ int main (void)
          //================ USLOV ZA VUCENJE MISA ===============
 
 
-            if(lbutton_down)
-            {
-                // nemoj da pravis kako vuce zid. Bolje kad je pritisnut da se pojavi
-                //rooler (ili linija u kome pravcu ides) i da odes na neku tacku
-                //kad pustis da zatvori zid.
-
-                //treba da imas dva drawcala
-                //jedan za liniju koja ide po sredini (to ce morati ili da ceka novi indeks
-                //bufer ili da smislis nesto privrement
-                //drugi za iscrtavanje. vidi sta je onaj triangle strip
-
-                // brojac ce takodje da skoci zavisno koliko polja zahvatis
-        
-                //  // do your drag here
-            }
+            
+               
+            
 
             std::cout<<lbutton_down<<std::endl;
 
@@ -567,19 +565,34 @@ int main (void)
             B.IndexBufferMemory2 (MouseXpos2,MouseYpos2, brojacStub, Memory2);  
             IndexBuffer ib_Memory2 (Memory2, memoryCount2);
 
+            if(lbutton_down)
+            B.IndexBufferGreda(MouseXposGreda,MouseYposGreda, mouseX,mouseY, brojacGreda, MemoryGreda);
+
+            
+            IndexBuffer ib_MemoryGreda(MemoryGreda,MemoryGredaCount); 
 
 
-            //============== ISCRTAVANJE ====================================
+        //============== ISCRTAVANJE ====================================
              /* Ovo je shader za memoriju  - aka zid */
            
             shaderMemory.Bind();
             shaderMemory.SetUniform4f("u_Color",ColorClick, 1.f, 1.f, 1.f );
             shaderMemory.SetUniformMat4f("u_MVP", proj);
             renderer.Draw(va, ib_Memory, shaderMemory); 
+
             shaderMemory.Unbind();
 
-            //treba ovdje da zakljucas klik nekako na drzanje
+            /* Ovo je shader za memoriju grede (jer ona moze preko stuba) */
+            
 
+            shaderMemoryGreda.Bind();
+            shaderMemoryGreda.SetUniform4f( "u_Color",ColorClick, 1.f, 1.f, 1.f );
+            shaderMemoryGreda.SetUniformMat4f( "u_MVP", proj );
+            renderer.Draw (va, ib_MemoryGreda, shaderMemoryGreda);
+            
+            shaderMemoryGreda.Unbind();
+
+            
             //============================================
             /* ovdje ce ti doci vrata jer 
             vrata mogu preko zida ali ne mogu preko stuba */
@@ -685,6 +698,7 @@ int main (void)
 
             brojacZid = 0;
             brojacStub = 0;
+            brojacGreda = 0;
             }
 
             static int hide = 0;
@@ -720,6 +734,7 @@ int main (void)
 
     delete[] Memory;
     delete[] Memory2;
+    delete[] MemoryGreda;
     
  }
     ImGui_ImplGlfw_Shutdown();   
