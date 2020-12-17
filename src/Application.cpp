@@ -63,11 +63,11 @@ void framebuffer_resize_callback(GLFWwindow* window, int fbW, int fbH)
 void updateInput(GLFWwindow* window)
 {
 
-       if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)//////////KRAJ
-       {
-             glfwTerminate();    
+    //    if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)//////////KRAJ
+    //    {
+    //          glfwTerminate();    
 
-       }
+    //    }
 
 }
 
@@ -631,9 +631,9 @@ int main (void)
             if (show_app_main_menu_bar)       ShowExampleAppMainMenuBar();
             //if buttn onda nesto    
 
-            ImGui::RadioButton("Zid", &element, 0); ImGui::SameLine();
-            ImGui::RadioButton("Stub", &element, 1); ImGui::SameLine();
-            ImGui::RadioButton("Greda", &element, 2);
+            ImGui::RadioButton("Wall", &element, 0); ImGui::SameLine();
+            ImGui::RadioButton("Column", &element, 1); ImGui::SameLine();
+            ImGui::RadioButton("Beam", &element, 2);
 
             // ImGui::RadioButton("Vrata", &element, 3); ImGui::SameLine();
             // ImGui::RadioButton("Prozor", &element, 4); 
@@ -659,7 +659,7 @@ int main (void)
         ImGui::Separator();
          
             {
-            const char* items[] = { "Zid", "Stub", "Greda", "Otvor", "Vrata", "Prozor", "Stepenice", "Stolica", "Lift", "Kuhinjski Sto", "Stolica","Kuhinjski Element", 
+            const char* items[] = { "Wall", "Column", "Beam", "Otvor", "Vrata", "Prozor", "Stepenice", "Stolica", "Lift", "Kuhinjski Sto", "Stolica","Kuhinjski Element", 
             "Trosjed", "Dvosjed","Fotelja","Klub sto", "Krevet - Bracni", "Krevet - Djeciji", "Plakar", "Radni sto" };
             static int item_current = 0;
             ImGui::Combo("Leyers", &item_current, items, IM_ARRAYSIZE(items));

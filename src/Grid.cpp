@@ -384,19 +384,48 @@ namespace grid
 
             //formula za racunanje ugaonog indeksa
             unsigned int I0= Ix + Iy*(rows+1);//prvi indeks. Donji lijevi
-            unsigned int I02= Ix2 + Iy2*(rows+1);//prvi indeks. Donji lijevi
+            unsigned int I02= Ix2 + Iy*(rows+1);//prvi indeks. Donji lijevi
+            unsigned int I03= Ix + Iy2*(rows+1);//prvi indeks. Donji lijevi
 
 
-            for( int i = 0; i<1; i++)
+            //Uslovi za orjentisanje
+            //1.Horizontalni uslovi
+
+            int visina = mouseYStatic - mouseYDynamic;
+            int visinaABS = abs(visina);
+
+            int sirina = mouseXDynamic - mouseXStatic;
+            int sirinaABS = abs(sirina);
+
+            if( (visinaABS) <= (sirinaABS) ) 
             {
-            Igraliste[i]   = I0;
-            Igraliste[i+1] = I02+1;
-            Igraliste[i+2] = I0+1+rows;
-            
-            Igraliste[i+3] = I02+1;
-            Igraliste[i+4] = I0+1+rows;
-            Igraliste[i+5] = I02+1+rows + 1;
+                for( int i = 0; i<1; i++)
+                {
+                Igraliste[i]   = I0;
+                Igraliste[i+1] = I02+1;
+                Igraliste[i+2] = I0+1+rows;
+                
+                Igraliste[i+3] = I02+1;
+                Igraliste[i+4] = I0+1+rows;
+                Igraliste[i+5] = I02+1+rows + 1;
+                }
+
+            }else if(  (visinaABS) > (sirinaABS) ){
+
+                for( int i = 0; i<1; i++)
+                {
+                Igraliste[i]   = I0;
+                Igraliste[i+1] = I0+1;
+                Igraliste[i+2] = I03+1+rows;
+                
+                Igraliste[i+3] = I0+1;
+                Igraliste[i+4] = I03+1+rows;
+                Igraliste[i+5] = I03+1+rows + 1;
+                }
+
             }
+            
+
 
             return 0;
 
