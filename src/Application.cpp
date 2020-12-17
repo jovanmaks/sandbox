@@ -36,7 +36,8 @@ grid::Buffer B;
 
 
 float ColorClick = 1.f;
-int brojacZid,brojacStub ;
+int brojacZid = 0;
+int brojacStub = 0;
 double MouseXpos, MouseYpos, MouseXpos2, MouseYpos2;
 int tt = 0;
 int trackerCount;
@@ -83,12 +84,12 @@ void mouseButtonCallback ( GLFWwindow *window, int button, int action, int mods)
         if(element == 0)
         {
 
-        glfwGetCursorPos(window, &MouseXpos, &MouseYpos);
         brojacZid += 1;
+        glfwGetCursorPos(window, &MouseXpos, &MouseYpos);
         }else if(element == 1)
         {
-        glfwGetCursorPos(window, &MouseXpos2, &MouseYpos2);
         brojacStub += 1;
+        glfwGetCursorPos(window, &MouseXpos2, &MouseYpos2);
         }
 
         // std::cout<<brojac<<std::endl;
@@ -231,8 +232,9 @@ int main (void)
     fprintf(stdout, "Status: Using GLEW %s\n", glewGetString(GLEW_VERSION));
     fprintf(stdout, "Status: Using GL %s\n", glGetString(GL_VERSION));   
 
-        glfwSetMouseButtonCallback ( window, mouseButtonCallback );
-        glfwSetScrollCallback(window, scroll_callback);
+    glfwSetInputMode(window, GLFW_STICKY_MOUSE_BUTTONS, GLFW_TRUE);
+    glfwSetMouseButtonCallback ( window, mouseButtonCallback );
+    glfwSetScrollCallback(window, scroll_callback);
     //=======================================================================
     //=======================================================================
     //=======================================================================
@@ -282,8 +284,8 @@ int main (void)
    
     
 
-    unsigned int* Memory = new unsigned int [memoryCount];//MemoryCount
-    unsigned int* Memory2 = new unsigned int [memoryCount2];//MemoryCount
+    unsigned int* Memory = new unsigned int [18 + memoryCount ];//MemoryCount
+    unsigned int* Memory2 = new unsigned int [18 + memoryCount2 ];//MemoryCount
 
 
 
@@ -379,8 +381,8 @@ int main (void)
     bool show_another_window = true;
     bool show_demo_window = true;
 
-    bool primarniGrid   = false;
-    bool sekundarniGrid = true;
+    bool primarniGrid   = true;
+    bool sekundarniGrid = false;
 
     bool stub = false;
 
@@ -472,11 +474,11 @@ int main (void)
             shaderTracker2.SetUniformMat4f("u_MVP", proj);
             renderer.Draw(va, ib_Tracker2, shaderTracker2); 
             
-            for(int i=0; i<6; i++)
-            {
+            // for(int i=0; i<6; i++)
+            // {
 
-            std::cout<<Tracker2[i]<<std::endl;
-            }
+            // std::cout<<Tracker2[i]<<std::endl;
+            // }
         
             shaderTracker2.Unbind();
             delete[] Tracker2;
@@ -522,7 +524,7 @@ int main (void)
 
         }
 
-        if(primarniGrid)
+        if(sekundarniGrid)
         {
             GLCall(glPolygonMode(GL_FRONT_AND_BACK, GL_LINE));// GL_FRONT, GL_FRONT_AND_BACK...  GL_FILL  GL_LINE  GL_POINT
             shaderWires.Bind();
@@ -531,7 +533,7 @@ int main (void)
             shaderWires.Unbind();
         }
 
-        if(sekundarniGrid)
+        if(primarniGrid)
         {
             GLCall(glPolygonMode(GL_FRONT_AND_BACK, GL_LINE));// GL_FRONT, GL_FRONT_AND_BACK...  GL_FILL  GL_LINE  GL_POINT
             shaderWiresSecundary.Bind();

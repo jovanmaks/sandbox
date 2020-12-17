@@ -23,8 +23,8 @@ public:
 //============== GRID - CELL ==========================
 
     /* neka uvijek budu parni da bi mogao da postoji sekundarni grid */
-    unsigned int rows = 24;/* VAZNO */
-    unsigned int colums = 24;/* VAZNO */
+    unsigned int rows = 36;/* VAZNO */
+    unsigned int colums = 36;/* VAZNO */
 
 
 //============== GRID - VERTEX ========================= 

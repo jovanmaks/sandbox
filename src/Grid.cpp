@@ -1,5 +1,6 @@
 #include "Grid.h"
 #include "Atributes.h"
+#include <cmath>
 
 namespace grid
 {
@@ -419,17 +420,33 @@ namespace grid
             double celijaX = ScreenWidth/rows;      
             double celijaY = ScreenHeight/colums;
 
-            unsigned int Ix = mouseX/celijaX;//treba da zaokruzis ovo na donju
-            unsigned int Iy = (ScreenHeight - mouseY)/celijaY;//treba da zaokruzis ovo na donju
-          
+            double  Ix = mouseX/celijaX;//treba da zaokruzis ovo na donju
+            double res1;
+            res1 = floor( Ix);
+
+            double  Iy = (ScreenHeight - mouseY)/celijaY;//treba da zaokruzis ovo na donju
+            double  res2;
+            res2 = floor(Iy);
             //formula za racunanje ugaonog indeksa
-            unsigned int I0= Ix + Iy*(rows+1);//prvi indeks. Donji lijevi
+            unsigned int I0= res1 + res2*(rows+1);//prvi indeks. Donji lijevi
             unsigned int I1=I0 +1;
             unsigned int I2=I0 +1 + rows;
 
             unsigned int I3=I0 +1;
             unsigned int I4=I0 +1 + rows;
             unsigned int I5=I0 +1 + rows + 1;       
+
+            /* Valgrind izgleda ovo izbacuje kao invalid write */
+            if(brojac == 1 )
+            {
+            Igraliste[0]= I0;
+            Igraliste[1]= I1;
+            Igraliste[2]= I2;
+ 
+            Igraliste[3]= I3;
+            Igraliste[4]= I4;
+            Igraliste[5]= I5;
+            }else{
 
             Igraliste[brojac*6 -6]= I0;
             Igraliste[brojac*6 -5]= I1;
@@ -438,6 +455,7 @@ namespace grid
             Igraliste[brojac*6 -3]= I3;
             Igraliste[brojac*6 -2]= I4;
             Igraliste[brojac*6 -1]= I5;
+            }
 
          
          return 0;
@@ -449,13 +467,17 @@ namespace grid
             double celijaX = ScreenWidth/rows;      
             double celijaY = ScreenHeight/colums;
 
-            unsigned int Ix = mouseX/celijaX;//treba da zaokruzis ovo na donju
-            unsigned int Iy = (ScreenHeight - mouseY)/celijaY;//treba da zaokruzis ovo na donju
-           
-           
+            double  Ix = mouseX/celijaX;//treba da zaokruzis ovo na donju
+            double res1;
+            res1 = floor( Ix);
 
+            double  Iy = (ScreenHeight - mouseY)/celijaY;//treba da zaokruzis ovo na donju
+            double  res2;
+            res2 = floor(Iy);
+
+           
              //formula za racunanje ugaonog indeksa
-            unsigned int I0= Ix + Iy*(rows+1);//prvi indeks. Donji lijevi
+            unsigned int I0= res1 + res2*(rows+1);//prvi indeks. Donji lijevi
             unsigned int I1=I0 +2;
             unsigned int I2=I0 +2 + rows*2;
 
@@ -463,6 +485,21 @@ namespace grid
             unsigned int I4=I0 +2 + rows*2;
             unsigned int I5=I0 +2 + rows*2 + 2;       
 
+
+            /* Valgrind izgleda ovo izbacuje kao invalid write */
+            //Videi da nije registrovao indekse kao nesto sto nije integer
+            //Ubacen je ovaj uslov na pocetku jer izgleda se nulti mora rucno definisati 
+            //ako ide preko brojaca izgleda neko njesra
+            if(brojac ==1 )
+            {
+            Igraliste[0]= I0;
+            Igraliste[1]= I1;
+            Igraliste[2]= I2;
+ 
+            Igraliste[3]= I3;
+            Igraliste[4]= I4;
+            Igraliste[5]= I5;
+            }else{
             Igraliste[brojac*6 -6]= I0;
             Igraliste[brojac*6 -5]= I1;
             Igraliste[brojac*6 -4]= I2;
@@ -470,11 +507,9 @@ namespace grid
             Igraliste[brojac*6 -3]= I3;
             Igraliste[brojac*6 -2]= I4;
             Igraliste[brojac*6 -1]= I5;
-
-
-
          
-             return 0;
+            }
+            return 0;
         }
 
 

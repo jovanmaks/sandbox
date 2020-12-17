@@ -6,7 +6,9 @@ include( GNUInstallDirs )
 
 set( GLFWM_VERSION_MAJOR "3" )
 set( GLFWM_VERSION_MINOR "2" )
-
+set(CMAKE_BUILD_TYPE Debug)
+#This also disables optimization.
+#For profiling instead of debugging, you generally want both optimization and symbols (aka -g O2).
 
 find_package( OpenGL REQUIRED )
 find_package( glfw3 REQUIRED )
