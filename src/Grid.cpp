@@ -370,6 +370,61 @@ namespace grid
 
         }
 
+        unsigned int Buffer::IndexBufferGreda (double mouseXStatic, double mouseYStatic, double mouseXDynamic, double mouseYDynamic, unsigned int* Igraliste)
+        {
+
+            double celijaX = ScreenWidth/rows;      
+            double celijaY = ScreenHeight/colums;
+
+            unsigned int Ix = mouseXStatic/celijaX;//treba da zaokruzis ovo na donju
+            unsigned int Iy = (ScreenHeight - mouseYStatic)/celijaY;//treba da zaokruzis ovo na donju
+           
+            unsigned int Ix2 = mouseXDynamic/celijaX;//treba da zaokruzis ovo na donju
+            unsigned int Iy2 = (ScreenHeight - mouseYDynamic)/celijaY;//treba da zaokruzis ovo na donju
+
+            //formula za racunanje ugaonog indeksa
+            unsigned int I0= Ix + Iy*(rows+1);//prvi indeks. Donji lijevi
+            unsigned int I02= Ix2 + Iy2*(rows+1);//prvi indeks. Donji lijevi
+
+
+            for( int i = 0; i<1; i++)
+            {
+            Igraliste[i]   = I0;
+            Igraliste[i+1] = I02+1;
+            Igraliste[i+2] = I0+1+rows;
+            
+            Igraliste[i+3] = I02+1;
+            Igraliste[i+4] = I0+1+rows;
+            Igraliste[i+5] = I02+1+rows + 1;
+            }
+
+            return 0;
+
+        }
+
+
+
+
+
+        unsigned int Buffer::IndexBufferRooler ( double mouseX,double mouseY, unsigned int* Igraliste )
+        {
+            
+            // Ovo ne moze raditi jer si ubaicio u bufer vec tacke i samo njih mozes koristiti
+            //potreban bi ti bio novi bufer i da kupis te indekse jer u ovom indeksi nisu
+            //zadovoljavajuci
+            // unsigned int I0= 0;
+            // unsigned int I1= mouseX;
+
+            /* for(int i = 0; i<1; i++)
+            {
+            Igraliste[i]      = I0;
+            Igraliste[i +1]   = I1;
+            } */
+
+
+            return 0;
+        }
+
     
         /* Ovo je ostavljeno da ima kako se radi mergovanje nizova */
         unsigned int Buffer::IndexBufferMerged( int countOne, int countTwo, unsigned int* Base, unsigned int* Element, unsigned int* Memory )
@@ -490,6 +545,7 @@ namespace grid
             //Videi da nije registrovao indekse kao nesto sto nije integer
             //Ubacen je ovaj uslov na pocetku jer izgleda se nulti mora rucno definisati 
             //ako ide preko brojaca izgleda neko njesra
+            //ali ni to nije rijesilo bug
             if(brojac ==1 )
             {
             Igraliste[0]= I0;

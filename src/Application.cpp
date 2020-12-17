@@ -38,13 +38,14 @@ grid::Buffer B;
 float ColorClick = 1.f;
 int brojacZid = 0;
 int brojacStub = 0;
-double MouseXpos, MouseYpos, MouseXpos2, MouseYpos2;
+int brojacGreda = 0;
+double MouseXpos, MouseYpos, MouseXpos2, MouseYpos2, MouseXposGreda, MouseYposGreda;
 int tt = 0;
-int trackerCount;
+int trackerCount, trackerGredaCount, roolerCount;
 int element = 0;
 int memoryCount, memoryCount2;
 
-
+bool lbutton_down;
 
 
 void cursorPositionCallback ( GLFWwindow *window, double xPos, double yPos)
@@ -76,11 +77,11 @@ void mouseButtonCallback ( GLFWwindow *window, int button, int action, int mods)
     if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS)
     {
         // ColorClick = 1.0f;
-   
     }
 
     if (button == GLFW_MOUSE_BUTTON_RIGHT && action == GLFW_PRESS)
     {
+
         if(element == 0)
         {
 
@@ -90,14 +91,29 @@ void mouseButtonCallback ( GLFWwindow *window, int button, int action, int mods)
         {
         brojacStub += 1;
         glfwGetCursorPos(window, &MouseXpos2, &MouseYpos2);
+        }else if( element ==2)
+        {
+        brojacGreda +=1;
+        lbutton_down = true;
+        glfwGetCursorPos(window, &MouseXposGreda, &MouseYposGreda);
         }
+
 
         // std::cout<<brojac<<std::endl;
         ColorClick = 1.0f;
-
     }
 
-    
+    else if( button == GLFW_MOUSE_BUTTON_RIGHT && action == GLFW_RELEASE )
+    {
+        lbutton_down = false;
+    }
+
+
+
+
+   
+
+        
 
 }
 
@@ -321,7 +337,7 @@ int main (void)
     /* Shader for wires */
     Shader shaderWires("../res/shaders/Basic2.shader");
     shaderWires.Bind();
-    shaderWires.SetUniform4f("u_Color",0.4f, 0.4f, 0.4f, 0.5f );
+    shaderWires.SetUniform4f("u_Color",0.2f, 0.2f, 0.2f, 0.15f );
 
     /* Shader for secundary wires  */
     Shader shaderWiresSecundary("../res/shaders/Basic2.shader");
@@ -335,6 +351,10 @@ int main (void)
       /* Shader for tracker 2 */
     Shader shaderTracker2("../res/shaders/Basic2.shader");
     shaderTracker2.Bind();
+
+    /* Shader za tracker Grede */
+    Shader shaderTrackerGreda("../res/shaders/Basic2.shader");
+    shaderTrackerGreda.Bind();
 
     /* Shader for Memory */
     Shader shaderMemory("../res/shaders/Basic2.shader");
@@ -363,6 +383,7 @@ int main (void)
 
     shaderTracker.Unbind();
     shaderTracker2.Unbind();
+    shaderTrackerGreda.Unbind();
 
     Renderer renderer;
 
@@ -425,20 +446,25 @@ int main (void)
 
 
             trackerCount = 6;
-     
+            trackerGredaCount = 6;
+            roolerCount = 2;
+
             memoryCount = brojacZid*6;
             memoryCount2 = brojacStub*6;
 
          
+         //================ ODABIR ELEMENTA ZA TRAKER ===============
 
             if( element == 0)
             {
-
             
             //Tracker
             unsigned int* Tracker = new unsigned int [trackerCount];
+            // unsigned in* Rooler = new unsigned int [roolerCount];
+
             B.IndexBufferElement(mouseX, mouseY, Tracker);
-            IndexBuffer ib_Tracker(Tracker, trackerCount);
+            IndexBuffer ib_Tracker (Tracker, trackerCount);
+            // IndexBuffer ib_Rooler (Rooler, roolerCount);
 
 
             /* Ovo je shader za tracker */
@@ -447,14 +473,17 @@ int main (void)
             shaderTracker.SetUniformMat4f("u_MVP", proj);
             renderer.Draw(va, ib_Tracker, shaderTracker);  
 
+            // renderer.DrawLines(va, ib_Rooler, shaderTracker);
 
             shaderTracker.Unbind();
             delete[] Tracker;
+            // delete[] Rooler;
 
-            }else if(element == 1){   
+            }
+            else if(element == 1)
+            {   
 
             //Tracker II
-
             /* uslov za izuzetak na desnom i gornjem kraju ekrana */
             if( mouseX >= atr.ScreenWidth - atr.ScreenWidth/ atr.rows || mouseY <= atr.ScreenHeight/ atr.colums  )
                {
@@ -483,11 +512,50 @@ int main (void)
             shaderTracker2.Unbind();
             delete[] Tracker2;
             }
+            else if (element == 2)
+            {
+                //Greda
+                unsigned int* TrackerGreda = new unsigned int [trackerGredaCount];
+                B.IndexBufferGreda(MouseXposGreda,MouseYposGreda, mouseX,mouseY, TrackerGreda);////OVO IMA DA ISPISES
+                IndexBuffer ib_TrackerGreda(TrackerGreda,trackerGredaCount);
+
+                /* Ovo je shader za tracker grede */
+                shaderTrackerGreda.Bind();
+                shaderTrackerGreda.SetUniform4f( "u_Color",ColorClick, 1.f, 0.5f, 0.5f );
+                shaderTrackerGreda.SetUniformMat4f("u_MVP", proj);
+                renderer.Draw (va, ib_TrackerGreda, shaderTrackerGreda);
+
+                shaderTrackerGreda.Unbind();
+                delete[] TrackerGreda;
+            }
+
+         //================ USLOV ZA VUCENJE MISA ===============
+
+
+            if(lbutton_down)
+            {
+                // nemoj da pravis kako vuce zid. Bolje kad je pritisnut da se pojavi
+                //rooler (ili linija u kome pravcu ides) i da odes na neku tacku
+                //kad pustis da zatvori zid.
+
+                //treba da imas dva drawcala
+                //jedan za liniju koja ide po sredini (to ce morati ili da ceka novi indeks
+                //bufer ili da smislis nesto privrement
+                //drugi za iscrtavanje. vidi sta je onaj triangle strip
+
+                // brojac ce takodje da skoci zavisno koliko polja zahvatis
+        
+                //  // do your drag here
+            }
+
+            std::cout<<lbutton_down<<std::endl;
+
+
+         //================ PUNJENJE MEMORIJE ===============
+
 
             B.IndexBufferMemory (MouseXpos,MouseYpos, brojacZid, Memory);   
             IndexBuffer ib_Memory (Memory, memoryCount);
-
-
 
             /* uslov za izuzetak na desnom i gornjem kraju ekrana */
             if( MouseXpos2 >= atr.ScreenWidth - atr.ScreenWidth/ atr.rows ||  MouseYpos2 <= atr.ScreenHeight/ atr.colums )
@@ -499,7 +567,9 @@ int main (void)
             B.IndexBufferMemory2 (MouseXpos2,MouseYpos2, brojacStub, Memory2);  
             IndexBuffer ib_Memory2 (Memory2, memoryCount2);
 
-            //============== SKLADISTENJE ====================================
+
+
+            //============== ISCRTAVANJE ====================================
              /* Ovo je shader za memoriju  - aka zid */
            
             shaderMemory.Bind();
@@ -507,6 +577,8 @@ int main (void)
             shaderMemory.SetUniformMat4f("u_MVP", proj);
             renderer.Draw(va, ib_Memory, shaderMemory); 
             shaderMemory.Unbind();
+
+            //treba ovdje da zakljucas klik nekako na drzanje
 
             //============================================
             /* ovdje ce ti doci vrata jer 
